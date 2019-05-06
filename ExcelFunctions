@@ -1,0 +1,212 @@
+package Raga;
+
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.util.Removal;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.awt.image.IndexColorModel;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+ 
+
+
+/* 
+ * Author @Ragavaendra Doijode
+ * */
+
+public class ExcelFunctions
+{
+    public FileInputStream fis = null;
+    public FileOutputStream fos = null;
+    public XSSFWorkbook workbook = null;
+    public XSSFSheet sheet = null;
+    public XSSFRow row = null;
+    public XSSFCell cell = null;
+    String xlFilePath;
+    static DataFormatter formatter = new DataFormatter();
+    
+ 
+    public ExcelFunctions(String xlFilePath) throws Exception
+    {
+        this.xlFilePath = xlFilePath;
+        fis = new FileInputStream(xlFilePath);
+        workbook = new XSSFWorkbook(fis);
+        fis.close();
+    }
+    
+    
+   /* 
+    * Functions Illustration
+    * 
+    * ExcelFunctions xlObj = new ExcelFunctions(System.getProperty("user.dir")+"/Excel.xlsx");
+    
+    xlObj.writeData("sheet1",3,1,"PASS", null, null);
+    xlObj.readExcelData("sheet1",1,0);
+    xlObj.writeData("sheet1",3,1,"PASS", "Bold", null);
+    xlObj.writeData("sheet1",3,1,"PASS", "white", "green");
+    xlObj.getColumnCount("sheet1");
+    xlObj.getRowCount("sheet1");
+    *
+    */
+ 
+    public boolean writeExcelData(String sheetName, int rowNum, int colNumber,  String value)
+    {
+    	
+        try
+        {
+            sheet = workbook.getSheet(sheetName);
+            row = sheet.getRow(rowNum);
+            if(row==null)
+                row = sheet.createRow(rowNum);
+            cell = row.getCell(colNumber);
+            if(cell == null)
+                cell = row.createCell(colNumber);                      
+            cell.setCellValue(value);       
+            fos = new FileOutputStream(xlFilePath);
+            workbook.write(fos);
+            fos.close();
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return  false;
+        }
+        return true;
+    }
+    
+    public boolean writeData(String sheetName, int rowNum, int colNumber,  String value, String fontcolor, String Backgroundcolor)
+    {
+    	
+        try
+        {
+            sheet = workbook.getSheet(sheetName);
+            row = sheet.getRow(rowNum);
+            if(row==null)
+                row = sheet.createRow(rowNum);
+            cell = row.getCell(colNumber);
+            if(cell == null)
+                cell = row.createCell(colNumber);
+            CellStyle style = workbook.createCellStyle();  
+            Font font = workbook.createFont();
+                     
+              try {
+				if (Backgroundcolor.equalsIgnoreCase("red"))
+				  {
+					  style.setFillForegroundColor(IndexedColors.RED.getIndex());  
+				      style.setFillPattern(FillPatternType.SOLID_FOREGROUND); 
+				      cell.setCellStyle(style); 
+				  }
+				  else if (Backgroundcolor.equalsIgnoreCase("green"))
+				  {
+					  style.setFillForegroundColor(IndexedColors.GREEN.getIndex());  
+				      style.setFillPattern(FillPatternType.SOLID_FOREGROUND); 
+				      cell.setCellStyle(style); 
+				   }
+				  else if (Backgroundcolor.equalsIgnoreCase("yellow"))
+				  {
+					  style.setFillForegroundColor(IndexedColors.YELLOW.getIndex());  
+				      style.setFillPattern(FillPatternType.SOLID_FOREGROUND); 
+				      cell.setCellStyle(style); 
+				   }
+				  else 
+				  {
+					  style.setFillForegroundColor(IndexedColors.WHITE.getIndex());  
+				      style.setFillPattern(FillPatternType.SOLID_FOREGROUND); 
+				      cell.setCellStyle(style); 
+				  }
+			} catch (Exception e) {
+				style.setFillForegroundColor(IndexedColors.WHITE.getIndex());  
+			      style.setFillPattern(FillPatternType.SOLID_FOREGROUND); 
+			      cell.setCellStyle(style); 
+			}
+              
+              try {
+				if (fontcolor.equalsIgnoreCase("red"))
+				  {	
+					  font.setBold(true);
+					  font.setColor(IndexedColors.RED.getIndex());
+				  }
+				  else if (fontcolor.equalsIgnoreCase("green"))
+				  {
+				  	  font.setBold(true);
+					  font.setColor(IndexedColors.GREEN.getIndex());
+				   }
+				  else if (fontcolor.equalsIgnoreCase("white"))
+				  {
+					  font.setBold(true);
+					  font.setColor(IndexedColors.WHITE.getIndex());
+				   }
+				  else if (fontcolor.equalsIgnoreCase("yellow"))
+				  {
+					  font.setBold(true);
+					  font.setColor(IndexedColors.YELLOW.getIndex());
+				   }
+				  else if (fontcolor.contains("Bold"))
+				  {
+					  font.setBold(true);
+					  font.setColor(IndexedColors.BLACK.getIndex());
+				  }
+			} catch (Exception e) {
+				
+				font.setColor(IndexedColors.BLACK.getIndex());
+			}
+              
+              style.setFont(font);
+              cell.setCellValue(value);
+            
+            fos = new FileOutputStream(xlFilePath);
+            workbook.write(fos);
+            fos.close();
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return  false;
+        }
+        return true;
+    }
+    
+    public String readExcelData(String sheetName,int rowNum, int colNum)
+    {
+        try
+        {
+            sheet = workbook.getSheet(sheetName);
+            row = sheet.getRow(rowNum);
+            cell = row.getCell(colNum);
+     
+            return (formatter.formatCellValue(cell).trim());
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+            return "row "+rowNum+" or column "+colNum +" does not exist  in Excel";
+        }
+    }
+       
+    
+    public int getRowCount(String sheetName)
+    {
+            sheet = workbook.getSheet(sheetName);
+            int rowCount = sheet.getLastRowNum();     
+            return rowCount;
+    }
+    
+    public int getColumnCount(String sheetName)
+    {
+            sheet = workbook.getSheet(sheetName);
+            int ColumnCount = sheet.getRow(0).getLastCellNum();    
+            return ColumnCount;
+    }
+
+}
