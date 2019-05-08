@@ -23,12 +23,16 @@ js.executeScript("arguments[0].style.display = 'block'", element );
 ### :dart:Generate Alert Pop Window using JavaScriptExecutor: 
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
-Js.executeScript("alert('hello world');");
+js.executeScript("alert('hello world');");
 ```
 ### :dart:Perform Click Action using JavaScriptExecutor: 
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
 js.executeScript("arguments[0].click();", element);
+```
+### :dart:To click on a SubMenu which is only visible on mouse hover on Menu: 
+```
+js.executeScript("$('ul.menus.menu-secondary.sf-js-enabled.sub-menu li').hover()");
 ```
 ### :dart:Handling Checkbox using JavaScriptExecutor: 
 ```
@@ -44,6 +48,10 @@ driver.executeScript("history.go(0)");
 JavascriptExecutor js = (JavascriptExecutor)driver;
 string sText =  js.executeScript("return document.documentElement.innerText;").toString();
 ```
+### :dart:Get Domain of a Webpage using JavaScriptExecutor: 
+```
+String sText =  js.executeScript("return document.domain;").toString();
+```
 ### :dart:Get Title of a WebPage using JavaScriptExecutor: 
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -58,7 +66,11 @@ string url = js.executeScript("return document.URL;").toString();
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
   //Vertical scroll - down by 150  pixels
-  js.executeScript("window.scrollBy(0,150)");
+js.executeScript("window.scrollBy(0,150)");
+  //scroll till the bottom of the page 
+js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+//scroll till the Top of the page 
+js.executeScript("window.scrollBy(0,0)");
 ```
 ### :dart:Getting Element Attributes using JavaScriptExecutor: 
 ```
