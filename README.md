@@ -33,10 +33,10 @@ string sText =  js.executeScript("return document.documentElement.innerText;").t
 JavascriptExecutor js = (JavascriptExecutor)driver;
 string sText =  js.executeScript("return document.title;").toString();
 ```
-### :dart:Get Title of a WebPage using JavaScriptExecutor: 
+### :dart:Fetching the URL of the WebPage using JavaScriptExecutor: 
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
-string sText =  js.executeScript("return document.title;").toString();
+string url = js.executeScript("return document.URL;").toString();
 ```
 ### :dart:Scroll Page using JavaScriptExecutor: 
 ```
