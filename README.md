@@ -8,5 +8,11 @@ js.executeScript(Script,Arguments);
 ```
 * Script – This is the JavaScript that needs to execute.
 * Arguments – It is the arguments to the script. It's optional.
+### :dart:Generate Alert Pop Window: 
+```
+JavascriptExecutor js = (JavascriptExecutor)driver;
+Js.executeScript("alert('hello world');");
+```
+
 
 
