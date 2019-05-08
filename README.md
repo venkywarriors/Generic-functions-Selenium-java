@@ -8,10 +8,51 @@ js.executeScript(Script,Arguments);
 ```
 * Script – This is the JavaScript that needs to execute.
 * Arguments – It is the arguments to the script. It's optional.
-### :dart:Generate Alert Pop Window: 
+### :dart:Generate Alert Pop Window using JavaScriptExecutor: 
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
 Js.executeScript("alert('hello world');");
+```
+### :dart:Perform Click Action using JavaScriptExecutor: 
+```
+JavascriptExecutor js = (JavascriptExecutor)driver;
+js.executeScript("arguments[0].click();", element);
+```
+### :dart:Refresh Browser using JavaScriptExecutor: 
+```
+JavascriptExecutor js = (JavascriptExecutor)driver;
+driver.executeScript("history.go(0)");
+```
+### :dart:Get InnerText of a Webpage using JavaScriptExecutor: 
+```
+JavascriptExecutor js = (JavascriptExecutor)driver;
+string sText =  js.executeScript("return document.documentElement.innerText;").toString();
+```
+### :dart:Get Title of a WebPage using JavaScriptExecutor: 
+```
+JavascriptExecutor js = (JavascriptExecutor)driver;
+string sText =  js.executeScript("return document.title;").toString();
+```
+### :dart:Get Title of a WebPage using JavaScriptExecutor: 
+```
+JavascriptExecutor js = (JavascriptExecutor)driver;
+string sText =  js.executeScript("return document.title;").toString();
+```
+### :dart:Scroll Page using JavaScriptExecutor: 
+```
+JavascriptExecutor js = (JavascriptExecutor)driver;
+  //Vertical scroll - down by 150  pixels
+  js.executeScript("window.scrollBy(0,150)");
+```
+### :dart:Get Title of a WebPage using JavaScriptExecutor: 
+```
+JavascriptExecutor js = (JavascriptExecutor)driver;
+string sText =  js.executeScript("return document.title;").toString();
+```
+### :dart:Get Title of a WebPage using JavaScriptExecutor: 
+```
+JavascriptExecutor js = (JavascriptExecutor)driver;
+string sText =  js.executeScript("return document.title;").toString();
 ```
 
 
