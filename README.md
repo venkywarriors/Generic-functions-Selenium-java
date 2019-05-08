@@ -80,7 +80,7 @@ JavascriptExecutor js = (JavascriptExecutor)driver;
 js.executeScript("window.scrollBy(0,150)");
   //scroll till the bottom of the page 
 js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
-//scroll till the Top of the page 
+ //scroll till the Top of the page 
 js.executeScript("window.scrollBy(0,0)");
 ```
 ### :dart:Getting Element Attributes using JavaScriptExecutor: 
