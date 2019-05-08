@@ -8,6 +8,18 @@ js.executeScript(Script,Arguments);
 ```
 * Script – This is the JavaScript that needs to execute.
 * Arguments – It is the arguments to the script. It's optional.
+* Returns –One of Boolean, Long, String, List, WebElement, or null.
+### :dart:Change attribute value of an element using JavaScriptExecutor: 
+Let's say i have below button which is hidden I need perform to click on but selenium detect it as Invisible.
+```
+<button id="datasubmit" name="btndubmit" style="display:none;">data submit</button>
+```
+If I try to locate, selenium will throw me the ElementNotVisibleException. So here you can set or change the attribute value of any element and perform your intended action. Here I'm going to change attribute value
+```
+WebElement element = driver.findElement(By.id("datasubmit"));
+JavascriptExecutor js = (JavascriptExecutor)driver;
+js.executeScript("arguments[0].style.display = 'block'", element );
+```
 ### :dart:Generate Alert Pop Window using JavaScriptExecutor: 
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
