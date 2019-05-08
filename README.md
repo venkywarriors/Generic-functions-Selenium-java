@@ -50,8 +50,21 @@ String className = Driver.executeScript("return document.getElementById('gsc-i-i
 ```
 ### :dart:Count number of frames inside a webpage using JavaScriptExecutor: 
 ```
-JavascriptExecutor js = (JavascriptExecutor)driver;
 js.executeScript("document.frames.length;");
+```
+### :dart:Adding an Element in DOM using JavaScriptExecutor: 
+```
+Driver.executeScript("var btn=document.createElement('BUTTON');"
+                     + "document.body.appendChild(btn);");
+```
+### :dart:Finding the size of browser window using JavaScriptExecutor: 
+```
+Driver.executeScript("return window.innerHeight;")
+Driver.executeScript("return window.innerWidth;")
+```
+### :dart:Navigating to URL using JavaScriptExecutor: 
+```
+js.executeScript("window.location = 'https://www.google.co.in'");
 ```
 
 
