@@ -30,6 +30,10 @@ Js.executeScript("alert('hello world');");
 JavascriptExecutor js = (JavascriptExecutor)driver;
 js.executeScript("arguments[0].click();", element);
 ```
+### :dart:Handling Checkbox using JavaScriptExecutor: 
+```
+js.executeScript("document.getElementById('enter element id').checked=false;");
+```
 ### :dart:Refresh Browser using JavaScriptExecutor: 
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
