@@ -6,8 +6,8 @@
 This method executes JavaScript in the context of the currently selected frame or window in Selenium. The script used in this method runs in the body of an anonymous function (a function without a name). The script can return values. <br>
 Data types returned are<br>  
 <li>Boolean</li> <li>Boolean</li> <li>Long</li> <li>String</li><li>List</li><li>WebElement</li>
-:dart:The basic syntax for JavascriptExecutor is given below: <br> 
-```Java
+### :dart:The basic syntax for JavascriptExecutor is given below: <br> 
+```Javascript
 JavascriptExecutor js = (JavascriptExecutor) driver;  
 js.executeScript(Script,Arguments);
 ```
