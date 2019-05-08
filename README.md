@@ -11,7 +11,7 @@ Data types returned are<br>
 JavascriptExecutor js = (JavascriptExecutor) driver;  
 js.executeScript(Script,Arguments);
 ```
-•Script – This is the JavaScript that needs to execute.
-•Arguments – It is the arguments to the script. It's optional.
+<li>Script – This is the JavaScript that needs to execute.</li>
+<li>Arguments – It is the arguments to the script. It's optional.</li>
 
 
