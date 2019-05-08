@@ -7,11 +7,11 @@ This method executes JavaScript in the context of the currently selected frame o
 Data types returned are<br>  
 <li>Boolean</li> <li>Boolean</li> <li>Long</li> <li>String</li><li>List</li><li>WebElement</li>
 ### :dart:The basic syntax for JavascriptExecutor is given below: <br> 
-```Javascript
+```
 JavascriptExecutor js = (JavascriptExecutor) driver;  
 js.executeScript(Script,Arguments);
 ```
-<li>Script – This is the JavaScript that needs to execute.</li>
-<li>Arguments – It is the arguments to the script. It's optional.</li>
+-Script – This is the JavaScript that needs to execute.
+-Arguments – It is the arguments to the script. It's optional.
 
 
