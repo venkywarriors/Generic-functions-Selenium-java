@@ -25,6 +25,17 @@ js.executeScript("arguments[0].style.display = 'block'", element );
 JavascriptExecutor js = (JavascriptExecutor)driver;
 js.executeScript("alert('hello world');");
 ```
+### :dart:Highlight the web elements using JavaScriptExecutor: 
+```
+WebElement ele = driver.findElement(By.xpath(“xpath_expression”));
+JavascriptExecutor js = (JavascriptExecutor)driver;
+Js.executeScript(“arguments[0].setAttribute(‘style’, ’background: blue; border: 2px solid red;’);”,ele);
+```
+### :dart:Scroll Element into View using JavaScriptExecutor: 
+```
+WebElement element = driver.findElement(By.id("id_of_element"));
+((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+```
 ### :dart:Perform Click Action using JavaScriptExecutor: 
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
