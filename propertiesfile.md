@@ -49,7 +49,7 @@ public class ConfigFileReader {
 		
 	}
 	
-public String getExtentreportPath() {
+	public String getExtentreportPath() {
 		
 		String screenshots = prop.getProperty("screenshots");
 		if(screenshots!=null)
