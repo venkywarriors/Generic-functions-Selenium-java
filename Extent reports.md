@@ -88,4 +88,28 @@ public class TestNGExtentreports {
 
 }
 ```
+### :dart:Insert Screenshot in Extent Reports for failed test cases: <br> 
+```
+public void getResult(ITestResult result,) throws IOException
+    {
+        if(result.getStatus() == ITestResult.FAILURE)
+        {
+            String screenShotPath = GetScreenShot.capture(driver, "screenShotName");
+            test.log(LogStatus.FAIL, result.getThrowable());
+            test.log(LogStatus.FAIL, "Snapshot below: " + test.addScreenCapture(screenShotPath));
+        }
+        extent.endTest(test);
+    }
+    
+ public static String capture(WebDriver driver,String screenShotName) throws IOException
+    {
+        TakesScreenshot ts = (TakesScreenshot)driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        String dest = System.getProperty("user.dir") +"\\ErrorScreenshots\\"+screenShotName+".png";
+        File destination = new File(dest);
+        FileUtils.copyFile(source, destination);        
+                     
+        return dest;
+    }
+```
 
