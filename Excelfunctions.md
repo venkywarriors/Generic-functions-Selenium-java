@@ -1,5 +1,5 @@
 ## Let’s see how to perform excel operations using Apache POI <br> 
-### :dart:Write data to excel sheet using column number: <br> 
+### :dart:Write data to excel sheet using row number & column number: <br> 
 ```
 public boolean writeData(String sheetName, int rowNum, int colNumber,  String value)
     {
@@ -25,4 +25,4 @@ public boolean writeData(String sheetName, int rowNum, int colNumber,  String va
         }
         return true;
     }
-    ```
+ 
