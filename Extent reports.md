@@ -1,7 +1,7 @@
 # Creating extent reports in selenium webdriver 
 ### Extent Reports are the most popular reporting used with Selenium. Extent Reports is a customizable HTML report developed by Anshoo Arora which can be integrated into Selenium WebDriver using JUnit and TestNG frameworks.<br>
 ### Extent Reports offer several advantages when compared to the built-in reports that are generated through JUnit and TestNG such as pie chart representation, test stepwise report generation, adding screenshots etc., at every test step and a presentable user interface that can be shared with all stakeholders of the project.<br> 
-Sample extent reports images <img src="http://extentreports.com/img/bdd/dashboard.png" alt="Simply Easy Learning" width="200"
+<img src="http://extentreports.com/img/bdd/dashboard.png" alt="Simply Easy Learning" width="200">
 ### :dart:Sample JAVA class for Extent Reports is given below: <br> 
 ```
 public class TestNGExtentreports {
