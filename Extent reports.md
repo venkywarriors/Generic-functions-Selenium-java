@@ -113,3 +113,5 @@ public void getResult(ITestResult result,) throws IOException
     }
 ```
 
+ <img src="http://automationtesting.in/wp-content/uploads/2016/12/Capture-Screenshot-in-Extent-Reports.png" alt="Capture Screenshot in Extent Reports" width="1000" height="400">
+
