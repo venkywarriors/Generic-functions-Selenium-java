@@ -258,24 +258,40 @@ public int countNumOfSheets() {
 	   
 	   }
 ```
-### :dart:Rad data from excel sheet using row number & column number:
+### :dart:Delete sheet from excel workbook:
+```
+public boolean deletesheet(String sheetName) {
+	   
+	   try {
+		   sheet =workbook.getSheet(sheetName); 
+		   int index = workbook.getSheetIndex(sheet);
+		    workbook.removeSheetAt(index);
+		} catch (Exception e) {
+			return false;
+		}
+	   
+	   return true;
+	   
+	   }
+```
+### :dart:Delete excel workbook from particular directory:
+```
+public boolean deleteExcel(String filepath) {
+	   
+	   try {
+		   File file = new File(filepath); 
+		   if(file.delete()) 
+	       { 
+	    	   return true;
+	       } 
+	       else
+	       { 
+	    	   return false;
+	       }
+		} catch (Exception e) {
+			System.out.println("file not found");
+			return false; 
+		}
 ```
 
-```
-### :dart:Rad data from excel sheet using row number & column number:
-```
-
-```
-### :dart:Rad data from excel sheet using row number & column number:
-```
-
-```
-### :dart:Rad data from excel sheet using row number & column number:
-```
-
-```
-### :dart:Rad data from excel sheet using row number & column number:
-```
-
-```
  
