@@ -1,4 +1,4 @@
-
+## Commonly used functions in Selenium webdriver
 ### :dart:Wait For Element to load: <br> 
 ```	
 	public static  void waitForElement(WebDriver driver, String xPath, int i) 
