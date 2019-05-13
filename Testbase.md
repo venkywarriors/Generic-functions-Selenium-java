@@ -89,11 +89,8 @@
 ### :dart:Scroll and Highlight Webelement: <br> 
 ```		
 	public static void scrollandhighlight(WebDriver driver, WebElement element) throws InterruptedException {
-		// Creating JavaScriptExecuter Interface
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		Actions actions = new Actions(driver);
-		actions.moveToElement(element);
-		actions.perform();
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		js.executeScript("arguments[0].style.border='4px solid red'", element);
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].style.border=''", element);
@@ -102,7 +99,6 @@
 ### :dart:Highlight Webelement: <br> 
 ```	
 	public static void highlightElement(WebDriver driver, WebElement element) throws InterruptedException {
-		// Creating JavaScriptExecuter Interface
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].style.border='4px solid yellow'", element);
 		Thread.sleep(2000);
@@ -147,6 +143,36 @@
 			e.printStackTrace();
 		}
 		return destFile;
+	}
+```
+### :dart:Browser Utility function: <br> 
+```
+public static  WebDriver browserUtility(String browser, String URL) 
+	{
+				
+		 if(browser.equalsIgnoreCase("chrome")) {			 
+			   System.out.println("*** launching chrome browser ***");
+			   System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/driver/chromedriver.exe");
+			   driver=new ChromeDriver();  			 
+		 }else if (browser.equalsIgnoreCase("ie")) { 			 
+				  System.out.println("*** launching IE browser ***");
+				  System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"/driver/IEDriverServer.exe");
+				  driver = new InternetExplorerDriver();
+		 }else if (browser.equalsIgnoreCase("edge")) { 			 
+					  System.out.println("*** launching Microsoft Edge browser ***");
+					  System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/driver/MicrosoftWebDriver.exe"); 
+					  driver = new EdgeDriver();
+		 }else if (browser.equalsIgnoreCase("Firefox")) { 			 
+			  System.out.println("*** launching Firefox browser ***");
+			  System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/driver/geckodriver.exe"); 
+			  driver = new EdgeDriver();
+		 }else if (browser.equalsIgnoreCase("headless browser")) { 			 
+			  driver = new HtmlUnitDriver(); 
+		 } 		
+		 driver.navigate().to(URL);
+		 driver.manage().window().maximize();
+		 driver.manage().timeouts().pageLoadTimeout(property.getpageTimeOut(), TimeUnit.SECONDS);
+		 return driver;
 	}
 ```
 
