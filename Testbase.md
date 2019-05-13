@@ -1,13 +1,6 @@
 
-### :dart:The basic syntax for JavascriptExecutor is given below: <br> 
-
-```
-
-
-
-
-public class testbase {
-	
+### :dart:Wait For Element to load: <br> 
+```	
 	public static  void waitForElement(WebDriver driver, String xPath, int i) 
 	{
 				
@@ -24,7 +17,9 @@ public class testbase {
 		}
 
 		}
-	
+```
+### :dart:Get current timestamp: <br> 
+```	
 	public static String timestamp() 
 		{
 				
@@ -33,7 +28,9 @@ public class testbase {
 		return timestp;
 		
 		}
-	
+```
+### :dart:Select value from dropdown by Visibliblty of Text: <br> 
+```	
 	public static void selctvalue(WebElement element, String value ) 
 	{
 			
@@ -41,7 +38,9 @@ public class testbase {
 		drpvalue.selectByVisibleText(value);
 	
 	}
-	
+```
+### :dart:Create Folder: <br> 
+```	
 	public static String checkFolderandCreateFolder(String folderpath) 
 	{
 			
@@ -57,7 +56,9 @@ public class testbase {
 		return createDir.getAbsolutePath().toString();
 	
 	}
-	
+```
+### :dart:Check for element exists: <br> 
+```	
 	public static boolean isElementdisplayed(WebDriver driver, String Xpath) 
 	{
 		
@@ -67,7 +68,9 @@ public class testbase {
 				return false;
 			}				
 	}
-	
+```
+### :dart:Get system Host Name: <br> 
+```	
 	public static String getHostName()
 	{
 			
@@ -82,18 +85,9 @@ public class testbase {
 		return localhost.getHostName().toString();
 	
 	}
-	
-
-	
-	public static void scrollANDhighlight(WebDriver driver, WebElement element) throws InterruptedException  {
-		// Creating JavaScriptExecuter Interface
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", element);
-		js.executeScript("arguments[0].style.border='4px solid yellow'", element);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].style.border=''", element);
-	}
-	
+```
+### :dart:Scroll and Highlight Webelement: <br> 
+```		
 	public static void scrollandhighlight(WebDriver driver, WebElement element) throws InterruptedException {
 		// Creating JavaScriptExecuter Interface
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -104,7 +98,9 @@ public class testbase {
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].style.border=''", element);
 	}
-	
+```
+### :dart:Highlight Webelement: <br> 
+```	
 	public static void highlightElement(WebDriver driver, WebElement element) throws InterruptedException {
 		// Creating JavaScriptExecuter Interface
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -112,7 +108,9 @@ public class testbase {
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].style.border=''", element);
 	}
-	
+```
+### :dart:Capture ScreenShot: <br> 
+```	
 	public static String captureScreen(WebDriver driver, String screenshotPath, String fileName, String status) {
 		if (fileName == "") {
 			fileName = "blank";
@@ -124,16 +122,15 @@ public class testbase {
 			
 			destFile = new File((String) screenshotPath +"/" + fileName + "_" + status + ".png");
 			FileUtils.copyFile(scrFile, destFile);
-			// This will help us to link the screen shot in testNG report
-			//Reporter.log("<a href='" + destFile.getAbsolutePath() + "'> <img src='" + destFile.getAbsolutePath() + "' height='100' width='100'/> </a>");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return destFile.getAbsolutePath().toString();
 	}
-	
-	
-	
+
+```
+### :dart:Capture full Page ScreenShot using AShot : <br> 
+```	
 	public static String fullPageScreenshot (WebDriver driver, String screenshotPath, String fileName, String status) {
 		if (fileName == "") {
 			fileName = "blank";
@@ -143,7 +140,7 @@ public class testbase {
 		try {
 			
 			destFile = screenshotPath +"/" + fileName + "_" + status + ".png";
-			Screenshot fpScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+			Screenshot fpScreenshot = new  AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
 		     ImageIO.write(fpScreenshot.getImage(),"PNG",new File(destFile));
 
 		} catch (IOException e) {
@@ -151,27 +148,5 @@ public class testbase {
 		}
 		return destFile;
 	}
-	
-	public static String webElementScreenshot (WebDriver driver, WebElement element ,String screenshotPath, String fileName, String status) {
-		if (fileName == "") {
-			fileName = "blank";
-		}
-		String destFile = null;
-				
-		try {
-			
-			destFile = screenshotPath +"/" + fileName + "_" + status + ".png";
-			Screenshot fpScreenshot = new AShot().takeScreenshot(driver,element);
-		     ImageIO.write(fpScreenshot.getImage(),"PNG",new File(destFile));
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return destFile;
-	}
-	
-	
-
-}
 ```
 
