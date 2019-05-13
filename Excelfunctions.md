@@ -62,7 +62,7 @@ public String readExcelData(String sheetName,int rowNum, int colNum)
             return rowCount;
     }    
 ```
-### :dart:Count number of rows in an excel sheet:
+### :dart:Count number of column in an excel sheet:
 ```
  public int getColumnCount(String sheetName)
     {
