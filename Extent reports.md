@@ -114,4 +114,74 @@ public void getResult(ITestResult result,) throws IOException
 ```
 
  <img src="http://automationtesting.in/wp-content/uploads/2016/12/Capture-Screenshot-in-Extent-Reports.png" alt="Capture Screenshot in Extent Reports" width="1000" height="400">
+ 
+ ### :dart:Adding Child Tests in Extent Reports: <br> 
+```
+// To add a test node as a child of another test, use the createNode method.	
+ExtentTest parentTest = extent.createTest("MyFirstTest");
+ExtentTest childTest1 = parentTest.createNode("MyFirstChildTest", "Node Description");
+ExtentTest childTest2 = childTest1.createNode("MySecondChildTest", "Node Description");
+ExtentTest childTest3 = childTest2.createNode("MyThirdChildTest", "Node Description");
+childTest1.log(Status.PASS, MarkupHelper.createLabel(" MyFirstChildTest is available", ExtentColor.RED));
+childTest2.log(Status.FAIL, MarkupHelper.createLabel(" MySecondChildTest is not available", ExtentColor.RED));
+childtest3.log(Status.INFO, "<a href='" + screenshotpath + "'> Click here to view Screenshot </a>");
+```
+ ### :dart:Create BDD-style Tests in Extent Reports: <br> 
+```
+// gherkin classes
+
+// feature
+ExtentTest feature = extent.createTest(Feature.class, "Refund item");
+
+// scenario
+ExtentTest scenario = feature.createNode(Scenario.class, "Jeff returns a faulty microwave");
+scenario.createNode(Given.class, "Jeff has bought a microwave for $100").pass("pass");
+scenario.createNode(And.class, "he has a receipt").pass("pass");
+scenario.createNode(When.class, "he returns the microwave").pass("pass");
+scenario.createNode(Then.class, "Jeff should be refunded $100").fail("fail");
+
+// using keyword names
+
+// feature
+ExtentTest feature = extent.createTest(new GherkinKeyword("Feature"), "Refund item");
+
+// scenario
+ExtentTest scenario = feature.createNode(new GherkinKeyword("Scenario") , "Jeff returns a faulty microwave");
+scenario.createNode(new GherkinKeyword("Given"), "Jeff has bought a microwave for $100").pass("pass");
+scenario.createNode(new GherkinKeyword("And"), "he has a receipt").pass("pass");
+scenario.createNode(new GherkinKeyword("When"), "he returns the microwave").pass("pass");
+scenario.createNode(new GherkinKeyword("Then"), "Jeff should be refunded $100").fail("fail");
+```
+ ### :dart:Creating Log Events in Extent Reports: <br> 
+```
+ExtentTest test = extent.createTest("TestName");
+test.log(Status.PASS, "pass");
+// or:
+test.pass("pass");
+
+test.log(Status.FAIL, "fail");
+// or:
+test.fail("fail");
+```
+ ### :dart:Logging Exceptions in Extent Reports: <br> 
+```
+Catch (Exception e);
+{
+test.fail(e);
+}
+```
+ ### :dart:Assign Categories to Tests in Extent Reports: <br> 
+```
+test.assignCategory("Regression");
+test.assignCategory("Regression", "ExtentAPI");
+test.assignCategory("Regression", "ExtentAPI", "category-3", "cagegory-4", ..);
+```
+ ### :dart:Assign Authors to Tests in Extent Reports: <br> 
+```
+test.assignAuthor("aventstack");
+```
+ ### :dart:Attach screenshots to test and logs in Extent Reports: <br> 
+```
+test.fail("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
+```
 
