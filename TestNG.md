@@ -177,8 +177,27 @@ public class TestNGInvocationcountTimeoutEx
  } 
 }
 ```
-### :dart:Get Webpage Links Using Selenium Example Program: <br> 
+### :dart:Ignore Test enabled Annotation: <br> 
+Whether methods on this class/method are enabled. 
 ```
+public class IgnoreTest {
+   String message = "Manisha";
+   MessageUtil messageUtil = new MessageUtil(message);
+
+   @Test(enabled = false)
+   public void testPrintMessage() {
+      System.out.println("Inside testPrintMessage()");
+      message = "Manisha";
+      Assert.assertEquals(message, messageUtil.printMessage());
+   }
+
+   @Test(enabled = true)
+   public void testSalutationMessage() {
+      System.out.println("Inside testSalutationMessage()");
+      message = "Hi!" + "Manisha";
+      Assert.assertEquals(message, messageUtil.salutationMessage());
+   }
+}
 ```
 ### :dart:Get Webpage Links Using Selenium Example Program: <br> 
 ```
