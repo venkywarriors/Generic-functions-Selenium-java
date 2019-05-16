@@ -258,20 +258,20 @@ System.out.println("in afterSuite");
 ```
 The output:<br>
 
-in beforeSuite
-in beforeTest
-in beforeClass
-in beforeMethod
-in test case 1
-in afterMethod
-in beforeMethod
-in test case 2
-in afterMethod
-in afterClass
-in afterTest
-in afterSuite
+in beforeSuite<br>
+in beforeTest<br>
+in beforeClass<br>
+in beforeMethod<br>
+in test case 1<br>
+in afterMethod<br>
+in beforeMethod<br>
+in test case 2<br>
+in afterMethod<br>
+in afterClass<br>
+in afterTest<br>
+in afterSuite<br>
 
-Total tests run: 2, Failures: 0, Skips: 0
+Total tests run: 2, Failures: 0, Skips: 0<br>
 ### :dart:Get Webpage Links Using Selenium Example Program: <br> 
 ```
 ```
