@@ -6,6 +6,7 @@ This repository contains generic functions used in selenium java <br>
 :+1: Click this link to view <a href="https://github.com/venkywarriors619/Generic-functions-Selenium-java/blob/master/propertiesfile.md" title="Click here to view Read data from Properties File ">*Access data from Properties File* </a><br>
 :+1: Click this link to view <a href="https://github.com/venkywarriors619/Generic-functions-Selenium-java/blob/master/Testbase.md" title="Click here to view Common methods used in selenium webdriver ">*Common methods used in selenium webdriver* </a><br>
 :+1: Click this link to view <a href="https://github.com/venkywarriors619/Generic-functions-Selenium-java/blob/master/SeleniumPrograms.md" title="Click here to view Common methods used in selenium webdriver ">*Sample selenium programs* </a><br>
+:+1: Click this link to view <a href="https://github.com/venkywarriors619/Generic-functions-Selenium-java/blob/master/TestNG.md" title="Click here to view Common methods used in selenium webdriver ">*Sample TestNG programs* </a><br>
 
 
 
