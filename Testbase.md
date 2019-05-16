@@ -152,18 +152,11 @@ public boolean bootstrapdropdown(WebElement bootstrap, String dropdownValue)
        // elements and findElements will return list of WebElements
  
        List<WebElement> list = bootstrap;
-	   int counter=0;
-	   
-       // We are using enhanced for loop to get the elements
+	int counter=0;
  
        for (WebElement ele : list) 
-       {
-          // Here we will verify if link (item) is equal to Java Script
- 
+       { 
           if (ele.getAttribute("innerHTML").contains(dropdownValue)) {
- 
-             // if yes then click on link (iteam)
- 
              ele.click();
 	     counter=counter+1;
              break;
