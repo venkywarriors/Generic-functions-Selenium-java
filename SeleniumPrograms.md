@@ -152,11 +152,36 @@ public class Close2ndWindiw
  }
 
 ```
-### :dart:Get Webpage Links Using Selenium Example Program: <br> 
+### :dart:Get Default Text Of a TextBox Using Java: <br> 
 ```
+public class GetUsernameText 
+{
+ public static void main(String[] args)
+ {
+ Logger log=Logger.getLogger(GetUsernameText.class);
+ WebDriver driver=new FirefoxDriver();
+ driver.get("https://www.facebook.com/");
+ log.info("Facebook Opened");
+ driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+ //driver.findElement(By.name("firstname")).sendKeys("abc@gmail.com");
+ String st=driver.findElement(By.name("firstname")).getAttribute("aria-label");
+ System.out.println(st);
+ }
+}
 ```
-### :dart:Get Webpage Links Using Selenium Example Program: <br> 
+### :dart:Handle SSL Certificate Issue: <br> 
 ```
+public class SSLCertificateIssue 
+{
+ public static void main(String[] args) 
+ {
+ DesiredCapabilities cap=new DesiredCapabilities();
+ cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+ WebDriver driver=new FirefoxDriver();
+ driver.get("http://www.cacert.org/");
+ driver.close();
+ }
+}
 ```
 ### :dart:Get Webpage Links Using Selenium Example Program: <br> 
 ```
