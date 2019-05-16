@@ -187,6 +187,7 @@
 ```
 ### :dart:Bootstrap drop down handling in selenium : <br> 
 ```
+
 	public boolean bootstrapdropdown(WebElement bootstrap, String dropdownValue) 
 	{
 		// elements and findElements will return list of WebElements
