@@ -213,13 +213,26 @@
  	}
 
 ```
+### :dart:Check if element is disable using selenium : <br> 
+```
+	public boolean checkEnabled(WebElement element)
+ 	{
+ 		if (element.isEnabled())
+		{
+			return element.isEnabled();
+		}
+		else
+		{	
+			return false;
+ 		}
+```
 ### :dart:Capture Tooltip in Selenium : <br> 
 ```
 	public String getTooltip(Webdriver driver, WebElement tooltip) 
 	{
 		Actions builder=new Actions(driver);
 		builder.moveToElement(tooltip).perform();
-		String tooltip_msg=tooltip.getText();
+		String tooltip_msg=tooltip.getAttribute("title");
 		return tooltip_msg;
 	}
 ```
