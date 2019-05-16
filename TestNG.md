@@ -166,7 +166,7 @@ public class TestNg_ExpectedException
 }
 ```
 ### :dart:Get Webpage Links Using Selenium Example Program: <br> 
-#### The maximum number of milliseconds this test should take for the cumulated time of all the invocationcounts. This attribute will be ignored if invocationCount is not specified.
+The maximum number of milliseconds this test should take for the cumulated time of all the invocationcounts. This attribute will be ignored if invocationCount is not specified.
 ```
 public class TestNGInvocationcountTimeoutEx 
 {
