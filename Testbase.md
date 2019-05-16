@@ -125,6 +125,27 @@
 	}
 
 ```
+### :dart:Capture Screenshot Using Robot Class: <br> 
+```	
+	public static String captureScreen(String screenshotPath, String fileName) {
+		if (fileName == "") {
+			fileName = "blank";
+		}
+		Robot r=new Robot();
+ 		Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
+ 		Rectangle screenRect=new Rectangle(screensize);
+ 		BufferedImage image=r.createScreenCapture(screenRect);
+		try {
+			
+			destFile = new File((String) screenshotPath +"/" + fileName + ".png");
+			 ImageIO.write(image, "png",new File(destFile));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return destFile.getAbsolutePath().toString();
+	}
+
+```
 ### :dart:Capture full Page ScreenShot using AShot : <br> 
 ```	
 	public static String fullPageScreenshot (WebDriver driver, String screenshotPath, String fileName, String status) {
