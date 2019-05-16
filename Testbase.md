@@ -157,7 +157,7 @@
 		try {
 			
 			destFile = screenshotPath +"/" + fileName + "_" + status + ".png";
-			Screenshot fpScreenshot = new  AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+			Screenshot fpScreenshot = new  	AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
 		     ImageIO.write(fpScreenshot.getImage(),"PNG",new File(destFile));
 
 		} catch (IOException e) {
@@ -166,27 +166,46 @@
 		return destFile;
 	}
 ```
+### :dart:Press Tab Key Using Action Class : <br> 
+```
+	public boolean pressTabKey(Webdriver driver)
+ 	{
+ 		Actions act=new Actions(driver);
+		act.sendKeys(Keys.TAB).build().perform();
+ 	}
+
+```
+### :dart:Get Browser Name Using JavascriptExecutor : <br> 
+```
+	public String browserName(Webdriver driver)
+ 	{
+ 		JavascriptExecutor js = (JavascriptExecutor) driver;
+ 		String browsername=js.executeScript("return navigator.appCodeName");
+		return browsername;
+ 	}
+
+```
 ### :dart:Bootstrap drop down handling in selenium : <br> 
 ```
-public boolean bootstrapdropdown(WebElement bootstrap, String dropdownValue) 
-{
-       // elements and findElements will return list of WebElements
- 
-       List<WebElement> list = bootstrap;
-	int counter=0;
- 
-       for (WebElement ele : list) 
-       { 
-          if (ele.getAttribute("innerHTML").contains(dropdownValue)) {
-             ele.click();
-	     counter=counter+1;
-             break;
-          }
-       }
-	   
-	if (counter != 0)    { return true; }
-	else { return false; }
-}
+	public boolean bootstrapdropdown(WebElement bootstrap, String dropdownValue) 
+	{
+		// elements and findElements will return list of WebElements
+
+		List<WebElement> list = bootstrap;
+		int counter=0;
+
+		for (WebElement ele : list) 
+		{ 
+			if (ele.getAttribute("innerHTML").contains(dropdownValue)) {
+			     ele.click();
+			     counter=counter+1;
+			     break;
+			  }
+		 }
+
+		if (counter != 0)    { return true; }
+		else { return false; }
+	}
 ```
 ### :dart:Browser Utility function: <br> 
 ```
