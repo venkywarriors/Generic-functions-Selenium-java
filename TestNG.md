@@ -289,7 +289,7 @@ System.out.println("in afterSuite");
  
 }
 ```
-The output:
+The output:<br>
 in beforeSuite
 
 in beforeTest
@@ -313,8 +313,6 @@ in afterClass
 in afterTest
 
 in afterSuite
-------------------------------------------
-Suite
 
 Total tests run: 2, Failures: 0, Skips: 0
 
