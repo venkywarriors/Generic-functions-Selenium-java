@@ -213,6 +213,16 @@
  	}
 
 ```
+### :dart:Capture Tooltip in Selenium : <br> 
+```
+	public String getTooltip(Webdriver driver, WebElement tooltip) 
+	{
+		Actions builder=new Actions(driver);
+		builder.moveToElement(tooltip).perform();
+		String tooltip_msg=tooltip.getText();
+		return tooltip_msg;
+	}
+```
 ### :dart:Bootstrap drop down handling in selenium : <br> 
 ```
 
