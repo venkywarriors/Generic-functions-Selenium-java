@@ -89,6 +89,69 @@ public class Firefox_Headless
 System.out.println(driver.getTitle());
 }
 ```
+### :dart:Disable Chrome Notification Selenium: <br> 
+```
+public class DisableChromeNotificationEx 
+{
+ public static void main(String[] args) 
+ {
+ // Create object of HashMap Class
+ Map<String, Object> prefs = new HashMap<String, Object>();
+ 
+ // Set the notification setting it will override the default setting
+ prefs.put("profile.default_content_setting_values.notifications", 2);
+ 
+ // Create object of ChromeOption class
+ ChromeOptions options = new ChromeOptions();
+ 
+ // Set the experimental option
+ options.setExperimentalOption("prefs", prefs);
+ 
+ // pass the options object in Chrome driver
+ System.setProperty("webdriver.chrome.driver", "G:\\Testing_Utilities\\BrowsersDriver\\chromedriver.exe");
+ WebDriver driver = new ChromeDriver(options);
+ driver.get("https://www.facebook.com/");
+ driver.manage().window().maximize();
+```
+### :dart:Close Second Window Using Selenium: <br> 
+```
+public class Close2ndWindiw 
+{
+ WebDriver driver=new FirefoxDriver();
+ @BeforeTest
+ public void open()
+ {
+ driver.manage().window().maximize();
+ driver.get("http://demoqa.com/frames-and-windows/");
+ driver.manage().timeouts().implicitlyWait(15000, TimeUnit.SECONDS);
+ }
+ @Test
+ public void operation() throws InterruptedException
+ {
+ //String parent=driver.getWindowHandle();
+ driver.findElement(By.xpath(".//*[@id='tabs-1']/div/p/a")).click();
+ Thread.sleep(2000);
+ Set<String> handles=driver.getWindowHandles();
+ int count=0;
+ for(String h:handles)
+ {
+ count++;
+ System.out.println(count);
+ if(count==1)
+ {
+ driver.switchTo().window(h);
+ driver.close(); 
+ }
+ else
+ {
+ continue;
+ }
+ }
+ //driver.switchTo().window(parent);
+ //driver.close();
+ }
+
+```
 ### :dart:Get Webpage Links Using Selenium Example Program: <br> 
 ```
 ```
