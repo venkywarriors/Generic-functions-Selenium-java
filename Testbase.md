@@ -175,7 +175,35 @@
  	}
 
 ```
+### :dart:Double Click Using Action Class : <br> 
+```
+	public boolean doubleClick(Webdriver driver)
+ 	{
+ 		Actions act=new Actions(driver);
+		act.moveToElement(Element).build().perform();
+ 		Thread.sleep(5000);
+ 		act.click().build().perform()
+ 	}
+```
+### :dart:Drag Drop Using Action Class : <br> 
+```
+	public boolean dragAndDrop(Webdriver driver,WebElement source,WebElement destination)
+ 	{
+ 		Actions act=new Actions(driver);
+		act.dragAndDrop(source, destination).build().perform();
+ 	}
+
+```
 ### :dart:Get Browser Name Using JavascriptExecutor : <br> 
+```
+	 public void openNewTab(WebDriver driver) throws InterruptedException
+	 {
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(0));
+		Thread.sleep(5000);
+   	 }
+```
+### :dart:Open New Tab Using Selenium WebDriver : <br> 
 ```
 	public String browserName(Webdriver driver)
  	{
