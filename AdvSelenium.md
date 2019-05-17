@@ -21,7 +21,7 @@ public void testQRCode()
     System.out.println("The Text in QR Code is : "+textInQrCode);
 }
 ```
-<strong>Understanding the code<strong><br>
+<strong>Understanding the code</strong><br>
 <strong>Bufferedimage: </strong>It is used to handle and manipulate the image data.<br>
 <strong>ImageIO.read: </strong>To perform the image read-write operation we will import the ImageIO class.<br>
 <strong>LuminanceSource:</strong> The examples are extracted from open source    Java projects.<br>
