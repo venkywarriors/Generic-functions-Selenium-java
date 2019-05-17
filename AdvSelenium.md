@@ -29,3 +29,14 @@ public void testQRCode()
 <strong>BinayBitmap: </strong>This class is the core bitmap class used by ZXing to represent 1-bit data. Reader objects accept a BinaryBitmap and attempt to decode it.<br>
 <strong>HybridBinarizer:</strong> It is designed for high scale images of QR code with black data on white backgrounds. This Binarizer is the default for the unit tests and the recommended class for library users.<br>
 <strong>MultiFormatReader():</strong> By default, it attempts to decode all QR Code formats that the library supports. Optionally, you can provide a hints object to request different behavior, for example only decoding QR codes.<br>
+### :dart:Generation Test Data Using FAKER API in JAVA: <br> 
+Add faker libraries 'javafaker' from the maven repository.
+```
+Faker faker = new Faker();
+
+String name = faker.name().fullName(); // Miss Samanta Schmidt
+String firstName = faker.name().firstName(); // Emory
+String lastName = faker.name().lastName(); // Barton
+String streetAddress = faker.address().streetAddress(); // 60018 Sawayn Brooks Suite 449
+```
+
