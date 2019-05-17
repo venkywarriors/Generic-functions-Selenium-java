@@ -4,26 +4,24 @@ Add Zxing libraries 'zxing-core-*.*.jar' , 'zxing-javase-*.*.jar' from the maven
 ```
 public void testQRCode()
 {
+    System.setProperty("webdriver.chrome.driver", "chromedriver.exe path");
+    WebDriver driver = new chromeDriver();
+    driver.manage().window().maximize();
+    driver.get(" C:\\Users\\Prateek\\Desktop\\QR_Code_Updated.png");
 
-System.setProperty("webdriver.chrome.driver", "chromedriver.exe path");
-WebDriver driver = new chromeDriver();
-driver.manage().window().maximize();
-driver.get(" C:\\Users\\Prateek\\Desktop\\QR_Code_Updated.png");
+    String qrCodeFileUrl =         driver.findElement(By.tagName("img")).getAttribute("src");
+    System.out.println("QR Code Image URL is : " +qrCodeFileUrl);
 
-String qrCodeFileUrl =         driver.findElement(By.tagName("img")).getAttribute("src");
-System.out.println("QR Code Image URL is : " +qrCodeFileUrl);
-
-URL urlOfImage = new URL(qrCodeFileUrl);
-BufferedImage bufferedImage = ImageIO.read(urlOfImage);
-LuminanceSource luminanceSource = new BufferedImageLuminanceSource(bufferedImage);
-BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(LuminanceSource));
-Result result = new MultiFormatReader().decode(binaryBitmap);
-String textInQrCode = result.getText();
-System.out.println("The Text in QR Code is : "+textInQrCode);
-
+    URL urlOfImage = new URL(qrCodeFileUrl);
+    BufferedImage bufferedImage = ImageIO.read(urlOfImage);
+    LuminanceSource luminanceSource = new BufferedImageLuminanceSource(bufferedImage);
+    BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(LuminanceSource));
+    Result result = new MultiFormatReader().decode(binaryBitmap);
+    String textInQrCode = result.getText();
+    System.out.println("The Text in QR Code is : "+textInQrCode);
 }
 ```
-Understanding the code<br>
+<strong>Understanding the code<strong><br>
 <strong>Bufferedimage: </strong>It is used to handle and manipulate the image data.<br>
 <strong>ImageIO.read: </strong>To perform the image read-write operation we will import the ImageIO class.<br>
 <strong>LuminanceSource:</strong> The examples are extracted from open source    Java projects.<br>
