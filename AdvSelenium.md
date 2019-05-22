@@ -62,4 +62,171 @@ fairy.textProducer().latinWord(); //pede consequat aliquet
 fairy.creditCard().getVendor(); //Visa
 fairy.company().getUrl(); //http://www.quisuc.biz
 ```
+### :dart:Test Data Generation Using JFairy in JAVA: <br> 
+Add faker libraries 'fabricator_2.10' from the maven repository.
+Alphanumeric
+------------
+This module allows you to generate any random number or string. As for strings, you can generate either fully random string,
+or you can generate string basing on a pattern.
+
+```scala
+
+val alpha = fabricator.Alphanumeric() // initialize alpha numeric module
+
+alpha.numerify("###ABC") // 981ABC
+
+alpha.letterify("???123") // LsQ123
+
+alpha.botify("???###") // AbC329
+
+alpha.randomInteger // random integer in 0 to 1000 range
+
+alpha.randomInteger(100) // random integer in 0 to 100 range
+
+alpha.randomInteger(200, 300) // random integer in 200 to 300 range
+
+alpha.randomIntegerRangeAsScalaList(1,10,1) // will return scala List[1,2,3,4,5,6,7,8,9,10]
+ 
+alpha.randomIntegerRangeAsJavaList(1,10,1) // will return List<Object>[1,2,3,4,5,6,7,8,9,10] . Each element need to be casted to Integer
+
+alpha.randomHash // d750c843c83a3a980082361e72aa41ac48975eab
+
+alpha.randomGuid // ed7592b7-11e4-5f7f-b83f-488733c8bc56
+```
+Calendar
+--------
+
+ This module allows you to generate random time or time.
+
+```scala
+
+val calendar = fabricator.Calendar() // initialize calendar module
+
+calendar.time12h // 03:15
+
+calendar.time24h // 15:15
+
+calendar.month(asNumber = false) // December
+
+calendar.month(asNumber = true) // 12
+
+calendar.date.asString // 10-02-2014
+
+calendar.date.asString(DateFormat.dd_MMM_yyyy_SEMICOLON) // 10:DEC:2014
+
+calendar.date.asDate // random Date object
+
+calendar.date.inYear(2014).inDay(10).inMinute(10).asString // random date in 2014 year, that happened in 10th day of random month in 10th minute of random hour
+
+calendar.relativeDate.years(2).weeks(1).seconds(-20).asDate // get relative date that is 2 years and 1 weeks in the future and 20 seconds behind (since current time)
+
+calendar.relativeDate(DateTime.now().plusDays(1)).tomorrow().asString // 2 days since now as a string with default formatting
+
+calendar.relativeDate(DateTimeZone.UTC).tomorrow().asString(DateFormat.dd_MM_yy) // tomorrows date in UTC time zone with custom formatting
+
+calendar.datesRange
+        .startYear(2010)
+        .startMonth(1)
+        .startDay(1)
+        .stepEvery(1, DateRangeType.DAYS)
+        .endYear(2011)
+        .endMonth(1)
+        .endDay(1)
+        .asList // list of dates between 2010-1-1 and 2011-1-1 with a step of 1 day between each date 
+```
+
+Contact
+--------
+
+  This module allows you to generate random person data
+
+```scala
+
+val contact = fabricator.Contact()
+
+contact.fullName // Betty Corwin
+
+contact.birthday(25) // 26.12.1989 (current year - 25 with default format dd.MM.yyyy)
+
+contact.bsn // 730550370 (equivalent of a national ID number)
+
+contact.eMail // Rebecca_Kohler506@yahoo.com
+
+contact.phoneNumber // (792)273-4251 x012
+
+contact.postCode //  44274-6580
+
+contact.state // Alaska
+
+contact.height(true) // 188 cm
+
+contact.height(false) // 1.88 m
+
+contact.weight // 108 kg
+
+contact.bloodType // A-
+
+contact.occupation // Craft Artist
+
+contact.religion // sikhism
+
+contact.zodiac // Taurus
+
+``` 
+Finance
+--------
+  
+This module allows you to generate random finance data
+  
+```scala
+
+val finance = fabricator.Finance() // initialize finance module
+
+finance.iban // GB91ROYC80901351879409
+
+finance.bic // CLSBUS33XXX
+
+finance.visacreditCard // 4556623851035641
+
+finance.visacreditCard(15) // 455662622900006
+
+finance.pincode // 1234
+```
+Mobile
+--------
+
+This module allows you to generate random mobile operating systems push tokens
+
+```scala
+
+val mobile = fabricator.Mobile() // initialize mobile module
+
+mobile.androidGsmId // APA91fCUNiRP-xKj0qBUoJgGWYnN3zFoznbFL61BkWktXCPTYgw4Xe7phJ3zhOEVYJ4ToZvYTp2f0PPHeNSmYHajXr9fwbDarFh8zTGVz3I54ffViW4Nl8s6XLs7i9lIi3oUeRI5bOx49wIC9EF-IwBcuOT-MQ-Nrw1GUW0cJco1Dti4nAtW7Xx
+
+mobile.applePushToken // a6cc474cd81a9697c2a232744dfdb7ec3f8c72977cd91c23e6ac8e8f75c56697
+
+mobile.wp8_anid2 // Windows Phone 8 ANID2 - YjBUN0hmYWV1VVEyZ2xIYnZWOWMwaGFoVUhlYlFq
+
+mobile.wp7_anid // Windows Phone 7 ANID - A=AC59226C42245673ABE85A32A8EBCACE&E=aed&W=3
+```
+
+Words
+--------
+
+This module allows you to generate random words, sentences and even blocks of text
+
+```scala
+
+val words = fabricator.Words() // initialize word module
+
+words.word // random word
+
+words.words(10) // array with 10 words
+
+words.sentence(20) // sentence out of 20 words
+
+words.paragraph // 100 chars length block of text
+
+words.paragraph(2000) // 2000 chars length block of text
+```
 
