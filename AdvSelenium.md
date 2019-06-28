@@ -1,5 +1,6 @@
 ### :dart:Record your Test Execution in Selenium : <br> 
-Monte Screen Recorder, a Java library that can assist you in creating videos of your Selenium tests. Click this link to view Maven Dependencies
+Monte Screen Recorder, a Java library that can assist you in creating videos of your Selenium tests. Add Screen Recorder
+Maven Dependencies
 
 How to Implement in our project :
 
@@ -21,11 +22,6 @@ public void navigation() throws Exception{
                MyScreenRecorder.stopRecording();
 
 }
-
-
-
-
-
 ```
 
 ### :dart:How to read QR Code or Barcode from Images: <br> 
