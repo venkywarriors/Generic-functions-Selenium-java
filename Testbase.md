@@ -1,19 +1,35 @@
 ## Commonly used functions in Selenium webdriver
 ### :dart:Wait For Element to load: <br> 
 ```	
-	public static  void waitForElement(WebDriver driver, String xPath, int i) 
+	public static  void waitForElement(WebDriver driver, String locator) 
 	{				
-		WebDriverWait wait = new WebDriverWait(driver,i);
+			 String[] arrOfStr = locator.split("#"); 
 
-		try{
-
-				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPath)));
+		if (arrOfStr[0].equalsIgnoreCase("xpath"))
+		{
+			if(driver.findElements(By.xpath(arrOfStr[1])).size() != 0){
+				return true;
+			}
+		}       
+		if (arrOfStr[0].equalsIgnoreCase("id"))
+		{
+			if(driver.findElements(By.id(arrOfStr[1])).size() != 0){
+				return true;
+			}
 		}
-
-		catch(Exception e){
-			e.printStackTrace();
-			System.out.println(e);
+		if (arrOfStr[0].equalsIgnoreCase("name"))
+		{
+			if(driver.findElements(By.name(arrOfStr[1])).size() != 0){
+				return true;
+			}
 		}
+		if (arrOfStr[0].equalsIgnoreCase("link"))
+		{
+			if(driver.findElements(By.linkText(arrOfStr[1])).size() != 0){
+				return true;
+			}
+		}
+			return false;
 
 	}
 ```
