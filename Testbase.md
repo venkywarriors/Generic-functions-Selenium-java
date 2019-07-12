@@ -87,7 +87,7 @@ public void waitForLoad(WebDriver driver) {
 ```
 ### :dart:Clear text in edit box and enter text <br> 
 ```
-public static String clearAndEnterText(WebElement element, String value) 
+public static void clearAndEnterText(WebElement element, String value) 
 	{
 		element.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 		element.sendKeys(value);
