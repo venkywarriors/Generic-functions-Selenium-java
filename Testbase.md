@@ -77,12 +77,20 @@ public void waitForLoad(WebDriver driver) {
 ```
 ### :dart:Select value from dropdown by Visibliblty of Text: <br> 
 ```	
-	public static void selctvalue(WebElement element, String value ) 
+	public static void selctvalue(WebElement element, String value) 
 	{
 			
 		Select drpvalue = new Select(element);
 		drpvalue.selectByVisibleText(value);
 	
+	}
+```
+### :dart:Clear text in edit box and enter text <br> 
+```
+public static String clearAndEnterText(WebElement element, String value) 
+	{
+		element.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+		element.sendKeys(value);
 	}
 ```
 ### :dart:Create Folder: <br> 
@@ -330,6 +338,7 @@ public static  WebDriver browserUtility(String browser, String URL)
 			  driver = new HtmlUnitDriver(); 
 		 } 		
 		 driver.navigate().to(URL);
+		  driver.manage().deleteAllCookies();
 		 driver.manage().window().maximize();
 		 driver.manage().timeouts().pageLoadTimeout(property.getpageTimeOut(), TimeUnit.SECONDS);
 		 return driver;
