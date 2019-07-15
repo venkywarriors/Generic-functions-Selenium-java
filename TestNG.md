@@ -272,13 +272,144 @@ in afterTest<br>
 in afterSuite<br>
 
 Total tests run: 2, Failures: 0, Skips: 0<br>
-### :dart:Get Webpage Links Using Selenium Example Program: <br> 
+### :dart:Including and excluding groups: <br> 
+TestNG also allows you to include and exclude certain groups from test execution. This helps in executing only a particular set of tests and excluding certain tests. A simple example can be when a feature is broken and you need to exclude a fixed set of tests from execution since these test will fail upon execution. Once the feature is fixed you can then verify the feature by just executing the respective group of tests.<br>
+Let’s create a sample program and learn how to exclude a group of tests.
 ```
+public class ExcludeGroupTest
+{
+    @Test(groups = { "include-group" })
+    public void testMethodOne() {
+        System.out.println("Test method one belonging to include group.");
+    }
+ 
+    @Test(groups = { "include-group" })
+    public void testMethodTwo() {
+        System.out.println("Test method two belonging to include group.");
+    }
+ 
+    @Test(groups = { "include-group", "exclude-group" })
+    public void testMethodThree() {
+        System.out.println("Test method three belonging to exclude/include groups.");
+    }
+}
 ```
-### :dart:Get Webpage Links Using Selenium Example Program: <br> 
+The preceding class contains three test methods that print a message onto console when executed. All the three methods belong to a group include-group whereas the testMethodThree() method also belongs to the group exclude-group.
 ```
+<suite name="Exclude Group Suite" verbose="1">
+  <test name="Exclude Group Test">
+    <groups>
+      <run>
+        <include name="include-group" />
+        <exclude name="exclude-group" />
+      </run>
+    </groups>
+    <classes>
+      <class name="com.howtodoinjava.groupExamples.ExcludeGroupTest" />
+    </classes>
+  </test>
+</suite>
 ```
-### :dart:Get Webpage Links Using Selenium Example Program: <br> 
+Now run above testng.xml file and it will produce below result.
 ```
+Test method one belonging to include group.
+Test method two belonging to include group.
+ 
+===============================================
+Exclude Group Suite
+Total tests run: 2, Failures: 0, Skips: 0
+===============================================
+```
+### :dart:Using regular expressions in groups: <br> 
+testng.xml file.
+```
+<suite name="Regular Exp. Group Suite" verbose="1">
+  <test name="Regular Exp. Test">
+    <groups>
+      <run>
+        <include name="include.*" />
+        <exclude name=".*exclude" />
+      </run>
+    </groups>
+    <classes>
+      <class name="com.howtodoinjava.groupExamples.RegularExpressionGroupTest" />
+    </classes>
+  </test>
+</suite>
+```
+Now run the testng.xml file and you will get below result in console.
+```
+Test method one
+Test method two
+ 
+===============================================
+Regular Exp. Group Suite
+Total tests run: 2, Failures: 0, Skips: 0
+===============================================
+```
+### :dart:Group of groups or ‘MetaGroups’: <br> 
+Let’s create a sample test program and learn how to create group of groups called MetaGroups.
+```
+package com.howtodoinjava.groupExamples;
+ 
+import org.testng.annotations.Test;
+ 
+public class RegularExpressionGroupTest
+{
+    @Test(groups = { "include-test-one" })
+    public void testMethodOne() {
+        System.out.println("Test method one");
+    }
+ 
+    @Test(groups = { "include-test-two" })
+    public void testMethodTwo() {
+        System.out.println("Test method two");
+    }
+ 
+    @Test(groups = { "test-one-exclude" })
+    public void testMethodThree() {
+        System.out.println("Test method three");
+    }
+ 
+    @Test(groups = { "test-two-exclude" })
+    public void testMethodFour() {
+        System.out.println("Test method Four");
+    }
+}
+```
+Now create testng.xml file like below:
+```
+<suite name="Group of group Suite" verbose="1">
+  <test name="Group of group Test">
+    <groups>
+      <define name="include-group">
+        <include name="include-test-one" />
+        <include name="include-test-two" />
+      </define>
+      <define name="exclude-group">
+        <include name="test-one-exclude" />
+        <include name="test-two-exclude" />
+      </define>
+      <run>
+        <include name="include-group" />
+        <exclude name="exclude-group" />
+      </run>
+    </groups>
+    <classes>
+      <class name="com.howtodoinjava.groupExamples.RegularExpressionGroupTest" />
+    </classes>
+  </test>
+</suite>
+```
+Here two groups of groups have been defined inside the test, and then these groups are used for test execution. The MetaGroup is created using the define tag inside the groups tag. The name of the new group is defined using the name attribute under the define tag. Groups are included and excluded from the new group by using the include and exclude tags.
+Now run the testng.xml test and it will produce below result in console:
+```
+Test method one
+Test method two
+ 
+===============================================
+Group of group Suite
+Total tests run: 2, Failures: 0, Skips: 0
+===============================================
 ```
 
