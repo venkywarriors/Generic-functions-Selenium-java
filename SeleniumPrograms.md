@@ -74,6 +74,32 @@ public class RetriveAllLinks
  }
 }
 ```
+### :dart:Running a vbs file Using Java Selenium: <br> 
+Vbs file to make system idle
+```
+set wsc = CreateObject("WScript.Shell")
+
+Do Until WScript.Sleep (60*1000)
+
+wsc.SendKeys ("{SCROLLLOCK 2}")
+
+Loop
+```
+Save the file as test.vbs
+```
+public static void main(String[] args) {
+   try {
+     // Runtime.getRuntime().exec( "wscript D:/test.vbs" ); 
+            Runtime.getRuntime().exec(new String[] {
+        "wscript.exe", "C:\\path\\example.vbs"
+        }); 
+   }
+   catch( IOException e ) {
+      System.out.println(e);
+      System.exit(0);
+   }
+}
+```
 ### :dart:Firefox Headless Browser Using Java Selenium: <br> 
 ```
 public class Firefox_Headless
