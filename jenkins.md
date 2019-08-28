@@ -17,5 +17,7 @@ Reference <a href="https://github.com/MukeshOtwani/Framework/blob/master/Framewo
 	</configuration>
 </plugin>
 ```
+In Jenkins Build section under Goals and options add following value
 ```
+clean install -Dbrowser=$Browser -DxmlFile=$XMLSuite
 ```
