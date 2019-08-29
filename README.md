@@ -12,6 +12,9 @@ This repository contains generic functions used in selenium java <br>
 :+1: Click this link to view <a href="https://github.com/venkywarriors619/Generic-functions-Selenium-java/blob/master/JavaTitBits.md" title="Click here to view Java TitBits">*Java TitBits* </a><br>
 
 
+<i class="material-icons md-48">face</i>
+
+
 
 
 
