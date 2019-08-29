@@ -102,7 +102,7 @@ import org.apache.commons.collections.map.MultiValueMap;
 /**
  * HashMap - Single Key and Multiple Values using Apache Commons Collections
  *
- * @author Jagadeesh Motamarri
+ * @author Ragavendra
  * @version 1.0
  */
 public class SingleKeyMultipleValueUsingApacheCollections {
