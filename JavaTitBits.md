@@ -130,5 +130,36 @@ public class SingleKeyMultipleValueUsingApacheCollections {
     }
 }
 ```
+# How to Store Duplicate Keys in a Map in Java? <br> 
+### Scenario <br> 
+
+Hashmap type Overwrite that key if hashmap key is same key
+map.put("1","1111");
+map.put("1","2222");
+
+output
+key:value
+1:2222
+
+The following code snippets will show you three different ways of storing duplicate key-value pairs 
+ ### :dart:Collection as Value: <br> 
+```
+public static void main(String[] args) {
+ 	Map<String, List<String>> map = new HashMap<>();
+	 List<String> list = new ArrayList<>();
+	 map.put("key1", list);
+	 map.get("key1").add("value1");
+	 map.get("key1").add("value2");
+	
+	 System.out.println("Print map -> "+map);
+	 System.out.println("value of key1 -> "+map.get("key1")); 
+}
+```
+##### Output
+```
+Print map ->{key1=[value1, value2]}
+value of key1 ->[value1, value2]
+```
+
 
 
