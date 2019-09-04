@@ -133,11 +133,11 @@ public class SingleKeyMultipleValueUsingApacheCollections {
 # How to Store Duplicate Keys in a Map in Java? <br> 
 ### Scenario <br> 
 
-Hashmap type Overwrite that key if hashmap key is same key
-map.put("1","1111");
-map.put("1","2222");
+Hashmap type Overwrite that key if hashmap key is same key <br> 
+map.put("1","1111"); <br> 
+map.put("1","2222"); <br> 
 
-output
+##### Output <br> 
 key:value
 1:2222
 
@@ -155,10 +155,158 @@ public static void main(String[] args) {
 	 System.out.println("value of key1 -> "+map.get("key1")); 
 }
 ```
-##### Output
+##### Output<br> 
 ```
 Print map ->{key1=[value1, value2]}
 value of key1 ->[value1, value2]
+```
+ ### :dart:Apache Commons Collections: <br> 
+ #### MultiHashMap <br>
+It's implemented by the org.apache.commons.collections.MultiHashMap; class, defines a Map that holds a collection of values against each key.
+```
+public static void main(String[] args) {
+ MultiHashMap mp=new MultiHashMap();
+	      mp.put("a", 10);
+	      mp.put("a", 10);
+	      mp.put("a", 11);
+	      mp.put("a", 12);
+	      mp.put("b", 13);
+	      mp.put("c", 14);
+	      mp.put("c", 14);
+	      mp.put("e", 15);
+	
+	      List list = null;
+
+	      Set set = mp.entrySet();
+	      Iterator i = set.iterator();
+	      while(i.hasNext()) {
+	         Map.Entry me = (Map.Entry)i.next();
+	         list=(List)mp.get(me.getKey());
+
+	         for(int j=0;j<list.size();j++)
+	         {
+	          System.out.println(me.getKey()+": value :"+list.get(j));
+	         }
+	      } 
+}
+```
+##### Output<br> 
+```
+a: value :10
+a: value :10
+a: value :11
+a: value :12
+b: value :13
+c: value :14
+c: value :14
+e: value :15
+```
+#### MultiMap<br>
+The org.apache.commons.collections4.MultiMap interface defines a Map that holds a collection of values against each key.
+
+It's implemented by the org.apache.commons.collections4.map.MultiValueMap class, which automatically handles most of the boilerplate under the hood:
+```
+	MultiMap<String, String> map = new MultiValueMap<>();
+	map.put("key1", "value1");
+	map.put("key1", "value2");
+	map.put("key1", "value1");
+	map.put("key2", "value1");
+	
+	System.out.println("Print map -> "+map);
+	System.out.println("value of key1 -> "+map.get("key1"));
+```
+##### Output<br> 
+```
+Print map -> {key1=[value1, value2, value1], key2=[value1]}
+value of key1 -> [value1, value2, value1]
+```
+
+#### MultiValuedMap <br>
+The successor of MultiMap is the org.apache.commons.collections4.MultiValuedMap interface. It has multiple implementations ready to be used.
+```
+	MultiValuedMap<String, String> map = new ArrayListValuedHashMap<>();
+	map.put("key1", "value1");
+	map.put("key1", "value2");
+	map.put("key1", "value1");
+	map.put("key2", "value1");
+	
+	System.out.println("Print map -> "+map);
+	System.out.println("value of key1 -> "+map.get("key1"));
+```
+##### Output<br> 
+```
+Print map -> {key1=[value1, value2, value1], key2=[value1]}
+value of key1 -> [value1, value2, value1]
+```
+Alternatively, we could use a HashSet, which drops duplicates:
+```
+	MultiValuedMap<String, String> map = new HashSetValuedHashMap<>();
+	map.put("key1", "value1");
+	map.put("key1", "value2");
+	map.put("key1", "value1");
+	map.put("key2", "value1");
+	
+	System.out.println("Print map -> "+map);
+	System.out.println("value of key1 -> "+map.get("key1"));
+```
+##### Output<br> 
+```
+Print map -> {key1=[value2, value1], key2=[value1]}
+value of key1 -> [value2, value1]
+```
+Note: All the above implementations are not thread-safe.
+### :dart:Guava Multimap: <br> 
+Guava is the Google Core Libraries for Java API.
+The most common one is the com.google.common.collect.ArrayListMultimap, which uses a HashMap backed by an ArrayList for every value:
+```
+	Multimap<String, String> map = ArrayListMultimap.create();
+	map.put("key1", "value1");
+	map.put("key1", "value2");
+	map.put("key1", "value1");
+	map.put("key2", "value1");
+	
+	System.out.println("Print map -> "+map);
+	System.out.println("value of key1 -> "+map.get("key1"));
+```
+##### Output<br> 
+```
+Print map -> {key1=[value1, value2, value1], key2=[value1]}
+value of key1 -> [value1, value2, value1]
+```
+### :dart:Common Map Implementations: <br> 
+When we need a specific Map implementation, the first thing to do is check if it exists, because probably Guava has already implemented it.
+
+For example, we can use the com.google.common.collect.LinkedHashMultimap, which preserves the insertion order of keys and values:
+```
+	Multimap<String, String> map = LinkedHashMultimap.create();
+	map.put("key1", "value1");
+	map.put("key1", "value2");
+	map.put("key1", "value1");
+	map.put("key2", "value1");
+	
+	System.out.println("Print map -> "+map);
+	System.out.println("value of key1 -> "+map.get("key1"));
+```
+##### Output<br> 
+```
+Print map -> {key1=[value1, value2], key2=[value1]}
+value of key1 -> [value1, value2]
+```
+Alternatively, we can use a com.google.common.collect.TreeMultimap, which iterates keys and values in their natural order:
+```
+	Multimap<String, String> map = TreeMultimap.create();
+	map.put("key1", "value1");
+	map.put("key1", "value2");
+	map.put("key1", "value1");
+	map.put("key2", "value1");
+	
+	System.out.println("Print map -> "+map);
+	System.out.println("value of key1 -> "+map.get("key1"));
+```
+##### Output<br> 
+```
+Print map -> {key1=[value1, value2], key2=[value1]}
+value of key1 -> [value1, value2]
 ```
 
 
