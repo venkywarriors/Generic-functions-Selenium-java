@@ -356,18 +356,17 @@ LinkedHashSet<String> lhs = new LinkedHashSet<String>();
         } 
 ```
 ##### Output<br> 
-This will print the elements in the order they were put into the map: 
 ```
 Amit
 null
 Vijay
 Rahul
 ```
-Order: Both LinkedHashMap and LinkedHashSet maintain the insertion order. Elements get sorted in the same sequence in which they have been added.
-Synchronized: Both are not synchronized and must be synchronized externally.
-Duplicates: LinkedHashMap does a mapping of keys to values so not have duplicates and LinkedHashSet simply stores a collection of things with no duplicates.
-Memory: Keeping the insertion order in both LinkedHashmap and LinkedHashset have additional associated costs, both in terms of spending additional CPU cycles and needing more memory.
-Replacement: LinkedHashMap replace value with duplicate key while LinkedHashSet not change original value.
+* Order: Both LinkedHashMap and LinkedHashSet maintain the insertion order. Elements get sorted in the same sequence in which they have been added.
+* Synchronized: Both are not synchronized and must be synchronized externally.
+* Duplicates: LinkedHashMap does a mapping of keys to values so not have duplicates and LinkedHashSet simply stores a collection of things with no duplicates.
+* Memory: Keeping the insertion order in both LinkedHashmap and LinkedHashset have additional associated costs, both in terms of spending additional CPU cycles and needing more memory.
+* Replacement: LinkedHashMap replace value with duplicate key while LinkedHashSet not change original value.
 Operation: LinkedHashMap does a mapping of keys to values while LinkedHashSet simply stores a collection of things.
 
 
