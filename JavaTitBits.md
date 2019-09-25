@@ -308,6 +308,66 @@ Alternatively, we can use a com.google.common.collect.TreeMultimap, which iterat
 Print map -> {key1=[value1, value2], key2=[value1]}
 value of key1 -> [value1, value2]
 ```
+# How to maintain insertion order of the elements in Java HashMap? <br> 
+### Scenario <br> 
+We cannot. As HashMap does not maintain the order of the elements. This means that It might not return the elements in the same order they were inserted into it. If application needs the elements to be returned in the same order they were inserted, LinkedHashMap should be used.
 
+LinkedHashMap implements doubly linked list so that it can traverse through all the elements.This linked list defines the iteration ordering, which is normally the order in which keys were inserted into the map (insertion-order).
+ ### :dart:LinkedHashMap -return the elements in the order they were inserted into the map : <br> 
+```
+Map<String, String> map = new LinkedHashMap<String, String>();
+ 
+map.put("id", "3");
+map.put("name", "shyam");
+map.put("age", "26");
+ 
+for (Map.Entry<String, String> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + " = " + entry.getValue());
+}
+```
+##### Output<br> 
+This will print the elements in the order they were put into the map: 
+```
+id = 3 
+name = shyam 
+age = 26 
+```
+ ### :dart:LinkedHashSet -return the elements in the order they were inserted into the map: <br> 
+```
+LinkedHashSet<String> lhs = new LinkedHashSet<String>(); 
+  
+        // insert element in LinkedHashMap 
+        lhs.add("Amit"); 
+  
+        // insert first null key 
+        lhs.add(null); 
+        lhs.add("Vijay"); 
+        lhs.add("Rahul"); 
+  
+        // insert second null key 
+        // which replace first null key value 
+        lhs.add(null); 
+        // insert duplicate 
+        lhs.add("Vijay"); 
+  
+        Iterator<String> itr = lhs.iterator(); 
+        while (itr.hasNext()) { 
+            System.out.println(itr.next()); 
+        } 
+```
+##### Output<br> 
+This will print the elements in the order they were put into the map: 
+```
+Amit
+null
+Vijay
+Rahul
+```
+Order: Both LinkedHashMap and LinkedHashSet maintain the insertion order. Elements get sorted in the same sequence in which they have been added.
+Synchronized: Both are not synchronized and must be synchronized externally.
+Duplicates: LinkedHashMap does a mapping of keys to values so not have duplicates and LinkedHashSet simply stores a collection of things with no duplicates.
+Memory: Keeping the insertion order in both LinkedHashmap and LinkedHashset have additional associated costs, both in terms of spending additional CPU cycles and needing more memory.
+Replacement: LinkedHashMap replace value with duplicate key while LinkedHashSet not change original value.
+Operation: LinkedHashMap does a mapping of keys to values while LinkedHashSet simply stores a collection of things.
 
 
