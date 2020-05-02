@@ -20,6 +20,8 @@ public class Getlogs {
 	public static void main(String[] args) throws Exception {
 		
 		System.setErr(new PrintStream(new FileOutputStream("Errorlog.txt")));
+		PrintStream out = new PrintStream(new FileOutputStream("ConsoleOutput.txt", false), false);
+		System.setOut(out);
 		
 		String downloadPath = String.format("%s/target/downloads/", System.getProperty("user.dir"));
 
