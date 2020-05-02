@@ -69,8 +69,9 @@ public class Getlogs {
 	}
 }
 ```
-:page_facing_up::page_facing_up::page_facing_up::page_facing_up::page_facing_up::page_facing_up::page_facing_up::page_facing_up:
-`May 02, 2020 10:46:47 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+:page_facing_up::page_facing_up::page_facing_up::page_facing_up::page_facing_up::page_facing_up::page_facing_up::page_facing_up:<br>
+```
+May 02, 2020 10:46:47 AM org.openqa.selenium.remote.DesiredCapabilities chrome
 INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
 Starting ChromeDriver 81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776}) on port 14800
 Only local connections are allowed.
@@ -81,4 +82,5 @@ INFO: Detected dialect: W3C
 [1588396617.503][SEVERE]: Timed out receiving message from renderer: 0.100
 [1588396617.608][SEVERE]: Timed out receiving message from renderer: 0.100
 [1588396617.712][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588396617.815][SEVERE]: Timed out receiving message from renderer: 0.100`
+[1588396617.815][SEVERE]: Timed out receiving message from renderer: 0.100
+```
