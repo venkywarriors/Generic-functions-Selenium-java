@@ -598,3 +598,56 @@ public class ExcelToDataProvider {
     }
 }
 ```
+### :dart:Run All Test Classes in a Package from testng.xml Suite: <br> 
+```
+<suite name="Suite1" verbose="1">
+    <test name="all-tests">
+        <packages>
+            <package name="io.devqa.tests.ui"/>
+        </packages>
+    </test>
+</suite>
+```
+##### If you need to run all tests from multiple packages, you can use:
+```
+<suite name="Suite2" verbose="1">
+    <test name="all-tests">
+        <packages>
+            <package name="io.devqa.tests.ui"/>
+            <package name="io.devqa.tests.api"/>
+        </packages>
+    </test>
+</suite>
+```
+### :dart:Run testng.xml via cmd prompt <br> 
+java –cp "path of lib folder present in workspace\*; path of bin folder present in project workspace; path of testng.jar file present in lib folder of project workspace" org.testng.TestNG testng.xml
+
+but for our project you need to write the following command.
+```
+Java –cp  "C:\Users\User\Desktop\Blitz\TestProject\lib\*;
+  C:\Users\User\Desktop\Blitz\TestProject\bin" org.testng.TestNG testng.xml
+```
+##### Running testng-failed.xml file from Command line
+if you have three test cases if all the test cases are executed successfully means you are not able to see this folder under the test-output folder. This folder will appear only when one of the test case is failed. Then run this file, it will going to run only failed test cases.
+<br>
+java –cp "path of lib folder present in workspace\*; path of bin folder present in project workspace; path of testing.jar file present in lib folder of project workspace" org.testng.TestNG test-output/testng-failed.xml
+<br>
+```
+Java –cp "C:\Users\User\Desktop\Blitz\TestProject\lib\*;
+C:\Users\User\Desktop\Blitz\TestProject\bin" org.testng.TestNG test-output/testng-failed.xml
+```
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
