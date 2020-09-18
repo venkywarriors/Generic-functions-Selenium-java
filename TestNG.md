@@ -467,4 +467,40 @@ Group of group Suite
 Total tests run: 2, Failures: 0, Skips: 0
 ===============================================
 ```
+### :dart:TestNG Group Annotation: <br> 
+```
+	@Test
+	public void testCaseOne() {
+		System.out.println("*** test case one started ***");
+		Assert.assertEquals(5, 5, "First hard assert failed");
+		System.out.println("hard assert success....");
+		Assert.assertTrue("Hello".equals("hello"), "Second hard assert failed");
+		System.out.println("*** test case one executed successfully ***");
+	}
 
+	@Test
+	public void testCasetwo() {
+		SoftAssert softAssert = new SoftAssert();
+		System.out.println("*** test case two started ***");
+		softAssert.assertEquals("Hello", "Hello", "First soft assert failed");
+		System.out.println("hard assert success....");
+		softAssert.assertTrue("Hello".equals("hello"), "Second soft assert failed");
+		softAssert.assertTrue("Welcome".equals("welcomeeee"), "Third soft assert failed");
+		System.out.println("*** test case two executed successfully ***");
+		softAssert.assertAll();
+	}
+```
+Once you execute the above code, you should see output something like below : -
+```
+[RemoteTestNG] detected TestNG version 6.14.3
+*** test case one started ***
+hard assert success....
+*** test case two started ***
+hard assert success....
+*** test case two executed successfully ***
+FAILED: testCaseOne
+java.lang.AssertionError: Second hard assert failed expected [true] but found [false]
+```
+Points to remember : - <br> 
+1. We should instantiate a SoftAssert object within a @Test method. Scope of SoftAssert should only be within the Test method as seen the above example. <br> 
+2. We should never use the same Soft Assertions with multiple test cases. In the below example, we are using the same object of SoftAssert class with multiple test cases and see the result which includes multiple test cases.
