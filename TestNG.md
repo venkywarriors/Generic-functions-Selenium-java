@@ -172,7 +172,7 @@ The below is the testng.xml file, in which we need to pass the parameter values 
 	</test>
 </suite>
 ```
-## Parameterize @BeforeMethod method in TestNG <br> 
+Parameterize @BeforeMethod method in TestNG <br> 
 ```
 public class AppTest {
     @Parameters({"par1", "par2"})
@@ -185,6 +185,7 @@ public class AppTest {
     public void testApp() {
     }
 }
+```
 ```
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite1" verbose="1" >
@@ -325,7 +326,7 @@ in afterClass<br>
 in afterTest<br>
 in afterSuite<br>
 
-Total tests run: 2, Failures: 0, Skips: 0<br>
+Total tests run: 2, Failures: 0, Skips: 0 <br>
 ### :dart:Including and excluding groups: <br> 
 TestNG also allows you to include and exclude certain groups from test execution. This helps in executing only a particular set of tests and excluding certain tests. A simple example can be when a feature is broken and you need to exclude a fixed set of tests from execution since these test will fail upon execution. Once the feature is fixed you can then verify the feature by just executing the respective group of tests.<br>
 Let’s create a sample program and learn how to exclude a group of tests.
