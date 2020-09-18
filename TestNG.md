@@ -523,7 +523,7 @@ public class DProvider {
      }
 }
 ```
-# Inherited DataProvider In TestNG <br>
+##### Inherited DataProvider In TestNG <br>
 @Test file below :
 ```
 public class DataProvider {
@@ -548,7 +548,7 @@ public class DP
 	}  
 }
 ```
-# Read data from Excel to DataProvider
+##### Read data from Excel to DataProvider
 ```
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
