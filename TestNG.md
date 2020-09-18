@@ -45,24 +45,21 @@ public class AlwaysRunExample
  }
 }
 ```
-### :dart: Skip few cases Without using annotation 
+### :dart: Skip few cases Without using annotation and Using preserve-order in the testng.xml file
 Without using annotation , we can skip few cases in selenium testing by following the script in testng Suite
 
 With Include Option:
 ```
-<suite name = "Suite"> 
-   <test name = "test">  
-      <classes> 
-         <class name = "TestClass"> 
-			<methods> 
-					<include name= "FirstCase"/> 
-					<include name= "SecondCase"/> 
-					<include name= "ThirdCase"/> 
-			</methods> 
-		</class> 
-      </classes>    
-   </test> 		 
-</suite> 
+<test name="OrderedTestNGTests" preserve-order="true">
+	<classes>
+		<class name="TestNGTestClass">
+			<methods>
+				<include name="testOne" />
+				<include name="testTwo" />
+			</methods>
+		</class>
+	</classes>
+</test>
 ```
 With Exclude Option:
 ```
