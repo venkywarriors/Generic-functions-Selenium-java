@@ -72,7 +72,7 @@ public class DependsonTest
  }
 }
 ```
-### :TestNg Description Annotation: <br> 
+### :dart:TestNg Description Annotation: <br> 
 ```
 public class TestNg_Description 
 {
@@ -142,15 +142,69 @@ public class PriorityTest
 ```
 ### :dart:Parameter TestNG Example Program: <br> 
 ```
-public class ParameterEx 
-{
- @Test
- @Parameters("myName") //This Values Comes From The Respective XML File
- //This Program Should Be Run From XML Not Here
- public void parameterTest(String myName) {
- System.out.println("Parameterized value is : " + myName);
- }
+public class TestParameters {
+	
+	@Parameters({ "browser" })
+	@Test
+	public void testCaseOne(String browser) {
+		System.out.println("browser passed as :- " + browser);
+	}
+
+	@Parameters({ "username", "password" })
+	@Test
+	public void testCaseTwo(String username, String password) {
+		System.out.println("Parameter for User Name passed as :- " + username);
+		System.out.println("Parameter for Password passed as :- " + password);
+	}
 }
+```
+The below is the testng.xml file, in which we need to pass the parameter values for the test method
+```
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameterization Test Suite">
+	<test name="Testing Parameterization">
+	<parameter name="browser" value="Firefox"/>
+	<parameter name="username" value="testuser"/>
+	<parameter name="password" value="testpassword"/>
+		<classes>
+			<class name="com.parameterization.TestParameters" />
+		</classes>
+	</test>
+</suite>
+```
+## Parameterize @BeforeMethod method in TestNG <br> 
+```
+public class AppTest {
+    @Parameters({"par1", "par2"})
+    @BeforeMethod()
+    public void setUp(String a, String b) {
+        System.out.println("a = [" + a + "], b = [" + b + "]");
+    }
+
+    @Test
+    public void testApp() {
+    }
+}
+```
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" verbose="1" >
+
+    <test name="Run1" >
+        <parameter name="par1"  value="val"/>
+        <parameter name="par2"  value="anotherval"/>
+        <packages>
+            <package name="dummy.java" />
+        </packages>
+    </test>
+
+    <test name="Run2" >
+        <parameter name="par1"  value="newValue"/>
+        <parameter name="par2"  value="yetAnotherVal"/>
+        <packages>
+            <package name="dummy.java" />
+        </packages>
+    </test>
+</suite>
 ```
 ### :dart:TestNg ExpectedException Annotation: <br> 
 ```
