@@ -45,6 +45,40 @@ public class AlwaysRunExample
  }
 }
 ```
+### :dart: Skip few cases Without using annotation 
+Without using annotation , we can skip few cases in selenium testing by following the script in testng Suite
+
+With Include Option:
+```
+<suite name = "Suite"> 
+   <test name = "test">  
+      <classes> 
+         <class name = "TestClass"> 
+			<methods> 
+					<include name= "FirstCase"/> 
+					<include name= "SecondCase"/> 
+					<include name= "ThirdCase"/> 
+			</methods> 
+		</class> 
+      </classes>    
+   </test> 		 
+</suite> 
+```
+With Exclude Option:
+```
+<suite name = "Suite">  
+   <test name = "test">    
+      <classes> 
+         <class name = "TestClass"> 
+			<methods> 
+					<exclude name= "FourthCase"/> 
+					<exclude name= "FifthCase"/> 
+			</methods> 
+		</class> 
+      </classes>    
+   </test> 		 
+</suite> 
+```
 ### :dart:TestNG Dependson Annotation: <br> 
 ```
 public class DependsonTest
@@ -375,7 +409,7 @@ Exclude Group Suite
 Total tests run: 2, Failures: 0, Skips: 0
 ===============================================
 ```
-### :dart:Using regular expressions in groups: <br> 
+##### Using regular expressions in groups: <br> 
 testng.xml file.
 ```
 <suite name="Regular Exp. Group Suite" verbose="1">
@@ -402,7 +436,65 @@ Regular Exp. Group Suite
 Total tests run: 2, Failures: 0, Skips: 0
 ===============================================
 ```
-### :dart:Group of groups or ‘MetaGroups’: <br> 
+##### Tests belonging to multiple Groups
+```
+import org.testng.annotations.Test;  
+public class Groups {  
+@Test(groups= {"Group A"})  
+public void testcase1()   
+{  
+System.out.println("Test case belonging to Group A");  
+}  
+@Test(groups= {"Group A","Group B"})  
+public void testcase2()   
+{  
+System.out.println("Test case belonging to both Group A and Group B");  
+}  
+@Test(groups= {"Group B"})  
+public void testcase3()   
+{  
+System.out.println("Test case belonging to Group B");  
+}  
+}  
+```
+```
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">  
+<suite name="test_suite">  
+<test name="Group A">  
+<groups>  
+<run>  
+<include name="Group A"/>  
+</run>  
+</groups>  
+<classes>  
+<class name="com.javatpoint.Groups"/>  
+</classes>  
+</test> <!-- Test -->  
+<test name="Group B">  
+<groups>  
+<run>  
+<include name="Group B"/>  
+</run>  
+</groups>  
+<classes>  
+<class name="com.javatpoint.Groups"/>  
+</classes>  
+</test> <!-- Test -->  
+</suite> <!-- Suite -->  
+```
+```
+Test case belonging to Group A
+Test case belonging to both Group A and Group B
+Test case belonging to both Group A and Group B
+Test case belonging to Group B
+ 
+===============================================
+Group of group Suite
+Total tests run: 2, Failures: 0, Skips: 0
+===============================================
+```
+##### Group of groups or ‘MetaGroups’: <br> 
 Let’s create a sample test program and learn how to create group of groups called MetaGroups.
 ```
 package com.howtodoinjava.groupExamples;
