@@ -467,7 +467,7 @@ Group of group Suite
 Total tests run: 2, Failures: 0, Skips: 0
 ===============================================
 ```
-### :dart:TestNG Group Annotation: <br> 
+### :dart:TestNG SoftAssert and HardAssert: <br> 
 ```
 	@Test
 	public void testCaseOne() {
@@ -504,3 +504,97 @@ java.lang.AssertionError: Second hard assert failed expected [true] but found [f
 Points to remember : - <br> 
 1. We should instantiate a SoftAssert object within a @Test method. Scope of SoftAssert should only be within the Test method as seen the above example. <br> 
 2. We should never use the same Soft Assertions with multiple test cases. In the below example, we are using the same object of SoftAssert class with multiple test cases and see the result which includes multiple test cases.
+### :dart:TestNG DataProviders: <br> 
+```
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+ 
+public class DProvider {
+ @DataProvider (name = "data-provider")
+ public Object[][] dpMethod(){
+ return new Object[][] {{2, 3 , 5}, {5, 7, 9}};
+ }
+ 
+   @Test (dataProvider = "data-provider")
+     public void myTest (int a, int b, int result) {
+         int sum = a + b;
+         Assert.assertEquals(result, sum);
+     }
+}
+```
+# Inherited DataProvider In TestNG <br>
+@Test file below :
+```
+public class DataProvider {
+	  @Test (dataProvider = "data-provider", dataProviderClass = DP.class)
+	    public void myTest (String val) {
+	        System.out.println("Current Status : " + val);
+	    }
+}
+```
+DP.java looks like this
+```
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class DP
+{
+	@DataProvider (name = "data-provider")
+	public Object[][] dpMethod(){
+		return new Object[][] {{"Value Passed"}};
+	}  
+}
+```
+# Read data from Excel to DataProvider
+```
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+ 
+public class ExcelToDataProvider {
+     
+    String xlFilePath = "/KRISHNA VOLUME/Jar Files/poi-3.16-beta1/TestData.xlsx";
+    String sheetName = "Credentials";
+    ExcelApiTest eat = null;
+     
+    @Test(dataProvider = "userData")
+    public void fillUserForm(String userName, String passWord, String dateCreated, String noOfAttempts, String result)
+    {
+       System.out.println("UserName: "+ userName);
+       System.out.println("PassWord: "+ passWord);
+       System.out.println("DateCreated: "+ dateCreated);
+       System.out.println("NoOfAttempts: "+ noOfAttempts);
+       System.out.println("Result: "+ result);
+       System.out.println("*********************");
+    }    
+     
+    @DataProvider(name="userData")
+    public Object[][] userFormData() throws Exception
+    {
+        Object[][] data = testData(xlFilePath, sheetName);
+        return data;
+    }
+     
+    public Object[][] testData(String xlFilePath, String sheetName) throws Exception
+    {
+        Object[][] excelData = null;
+        eat = new ExcelApiTest(xlFilePath);
+        int rows = eat.getRowCount(sheetName);
+        int columns = eat.getColumnCount(sheetName);
+                 
+        excelData = new Object[rows-1][columns];
+         
+        for(int i=1; i<rows; i++)
+        {
+            for(int j=0; j<columns; j++)
+            {
+                excelData[i-1][j] = eat.getCellData(sheetName, j, i);
+            }
+             
+        }
+        return excelData;
+    }
+}
+```
