@@ -45,7 +45,7 @@ public class AlwaysRunExample
  }
 }
 ```
-### :dart: Skip few cases Without using annotation and Using preserve-order in the testng.xml file
+### :dart: Skip few cases Without using annotation/Using preserve-order in the testng.xml file
 Without using annotation , we can skip few cases in selenium testing by following the script in testng Suite
 
 With Include Option:
@@ -122,12 +122,107 @@ public class RerunFailedtestcases
  {
  TestNG runner=new TestNG();
  List <String> list=new ArrayList<String>();
- list.add("G:\\Git_Base_Folder\\softwaretestingblog\\Daily_Practice\\test-output\\testng-failed.xml");
+ list.add("G:\\Git_Base_Folder\\softwaretestingblog\\Daily_Practice\\test-output\\testng-failed.xml"); //Path of failed testng xml file under test-output folder
  runner.setTestSuites(list);
  runner.run();
  }
 }
 ```
+### :dart:Run Failed Test Cases Using TestNG in Selenium WebDriver: <br> 
+Create a class to implement IRetryAnalyzer. The steps are explained further below.
+
+```
+package Analyzer;
+
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
+
+public class RetryAnalyzer implements IRetryAnalyzer {
+    private int retryCnt = 0;
+    private int maxRetryCnt = 2; //You could mentioned maxRetryCnt (Maximiun Retry Count) as per your requirement.
+ /*
+ * (non-Javadoc)
+ * @see org.testng.IRetryAnalyzer#retry(org.testng.ITestResult)
+ * 
+ * This method decides how many times a test needs to be rerun.
+ * TestNg will call this method every time a test fails. So we 
+ * can put some code in here to decide when to rerun the test.
+ * 
+ * Note: This method will return true if a tests needs to be retried
+ * and false it not.
+ *
+ */
+    public boolean retry(ITestResult result) {
+        if (retryCnt < maxRetryCnt) {
+            System.out.println("Retrying " + result.getName() + " again and the count is " + (retryCnt+1));
+            retryCnt++;
+            return true;
+        }
+        return false;
+    }
+   
+}
+```
+There are two ways to include retry analyser in your tests
+By specifying retryAnalyzer value in the @Test annotation
+By adding Retry analyser during run time by implementing on the of the Listener interfaces
+
+#### First way Specifying retryAnalyzer attribute in the @Test annotation
+We can do this by simply using following syntax to @Test(retryAnalyzer=”IRetryAnalyzer Implementing class”). Below is the code to do that
+```
+import org.testng.Assert;
+import org.testng.annotations.Test;
+ 
+public class Test001 {
+ 
+ @Test(retryAnalyzer = Analyzer.RetryAnalyzer.class)
+ public void Test1()
+ {
+ Assert.assertEquals(false, true);
+ }
+ 
+ @Test
+ public void Test2()
+ {
+ Assert.assertEquals(false, true);
+ }
+}
+```
+#### Second way of adding retryAnalyzer to your test.
+Specifying retryAnalyzer during runtime. Create another class ‘RetryListenerClass’ by Implementing ‘IAnnotationTransaformer’ interface. transform method is called for every test during test run. A simple implementation of this ‘IAnnotationTransformer’ interface can help us set the ‘setRetryAnalyzer’ for ‘ITestAnnotation’. Add the above class name (RetryAnalyzer.class) in the below program. This interface does its work in run time by adding annotation to the test methods.
+```
+package Analyzer;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+ 
+import org.testng.IAnnotationTransformer;
+import org.testng.IRetryAnalyzer;
+import org.testng.annotations.ITestAnnotation;
+ 
+public class AnnotationTransformer implements IAnnotationTransformer {
+ 
+@Override
+public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
+	annotation.setRetryAnalyzer(RetryAnalyzer.class);
+}
+}
+}
+``` 
+Once we have the implementation of IAnnotationTransformer, we just need to add it as a listener in the testng run xml. Like this
+``` 
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="RetryFailedTests" verbose="1" >
+ <listeners>
+        <listener class-name="Analyzer.AnnotationTransformer"/>
+  </listeners>
+  <test name="RetryMulitple">
+    <classes>
+      <class name="Tests.Test001"/>
+    </classes>
+  </test>
+</suite>
+``` 
 ### :dart:Run Test Multiple Times Using TestNG: <br> 
 ```
 public class RunTestMultipleTime 
@@ -716,14 +811,6 @@ but for our project you need to write the following command.
 Java –cp  "C:\Users\User\Desktop\Blitz\TestProject\lib\*;
   C:\Users\User\Desktop\Blitz\TestProject\bin" org.testng.TestNG testng.xml
 ```
-##### Running testng-failed.xml file from Command line
-if you have three test cases if all the test cases are executed successfully means you are not able to see this folder under the test-output folder. This folder will appear only when one of the test case is failed. Then run this file, it will going to run only failed test cases.
-<br>
-java –cp "path of lib folder present in workspace\*; path of bin folder present in project workspace; path of testing.jar file present in lib folder of project workspace" org.testng.TestNG test-output/testng-failed.xml
-<br>
-```
-Java –cp "C:\Users\User\Desktop\Blitz\TestProject\lib\*;
-C:\Users\User\Desktop\Blitz\TestProject\bin" org.testng.TestNG test-output/testng-failed.xml
 ```
 ```
 
