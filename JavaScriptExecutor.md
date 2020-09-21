@@ -42,6 +42,10 @@ Js.executeScript(“arguments[0].setAttribute(‘style’, ’background: blue; 
 			}, timeoutInSeconds);
 	}
 ```
+### :dart: Total Frames in Browser:
+```
+JS.executeScript("document.frames.length;");
+```
 ### :dart:Scroll Element into View using JavaScriptExecutor: 
 ```
 WebElement element = driver.findElement(By.id("id_of_element"));
