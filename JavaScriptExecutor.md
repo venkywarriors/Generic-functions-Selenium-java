@@ -47,6 +47,15 @@ Js.executeScript(“arguments[0].setAttribute(‘style’, ’background: blue; 
 WebElement element = driver.findElement(By.id("id_of_element"));
 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 ```
+### :dart:Set value of input instead of sendKeys() using JavaScriptExecutor: 
+```
+WebElement element = driver.findElement(By.id("id_of_element"));
+((JavascriptExecutor) driver).executeScript("arguments[0].value='"+ value +"';", element);
+```
+```
+String value= "your value"; 
+driver.execute_script("document.getElementById('q').value=' "+value+" ' ");
+```
 ### :dart:Perform Click Action using JavaScriptExecutor: 
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
