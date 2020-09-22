@@ -36,9 +36,6 @@ initElements(WebDriver driver, java.lang.Class pageObjectClass)
 <strong>lazy initialization:</strong> AjaxElementLocatorFactory is a lazy load concept in Page Factory. This is used to identify web elements only when they are used in any operation or activity. The timeout of a web element can be assigned to the object class with the help of the AjaxElementLocatorFactory.
  <br><strong>'How’ </strong> is a class and it has static variables like ID, XPATH, CLASSNAME, LINKTEXT, etc. <br> 
 <strong>‘using’ </strong> – To assign a value to a static variable.<br>
-<strong>We should also understand that POM follows OOPS principles.</strong>
-1) WebElements are declared as private member variables (Data Hiding).
-2) Binding WebElements with corresponding methods (Encapsulation).
 ```
 @FindBy(how = How.ID, using="EmailAddress") 
 WebElement Email;
@@ -46,7 +43,10 @@ WebElement Email;
 @FindBy(id="EmailAddress") 
 WebElement Email;
 ```
-<br> Code Snippet: With page factory
+<strong>We should also understand that POM follows OOPS principles.</strong>
+1) WebElements are declared as private member variables (Data Hiding).
+2) Binding WebElements with corresponding methods (Encapsulation).<br> 
+Code Snippet: With page factory
 ```
 package StackPages;
 import static org.testng.Assert.assertEquals;
