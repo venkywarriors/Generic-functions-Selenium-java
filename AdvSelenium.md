@@ -1,8 +1,71 @@
-### :dart:What is Page Object Model in Selenium?
+### :dart:What is Page Object Model in Selenium? <br> 
 Page Object Model, also known as POM is a design pattern in Selenium that creates an object repository for storing all web elements. It is useful in reducing code duplication and improves test case maintenance.
+<br> Code Snippet: Without page factory 
+```
+package StackPages;
+import static org.testng.Assert.assertEquals;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+public class BrowserStackHomePage {
 
+WebDriver driver;
+By Header=By.xpath("//h1");
+By getStarted=By.xpath("//*[@id='signupModalButton']");
 
+public BrowserStackHomePage(WebDriver driver) {
+this.driver=driver;
+}
+public void veryHeader() {
+String getheadertext=driver.findElement(Header).getText();
+assertEquals("App & Browser Testing Made Easy", getheadertext);
+}
+public void clickOnGetStarted() {
+driver.findElement(getStarted).click();
+}
+}
+```
+<strong>What is Page Factory in Selenium? </strong> <br> 
+Page Factory is a class provided by Selenium WebDriver to support Page Object Design patterns. In Page Factory, testers use @FindBy annotation. The initElements method is used to initialize web elements.
 
+<strong>@FindBy:</strong>An annotation used in Page Factory to locate and declare web elements using different locators. Below is an example of declaring an element using @FindBy <br> 
+<strong>initElements(): </strong>initElements is a static method in Page Factory class. Using the initElements method, one can initialize all the web elements located by @FindBy annotation. <br> 
+<strong>lazy initialization:</strong> AjaxElementLocatorFactory is a lazy load concept in Page Factory. This is used to identify web elements only when they are used in any operation or activity. The timeout of a web element can be assigned to the object class with the help of the AjaxElementLocatorFactory.
+<strong>'How’ </strong> is a class and it has static variables like ID, XPATH, CLASSNAME, LINKTEXT, etc.
+‘using’ – To assign a value to a static variable.<br>
+```
+@FindBy(how = How.ID, using="EmailAddress") 
+WebElement Email;
+
+@FindBy(id="EmailAddress") 
+WebElement Email;
+```
+<br> Code Snippet: With page factory
+```
+package StackPages;
+import static org.testng.Assert.assertEquals;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+public class BrowserStackHomePage {
+WebDriver driver;
+@FindBy(xpath = "//h1")
+WebElement Header;
+@FindBy(xpath = "//*[@id='signupModalButton']")
+WebElement getStarted;
+public BrowserStackHomePage(WebDriver driver) {
+this.driver = driver;
+PageFactory.initElements(driver, this);
+}
+public void veryHeader() {
+String getheadertext = Header.getText();
+assertEquals("App & Browser Testing Made Easy", getheadertext);
+}
+public void clickOnGetStarted() {
+getStarted.click();
+}
+}
+```
 ### :dart:Record your Test Execution in Selenium : <br> 
 Monte Screen Recorder, a Java library that can assist you in creating videos of your Selenium tests. Add Screen Recorder
 Maven Dependencies
