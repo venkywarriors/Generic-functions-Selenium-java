@@ -28,12 +28,14 @@ driver.findElement(getStarted).click();
 ```
 <strong>What is Page Factory in Selenium? </strong> <br> 
 Page Factory is a class provided by Selenium WebDriver to support Page Object Design patterns. In Page Factory, testers use @FindBy annotation. The initElements method is used to initialize web elements.<br> 
-<strong>@FindBy:</strong>An annotation used in Page Factory to locate and declare web elements using different locators. Below is an example of declaring an element using @FindBy <br> 
-<strong>initElements(): </strong>initElements is a static method in Page Factory class. Using the initElements method, one can initialize all the web elements located by @FindBy annotation. <br> 
+<strong>@FindBy :</strong>An annotation used in Page Factory to locate and declare web elements using different locators. Below is an example of declaring an element using @FindBy <br> 
+<strong>initElements() :</strong>initElements is a static method in Page Factory class. Using the initElements method, one can initialize all the web elements located by @FindBy annotation. <br> 
 ```
 initElements(WebDriver driver, java.lang.Class pageObjectClass)
 ```
-<strong>lazy initialization:</strong> AjaxElementLocatorFactory is a lazy load concept in Page Factory. This is used to identify web elements only when they are used in any operation or activity. The timeout of a web element can be assigned to the object class with the help of the AjaxElementLocatorFactory.
+<strong>@FindBys :</strong> When the required WebElement objects need to match all of the given criteria use @FindBys annotation <br> 
+<strong>@FindAll :</strong> When required WebElement objects need to match at least one of the given criteria use @FindAll annotation <br> 
+<strong>lazy initialization :</strong> AjaxElementLocatorFactory is a lazy load concept in Page Factory. This is used to identify web elements only when they are used in any operation or activity. The timeout of a web element can be assigned to the object class with the help of the AjaxElementLocatorFactory.
  <br><strong>'How’ </strong> is a class and it has static variables like ID, XPATH, CLASSNAME, LINKTEXT, etc. <br> 
 <strong>‘using’ </strong> – To assign a value to a static variable.<br>
 ```
