@@ -1,3 +1,8 @@
+### :dart:What is Page Object Model in Selenium?
+Page Object Model, also known as POM is a design pattern in Selenium that creates an object repository for storing all web elements. It is useful in reducing code duplication and improves test case maintenance.
+
+
+
 ### :dart:Record your Test Execution in Selenium : <br> 
 Monte Screen Recorder, a Java library that can assist you in creating videos of your Selenium tests. Add Screen Recorder
 Maven Dependencies
