@@ -1,3 +1,22 @@
+### :dart:How to switch to a specific window? <br> 
+```
+public static void switchWindow(String text) {
+    WebDriver popup = null;
+    Set<String>s=driver.getWindowHandles();
+
+// Now iterate using Iterator
+    Iterator<String> windowIterator = s.iterator();
+
+    while (windowIterator.hasNext()) {
+        String windowHandle = windowIterator.next();
+        popup = driver.switchTo().window(windowHandle);
+        String title = popup.getTitle();
+        if (title.contains(text)) {
+            break;
+        }
+    }
+}
+```
 ### :dart:Read CSV File in selenium Sample Java code given below: <br> 
 ```
 import java.io.File;
