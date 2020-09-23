@@ -1,4 +1,28 @@
+### :dart: How to identify object types in java:
+```
+public void test(Object value) {
 
+        if (value.getClass() == Integer) {
+            System.out.println("This is an Integer");
+        }else if(value.getClass() == String){
+            System.out.println("This is a String");
+        }else if(value.getClass() == Float){
+            System.out.println("This is a Float");
+        }
+
+}
+```
+```
+if (value instanceof Integer) {
+        System.out.println("This is an Integer");
+    } else if(value instanceof String) {
+        System.out.println("This is a String");
+    } else if(value instanceof Float) {
+        System.out.println("This is a Float");
+    }
+```
+#### Difference between instanceof and getClass() method
+instanceof operator returns true, even if compared with subclass, for example, Subclass instanceof Superclass is true, but with getClass() its false. By using getClass() you ensure that your equals() implementation doesn't return true if compared with subclass object.
 ### :dart:Java program to check whether two strings are anagram or not? <br> 
 ```
 import java.util.Arrays;  
