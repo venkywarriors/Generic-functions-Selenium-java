@@ -59,9 +59,19 @@ int num = Integer.valueOf(str);
 * Integer.valueOf() returns an Integer object while Integer.parseInt() returns a primitive int.
 * Both String and integer can be passed a parameter to Integer.valueOf() whereas only a String can be passed as parameter to Integer.parseInt().
 * Integer.valueOf() can take a character as parameter and will return its corresponding unicode value whereas Integer.parseInt() will produce an error on passing a character as parameter.
-### :dart:Java program to Type casting<br> 
+### :dart:C# program to Type casting<br> 
+Parse Method
 ```
+Int16.Parse("100"); // returns 100
+Int16.Parse("(100)", NumberStyles.AllowParentheses); // returns -100
+int.Parse("30,000", NumberStyles.AllowThousands, new CultureInfo("en-au"));//
 ```
+Convert Class
+```
+Convert.ToInt16("100"); // returns short
+Convert.ToInt16(null);//returns 0
+```
+Both int.Parse and Convert.ToInt32 are used to convert string into the integer but Only difference between them is to Convert.ToInt32 handle null and returns '0' as output and int.parse is not going to handle NULL and will give a Argument Null Exception.
 ### :dart:Java program to check whether two strings are anagram or not? <br> 
 ```
 import java.util.Arrays;  
