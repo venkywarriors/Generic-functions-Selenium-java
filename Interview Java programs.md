@@ -23,6 +23,27 @@ if (value instanceof Integer) {
 ```
 #### Difference between instanceof and getClass() method
 instanceof operator returns true, even if compared with subclass, for example, Subclass instanceof Superclass is true, but with getClass() its false. By using getClass() you ensure that your equals() implementation doesn't return true if compared with subclass object.
+### :dart: How to identify object types in C#:<br>
+<strong>typeof </strong>takes a type name (which you specify at compile time).<br>
+<strong>GetType </strong>gets the runtime type of an instance.<br>
+<strong>is </strong>returns true if an instance is in the inheritance tree.<br>
+```
+1.
+
+Type t = typeof(obj1);
+if (t == typeof(int))
+This is illegal, because typeof only works on types, not on variables. I assume obj1 is a variable. So, in this way typeof is static, and does its work at compile time instead of runtime.
+
+2.
+
+if (obj1.GetType() == typeof(int))
+This is true if obj1 is exactly of type int. If obj1 derives from int, the if condition will be false.
+
+3.
+
+if (obj1 is int)
+This is true if obj1 is an int, or if it derives from a class called int, or if it implements an interface called int.
+```
 ### :dart:Java program to check whether two strings are anagram or not? <br> 
 ```
 import java.util.Arrays;  
