@@ -55,7 +55,10 @@ Java – Convert String to int using Integer.valueOf(String)
 String str="1122ab";
 int num = Integer.valueOf(str);
 ```
-<strong>Differences between Integer.parseInt() and Integer.valueOf()<\strong>
+<strong>Differences between Integer.parseInt() and Integer.valueOf()</strong>
+* Integer.valueOf() returns an Integer object while Integer.parseInt() returns a primitive int.
+* Both String and integer can be passed a parameter to Integer.valueOf() whereas only a String can be passed as parameter to Integer.parseInt().
+* Integer.valueOf() can take a character as parameter and will return its corresponding unicode value whereas Integer.parseInt() will produce an error on passing a character as parameter.
 ### :dart:Java program to Type casting<br> 
 ```
 ```
