@@ -52,6 +52,65 @@ Output:
 nahk si eman ym
 lawsiaj oonos ma I
 ```
+```
+
+// Java program to Reverse a String  by 
+// converting string to characters  one 
+// by one 
+
+import java.lang.*; 
+
+import java.io.*; 
+
+import java.util.*; 
+
+  
+// Class of ReverseString 
+
+class ReverseString { 
+
+    public static void main(String[] args) 
+    { 
+        String input = "GeeksForGeeks"; 
+        // convert String to character array 
+        // by using toCharArray 
+
+        char[] try1 = input.toCharArray();  
+
+        for (int i = try1.length - 1; i >= 0; i--) 
+           System.out.print(try1[i]); 
+    } 
+} 
+Output:
+
+skeeGrofskeeG
+
+```
+```
+// Java program to ReverseString using StringBuilder 
+ 
+// Class of ReverseString 
+
+class ReverseString { 
+
+    public static void main(String[] args) 
+    { 
+        String input = "Geeks for Geeks"; 
+        StringBuilder input1 = new StringBuilder(); 
+        // append a string into StringBuilder input1 
+
+        input1.append(input); 
+ 
+        // reverse StringBuilder input1 
+        input1 = input1.reverse(); 
+        // print reversed String 
+        System.out.println(input1); 
+    } 
+} 
+Output:
+
+skeeG rof skeeG
+```
 ### :dart:By Reverse Iteration :<br> 
 ```
 class ReverseString
@@ -99,6 +158,36 @@ int []arr = {1, 2, 3, 4, 5, 6};
   //Output contents of now-reversed array.
   for(i = 0; i < len-1; i++)
     printf("%d ", a[i])
+```
+```
+// Java program to Reverse a String using swapping 
+// of variables 
+class ReverseString { 
+
+    public static void main(String[] args) 
+
+    { 
+
+        String input = "Geeks For Geeks"; 
+        char[] temparray = input.toCharArray(); 
+        int left, right = 0; 
+        right = temparray.length - 1; 
+
+        for (left = 0; left < right; left++, right--) { 
+            // Swap values of left and right 
+            char temp = temparray[left]; 
+            temparray[left] = temparray[right]; 
+            temparray[right] = temp; 
+        } 
+
+        for (char c : temparray) 
+            System.out.print(c); 
+        System.out.println(); 
+    } 
+} 
+Output:
+
+skeeG roF skeeG
 ```
 ### :dart:By StringBuilder / StringBuffer:<br> 
 ```
