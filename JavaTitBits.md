@@ -53,20 +53,9 @@ nahk si eman ym
 lawsiaj oonos ma I
 ```
 ```
-
 // Java program to Reverse a String  by 
 // converting string to characters  one 
 // by one 
-
-import java.lang.*; 
-
-import java.io.*; 
-
-import java.util.*; 
-
-  
-// Class of ReverseString 
-
 class ReverseString { 
 
     public static void main(String[] args) 
@@ -84,13 +73,9 @@ class ReverseString {
 Output:
 
 skeeGrofskeeG
-
 ```
 ```
 // Java program to ReverseString using StringBuilder 
- 
-// Class of ReverseString 
-
 class ReverseString { 
 
     public static void main(String[] args) 
@@ -165,9 +150,7 @@ int []arr = {1, 2, 3, 4, 5, 6};
 class ReverseString { 
 
     public static void main(String[] args) 
-
     { 
-
         String input = "Geeks For Geeks"; 
         char[] temparray = input.toCharArray(); 
         int left, right = 0; 
