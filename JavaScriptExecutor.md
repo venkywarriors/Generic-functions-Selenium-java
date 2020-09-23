@@ -46,6 +46,11 @@ Js.executeScript(“arguments[0].setAttribute(‘style’, ’background: blue; 
 ```
 JS.executeScript("document.frames.length;");
 ```
+### :dart: Selenium WebDriver get Current frame:
+```
+JavascriptExecutor jsExecutor = (JavascriptExecutor)driver;
+String currentFrame = jsExecutor.executeScript("return self.name");
+```
 ### :dart:Scroll Element into View using JavaScriptExecutor: 
 ```
 WebElement element = driver.findElement(By.id("id_of_element"));
