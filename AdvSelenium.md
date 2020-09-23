@@ -49,8 +49,10 @@ public WebElement AB;
 })
 private WebElement searchText;
 ```
-<strong>lazy initialization :</strong> AjaxElementLocatorFactory is a lazy load concept in Page Factory. This is used to identify web elements only when they are used in any operation or activity. The timeout of a web element can be assigned to the object class with the help of the AjaxElementLocatorFactory.
- <br><strong>'How’ </strong> is a class and it has static variables like ID, XPATH, CLASSNAME, LINKTEXT, etc. <br> 
+<strong>lazy initialization :</strong> AjaxElementLocatorFactory is a lazy load concept in Page Factory. This is used to identify web elements only when they are used in any operation or activity. It assigns a timeout for WebElements to the object page class. One of the key advantages of using PageFactory pattern is AjaxElementLocatorFactory Class.
+Here, when an operation is performed on an element the wait for its visibility starts from that moment only. If the element is not found in the given time interval, Test Case execution will throw 'NoSuchElementException' exception.
+[!Ajax Pom](https://www.guru99.com/images/AdvanceSelenium/071514_0722_PageObjectM11.png)
+<br><strong>'How’ </strong> is a class and it has static variables like ID, XPATH, CLASSNAME, LINKTEXT, etc. <br> 
 <strong>‘using’ </strong> – To assign a value to a static variable.<br>
 ```
 @FindBy(how = How.ID, using="EmailAddress") 
