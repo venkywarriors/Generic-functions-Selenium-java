@@ -81,6 +81,28 @@ Output:
 nahk si eman ym
 lawsiaj oonos ma I
 ```
+### :dart:Write a program to reverse an array or string:<br> 
+```
+int []a = {1, 2, 3, 4, 5, 6};
+  i = len - 1;
+  j = 0;
+  while(i > j)
+  {
+    int temp = a[i];
+    a[i] = a[j];
+    a[j] = temp;
+    i--;
+    j++;
+  }
+
+  //Output contents of now-reversed array.
+  for(i = 0; i < len; i++)
+    printf("%d ", a[i])
+```
+### :dart:By StringBuilder / StringBuffer:<br> 
+```
+
+```
 ### :dart:By StringBuilder / StringBuffer:<br> 
 ```
 
