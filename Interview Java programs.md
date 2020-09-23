@@ -44,6 +44,21 @@ This is true if obj1 is exactly of type int. If obj1 derives from int, the if co
 if (obj1 is int)
 This is true if obj1 is an int, or if it derives from a class called int, or if it implements an interface called int.
 ```
+### :dart:Java program to Type casting<br> 
+Java – Convert String to int using Integer.parseInt(String)<br>
+```
+String str = "1234";
+int inum = Integer.parseInt(str);
+```
+Java – Convert String to int using Integer.valueOf(String)
+```
+String str="1122ab";
+int num = Integer.valueOf(str);
+```
+<strong>Differences between Integer.parseInt() and Integer.valueOf()<\strong>
+### :dart:Java program to Type casting<br> 
+```
+```
 ### :dart:Java program to check whether two strings are anagram or not? <br> 
 ```
 import java.util.Arrays;  
