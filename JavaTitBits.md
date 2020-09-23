@@ -29,6 +29,62 @@ public class AnagramString {
     }  
 }  
 ```
+### :dart:How To Non repeating character in a string?
+```
+String intitialString = "statistic non";
+        int count = 0;
+        char[] ch = intitialString.toCharArray();
+        for (int i = 0; i < ch.length; i++) {
+            for (int j = 0; j < ch.length; j++) {
+                if (ch[i] == ch[j]) {
+                    count++;
+                }
+            }
+            if (count > 1) {
+                count = 0;
+            } else
+                System.out.println(ch[i]);
+        }
+output
+
+a
+c
+o
+```
+```
+// We keep only a map of between tha char and the number of
+// occurrences. We don't store the positions for the next (after first)
+// occurrences, but the LinkedHashMap guarantees that
+// the iteration order is the same as  insertion order
+// (so first inserted letters will appear first when iterating)
+LinkedHashMap<Character, Integer> charOccurs=new LinkedHashMap<>();
+
+for(char c : str) {
+  Integer occ=charOccurs.get(c);
+  if(null==occ) {
+    occ=0;
+  }
+  else {
+    occ=new Integer(occ.intValue()+1);
+  }
+  // "Note that insertion order is not affected 
+  // if a key is re-inserted into the map."
+  // Niiice!
+  charOccurs.put(c, occ);
+}
+
+int order=1;
+for(Map.Entry<Character, Integer> entry : charOccurs.entrySet()) {
+  // this works because ...
+  // "This linked list defines the iteration ordering,
+  // which is normally the order in which keys were inserted"
+  // Doubly-nice!!!
+  if(1==entry.getValue()) { // single occurrence
+    System.out.println("Char: "+entry.getKey()+" order: "+order);
+    order++; 
+  }
+}
+```
 ## How to reverse String in Java
 
 ### :dart:By StringBuilder / StringBuffer:<br> 
