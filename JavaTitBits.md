@@ -54,23 +54,28 @@ lawsiaj oonos ma I
 ```
 ### :dart:By Reverse Iteration :<br> 
 ```
-public class StringFormatter {  
-public static String reverseString(String str){  
-    char ch[]=str.toCharArray();  
-    String rev="";  
-    for(int i=ch.length-1;i>=0;i--){  
-        rev+=ch[i];  
-    }  
-    return rev;  
-}  
-}  
+class ReverseString
+{
+  public static void main(String args[])
+  {
+    String original, reverse = "";
+    Scanner in = new Scanner(System.in);
 
-public class TestStringFormatter {  
-public static void main(String[] args) {  
-    System.out.println(StringFormatter.reverseString("my name is khan"));  
-    System.out.println(StringFormatter.reverseString("I am sonoo jaiswal"));      
-    }  
-}  
+    System.out.println("Enter a string to reverse");
+    original = in.nextLine();
+
+    int length = original.length();
+
+    for (int i = length - 1 ; i >= 0 ; i--)
+      reverse = reverse + original.charAt(i);
+
+    System.out.println("Reverse of the string: " + reverse);
+  }
+}
+Input:
+"my name is khan"
+"I am sonoo jaiswal"    
+   
 Output:
 
 nahk si eman ym
