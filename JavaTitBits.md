@@ -29,6 +29,57 @@ public class AnagramString {
     }  
 }  
 ```
+## How to reverse String in Java
+
+### :dart:By StringBuilder / StringBuffer:<br> 
+```
+public class StringFormatter {  
+public static String reverseString(String str){  
+    StringBuilder sb=new StringBuilder(str);  
+    sb.reverse();  
+    return sb.toString();  
+}  
+}  
+
+public class TestStringFormatter {  
+public static void main(String[] args) {  
+    System.out.println(StringFormatter.reverseString("my name is khan"));  
+    System.out.println(StringFormatter.reverseString("I am sonoo jaiswal"));      
+    }  
+}  
+Output:
+
+nahk si eman ym
+lawsiaj oonos ma I
+```
+### :dart:By Reverse Iteration :<br> 
+```
+public class StringFormatter {  
+public static String reverseString(String str){  
+    char ch[]=str.toCharArray();  
+    String rev="";  
+    for(int i=ch.length-1;i>=0;i--){  
+        rev+=ch[i];  
+    }  
+    return rev;  
+}  
+}  
+
+public class TestStringFormatter {  
+public static void main(String[] args) {  
+    System.out.println(StringFormatter.reverseString("my name is khan"));  
+    System.out.println(StringFormatter.reverseString("I am sonoo jaiswal"));      
+    }  
+}  
+Output:
+
+nahk si eman ym
+lawsiaj oonos ma I
+```
+### :dart:By StringBuilder / StringBuffer:<br> 
+```
+
+```
 ## HashMap – Single Key and Multiple Values Example <br> 
 ### Scenario <br> 
 HashMap can be used to store key-value pairs. But sometimes you may want to store multiple values for the same key.
