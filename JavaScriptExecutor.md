@@ -45,6 +45,9 @@ Js.executeScript(“arguments[0].setAttribute(‘style’, ’background: blue; 
 ### :dart: Total Frames in Browser:
 ```
 JS.executeScript("document.frames.length;");
+Or
+JS.executeScript
+document.getElementsByTagName("iframe").length;");
 ```
 ### :dart: Selenium WebDriver get Current frame:
 ```
