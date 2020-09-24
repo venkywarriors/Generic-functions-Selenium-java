@@ -72,6 +72,44 @@ Convert.ToInt16("100"); // returns short
 Convert.ToInt16(null);//returns 0
 ```
 Both int.Parse and Convert.ToInt32 are used to convert string into the integer but Only difference between them is to Convert.ToInt32 handle null and returns '0' as output and int.parse is not going to handle NULL and will give a Argument Null Exception.
+### :dart:Replacing a character every occurrence in a string in java
+```
+public static void main(String| args) {
+//input:"HELLO WORLD"
+//OUTPUT:" HExxx0 WORxxxD
+String s="HELLO WORLD";
+String z="";
+int count=1;
+for(int i=0;i<s.length():i++) {
+if(s.charAt(i)=="'L) {
+for(int j=0;j<count;j++) {
+Z=Z+'X'; 
+}
+count++
+else{
+Z=Z+s.charAt(i);
+}}
+System.out.printin(z);
+}
+```
+```
+//input:"HELLO WORLD"
+//OUTPUT:" HExxx0 WORxxxD
+String s="HELLO WORLD";
+String z="";
+Stringbuilder array=new Stringbuilder(s);
+for(int I=O; I<array.length; I++)
+{
+If (array[I]=='L')
+{
+z+='X'; 
+array.remove(I,1);
+array.insert(I,z);
+}
+}
+s=array.Tostring();
+Console.writeline
+```
 ### :dart:Java program to check whether two strings are anagram or not? <br> 
 ```
 import java.util.Arrays;  
