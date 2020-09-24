@@ -23,6 +23,11 @@ if (value instanceof Integer) {
 ```
 #### Difference between instanceof and getClass() method
 instanceof operator returns true, even if compared with subclass, for example, Subclass instanceof Superclass is true, but with getClass() its false. By using getClass() you ensure that your equals() implementation doesn't return true if compared with subclass object.
+### :dart: Difference between StringBuffer and StringBuilder
+* StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously
+* StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously
+* StringBuffer is less efficient than StringBuilder
+* StringBuilder is more efficient than StringBuffer
 ### :dart: How to identify object types in C#:<br>
 <strong>typeof </strong>takes a type name (which you specify at compile time).<br>
 <strong>GetType </strong>gets the runtime type of an instance.<br>
