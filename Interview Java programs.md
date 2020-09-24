@@ -183,28 +183,27 @@ o
 // occurrences, but the LinkedHashMap guarantees that
 // the iteration order is the same as  insertion order
 // (so first inserted letters will appear first when iterating)
-LinkedHashMap<Character, Integer> charOccurs=new LinkedHashMap<>();
-
+LinkedHashMap<Character, Integer> charCountMap=new LinkedHashMap<>();
+char[] str = inputString.toCharArray();
 for(char c : str) {
-  Integer occ=charOccurs.get(c);
-  if(null==occ) {
-    occ=0;
-  }
-  else {
-    occ=new Integer(occ.intValue()+1);
-  }
-  // "Note that insertion order is not affected 
-  // if a key is re-inserted into the map."
-  // Niiice!
-  charOccurs.put(c, occ);
+  if (charCountMap.containsKey(c)) { 
+                // If char is present in charCountMap, 
+                // incrementing it's count by 1 
+                charCountMap.put(c, charCountMap.get(c) + 1); 
+            } 
+            else { 
+                // If char is not present in charCountMap, 
+                // putting this char to charCountMap with 1 as it's value 
+                charCountMap.put(c, 1); 
+            } 
 }
 
 int order=1;
-for(Map.Entry<Character, Integer> entry : charOccurs.entrySet()) {
+for(Map.Entry<Character, Integer> entry : charCountMap.entrySet()) {
   // this works because ...
   // "This linked list defines the iteration ordering,
   // which is normally the order in which keys were inserted"
-  // Doubly-nice!!!
+  
   if(1==entry.getValue()) { // single occurrence
     System.out.println("Char: "+entry.getKey()+" order: "+order);
     order++; 
