@@ -110,6 +110,20 @@ array.insert(I,z);
 s=array.Tostring();
 Console.writeline
 ```
+### :dart:Replace all occurrences of a character with just a character
+```
+string strTest = "%%%A%%B%%C%%";
+        string strPattern = "%+";
+        RegexOptions opt = RegexOptions.IgnoreCase;
+        var reg = new Regex(strPattern, opt);
+        var strReplaceResult = reg.Replace(strTest, "%");
+result will be "%A%B%C%"
+
+private static string TruncatePercents(string input)
+{
+    return Regex.Replace(input, @"%+", "%");
+}
+```
 ### :dart:Java program to check whether two strings are anagram or not? <br> 
 ```
 import java.util.Arrays;  
