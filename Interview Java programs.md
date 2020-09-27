@@ -446,19 +446,16 @@ import java.lang.*;
  
 class GFG { 
     // Function to sort the elements of the array 
-
     // from index a to index b 
 
     static void partSort(int[] arr, int N, int a, int b) 
     { 
-        // Variables to store start and end  
-        // of the index range 
+        // Variables to store start and end of the index range 
 
         int l = Math.min(a, b); 
         int r = Math.max(a, b); 
 
-        // Sort the subarray from arr[l] to 
-        // arr[r] 
+        // Sort the subarray from arr[l] to arr[r]  
 
         Arrays.sort(arr, l, r+1); 
 
