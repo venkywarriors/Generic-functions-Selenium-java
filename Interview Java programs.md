@@ -433,7 +433,46 @@ Output:
 Second Largest: 5
 Second Largest: 77
 ```
-### :dart:By StringBuilder / StringBuffer:<br> 
+### :dart:Sort the array in a given index range:<br> 
+Input: arr[] = {7, 8, 4, 5, 2}, a = 1, b = 4
+Output: 7 2 4 5 8
+For the index range [1, 4] we get the elements 8, 4, 5 and 2
+On sorting these elements we get 2, 4, 5 and 8.
+So the array is modified as {7, 2, 4, 5, 8}
 ```
+import java.io.*; 
+import java.util.*; 
+import java.lang.*; 
+ 
+class GFG { 
+    // Function to sort the elements of the array 
 
+    // from index a to index b 
+
+    static void partSort(int[] arr, int N, int a, int b) 
+    { 
+        // Variables to store start and end  
+        // of the index range 
+
+        int l = Math.min(a, b); 
+        int r = Math.max(a, b); 
+
+        // Sort the subarray from arr[l] to 
+        // arr[r] 
+
+        Arrays.sort(arr, l, r+1); 
+
+        // Print the modified array 
+
+        for (int i = 0; i < N; i++)  
+            System.out.print(arr[i] + " "); 
+    }
+    public static void main(String args[]) 
+    { 
+        int[] arr = { 7, 8, 4, 5, 2 }; 
+        int a = 1, b = 4; 
+        int N = arr.length; 
+        partSort(arr, N, a, b); 
+    } 
+} 
 ```
