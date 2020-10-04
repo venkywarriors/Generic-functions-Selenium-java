@@ -21,6 +21,7 @@ if (value instanceof Integer) {
         System.out.println("This is a Float");
     }
 ```
+<a href="https://www.javamadesoeasy.com/2015/04/hashmap-vs-hashtable-vs-linkedhashmap.html?m=1">Differences between HashMap, Hashtable, LinkedHashMap and TreeMap in java</a>
 #### Difference between instanceof and getClass() method
 instanceof operator returns true, even if compared with subclass, for example, Subclass instanceof Superclass is true, but with getClass() its false. By using getClass() you ensure that your equals() implementation doesn't return true if compared with subclass object.
 ### :dart: Difference between StringBuffer and StringBuilder
