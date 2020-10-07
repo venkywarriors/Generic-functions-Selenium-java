@@ -17,7 +17,19 @@ String browserName = caps.getBrowserName();
 String browserVersion = caps.getVersion();
 System.out.println(browserName+" "+browserVersion);
 ```
-### :dart: How to identify object types in java:
+### :dart:VBS file from Java:
+```
+public static void main(String[] args) {
+   try {
+      Runtime.getRuntime().exec( "wscript D:/Send_Mail_updated.vbs" );
+   }
+   catch( IOException e ) {
+      System.out.println(e);
+      System.exit(0);
+   }
+}
+```
+### :dart:How to identify object types in java:
 ```
 public void test(Object value) {
 
