@@ -24,6 +24,7 @@ Selenium scripts use Robot class for automating the browser and desktop pop-ups,
 <br>Then from where does this class come?<br>It doesn’t reside in Web Driver API; it is part of the Java API awt package<br>
 <a href="https://www.softwaretestinghelp.com/java-robot-class-in-selenium/amp/">How to use Robot Class</a><br>
 ## Test Automation for Windows Desktop Applications using Winium
+a href="https://defectracker.com/2019/09/20/1363/">Winium sample code snippet</a>
 ```
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
