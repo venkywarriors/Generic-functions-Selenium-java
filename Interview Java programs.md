@@ -48,6 +48,49 @@ public static void Separate(String str)
     System.out.println("Numbers in String:"+number);   
 }
 ```
+### :dart:Remove duplicates from a given string? :
+```
+StringBuilder sb = new StringBuilder();
+int idx;
+for (int i = 0; i < str.length(); i++) {
+    char c = str.charAt(i);
+    idx = str.indexOf(c, i + 1);
+    if (idx == -1) {
+        sb.append(c);
+    }
+}
+```
+```
+char[] chars = str.toCharArray();
+StringBuilder sb = new StringBuilder();
+boolean repeatedChar;
+for (int i = 0; i < chars.length; i++) {
+    repeatedChar = false;
+    for (int j = i + 1; j < chars.length; j++) {
+        if (chars[i] == chars[j]) {
+            repeatedChar = true;
+            break;
+        }
+    }
+    if (!repeatedChar) {
+        sb.append(chars[i]);
+    }
+}
+```
+```
+StringBuilder sb = new StringBuilder();
+if(!str.isEmpty()) {
+    char[] chars = str.toCharArray();
+    Arrays.sort(chars);
+ 
+    sb.append(chars[0]);
+    for (int i = 1; i < chars.length; i++) {
+        if (chars[i] != chars[i - 1]) {
+            sb.append(chars[i]);
+        }
+    }
+}
+```
 ### :dart:How to find the JVM version from a program? :
 ```
 System.getProperty("java.version")
