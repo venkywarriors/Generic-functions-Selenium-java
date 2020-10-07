@@ -25,6 +25,10 @@ js.executeScript("arguments[0].style.display = 'block'", element );
 JavascriptExecutor js = (JavascriptExecutor)driver;
 js.executeScript("alert('hello world');");
 ```
+### :dart:Browser name using JavaScriptExecutor: 
+```
+String s = (String) ((JavascriptExecutor) driver).executeScript("return navigator.userAgent;");
+```
 ### :dart:Highlight the web elements using JavaScriptExecutor: 
 ```
 WebElement ele = driver.findElement(By.xpath(“xpath_expression”));
