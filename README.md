@@ -24,8 +24,47 @@ Selenium scripts use Robot class for automating the browser and desktop pop-ups,
 <br>Then from where does this class come?<br>It doesn’t reside in Web Driver API; it is part of the Java API awt package<br>
 <a href="https://www.softwaretestinghelp.com/java-robot-class-in-selenium/amp/">How to use Robot Class</a><br>
 ## Test Automation for Windows Desktop Applications using Winium
+```
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.winium.DesktopOptions;
+import org.openqa.selenium.winium.WiniumDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 
+public class sampleTest {
+    public static void main(String[] args) throws MalformedURLException, InterruptedException {
+        WiniumDriver driver = null;
+        String appPath = "C:/windows/system32/calc.exe";
+        DesktopOptions option = new DesktopOptions();
+        option.setApplicationPath(appPath);
+        option.setDebugConnectToRunningApp(false);
+        option.setLaunchDelay(2);
+        driver = new WiniumDriver(new URL("http://localhost:9999"),option);
+        Thread.sleep(1000);
+        WebElement window =  driver.findElementByClassName("CalcFrame");
+        WebElement menuItem = window.findElement(By.id("MenuBar")).findElement(By.name("View"));
+        menuItem.click();
+        driver.findElementByName("Scientific").click();
+
+        window.findElement(By.id("MenuBar")).findElement(By.name("View")).click();
+        driver.findElementByName("History").click();
+
+        window.findElement(By.id("MenuBar")).findElement(By.name("View")).click();
+        driver.findElementByName("History").click();
+
+        window.findElement(By.id("MenuBar")).findElement(By.name("View")).click();
+        driver.findElementByName("Standard").click();
+
+        driver.findElementByName("4").click();
+        driver.findElementByName("Add").click();
+        driver.findElementByName("5").click();
+        driver.findElementByName("Equals").click();
+        driver.close();
+    }
+}
+```
 
 
 
