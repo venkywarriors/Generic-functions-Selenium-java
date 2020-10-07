@@ -1,4 +1,15 @@
 <a href="https://www.browserstack.com/guide/how-to-find-broken-links-in-selenium">Finding Broken Links in Selenium</a>
+### :dart:Java code to find length of the String without using length method
+```
+   public static void main(String args[]) throws Exception {
+      String str = "sampleString";
+      int i = 0;
+      for(char c: str.toCharArray()) {
+         i++;
+      }
+      System.out.println("Length of the given string ::"+i);
+   }
+```
 ### :dart:Java program to separate alphabets and numbers from string
 ```
 public static void separate(String string) {
