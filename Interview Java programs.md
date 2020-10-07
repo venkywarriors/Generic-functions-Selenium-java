@@ -6,6 +6,16 @@ System.getProperty("user.name")
 InetAddress.getLocalHost().getHostName()
 InetAddress.getLocalHost().getHostAddress()
 
+//make sure have correct import statements - I had to add these
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+WebDriver driver = new FirefoxDriver();
+
+Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
+String browserName = caps.getBrowserName();
+String browserVersion = caps.getVersion();
+System.out.println(browserName+" "+browserVersion);
 ```
 ### :dart: How to identify object types in java:
 ```
