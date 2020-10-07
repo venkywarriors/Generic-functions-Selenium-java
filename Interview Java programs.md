@@ -1,3 +1,12 @@
+### :dart:How to find the JVM version from a program? :
+```
+System.getProperty("java.version")
+System.getProperty("os.name")
+System.getProperty("user.name")
+InetAddress.getLocalHost().getHostName()
+InetAddress.getLocalHost().getHostAddress()
+
+```
 ### :dart: How to identify object types in java:
 ```
 public void test(Object value) {
