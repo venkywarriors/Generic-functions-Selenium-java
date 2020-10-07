@@ -19,7 +19,10 @@ Most of the web applications are developed using Ajax and Javascript. When a pag
 Action Class in Selenium is a built-in feature provided by the selenium for handling keyboard and mouse events. It includes various operations such as multiple events clicking by control key, drag and drop events and many more. These operations from the action class are performed using the advanced user interaction API in Selenium Webdriver.
 <br>
 <a href="https://www.toolsqa.com/selenium-webdriver/actions-class-in-selenium/">How to use Action Class</a><br>
-
+## Need for Robot class
+Selenium scripts use Robot class for automating the browser and desktop pop-ups, but the exciting thing is this class is not part of org.openqa.selenium package of Web Driver API.
+<br>Then from where does this class come?<br>It doesn’t reside in Web Driver API; it is part of the Java API awt package
+<a href="https://www.softwaretestinghelp.com/java-robot-class-in-selenium/amp/">How to use Robot Class</a><br>
 
 
 
