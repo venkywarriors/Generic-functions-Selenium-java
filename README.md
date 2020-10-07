@@ -23,7 +23,9 @@ Action Class in Selenium is a built-in feature provided by the selenium for hand
 Selenium scripts use Robot class for automating the browser and desktop pop-ups, but the exciting thing is this class is not part of org.openqa.selenium package of Web Driver API.
 <br>Then from where does this class come?<br>It doesn’t reside in Web Driver API; it is part of the Java API awt package<br>
 <a href="https://www.softwaretestinghelp.com/java-robot-class-in-selenium/amp/">How to use Robot Class</a><br>
-## Test Automation for Windows Desktop Applications using Winium
+## Test Automation for Windows Desktop Applications 
+### Winium 
+Winium is a Selenium-based tool for testing and automating desktop applications on a Windows desktop. It uses selenium-based libraries however the community has made only two releases and there is no active work or maintenance since then<br>
 <a href="https://defectracker.com/2019/09/20/1363/">Winium sample code snippet</a>
 ```
 import org.openqa.selenium.By;
@@ -66,8 +68,11 @@ public class sampleTest {
     }
 }
 ```
+### WinAppDriver Test Automation Framework
+WinAppDriver uses selenium-like libraries and is actively supported by the community and is developed by the makers of Windows OS – Microsoft. Windows Application Driver supports Selenium-like UI test automation for Windows applications. The service supports automated testing of Universal Windows Platform (UWP), Windows Forms (WinForms), Windows Presentation Foundation (WPF), and Classic Windows (Win32) apps on the Windows 10 operating system. Winappdriver complies with the JSON Wire Protocol and some application management functionalities defined by Appium. This service provides better support for using Appium to test Windows Applications.
 
 
-
+```
+```
 
 
