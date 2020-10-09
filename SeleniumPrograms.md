@@ -17,6 +17,16 @@ public static void switchWindow(String text) {
     }
 }
 ```
+### :dart:How to block the pop-up windows in chrome by Selenium
+```
+System.setProperty("webdriver.chrome.driver", "//chrome path in system//");
+    ChromeOptions options  = new ChromeOptions();
+    //options.addArguments("incognito");
+    options.addArguments("--disable-popup-blocking");
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+    capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+    driver = new ChromeDriver(capabilities);
+```
 ### :dart:Read CSV File in selenium Sample Java code given below: <br> 
 ```
 import java.io.File;
