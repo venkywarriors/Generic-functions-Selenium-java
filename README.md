@@ -72,5 +72,4 @@ public class sampleTest {
 WinAppDriver uses selenium-like libraries and is actively supported by the community and is developed by the makers of Windows OS – Microsoft. Windows Application Driver supports Selenium-like UI test automation for Windows applications. The service supports automated testing of Universal Windows Platform (UWP), Windows Forms (WinForms), Windows Presentation Foundation (WPF), and Classic Windows (Win32) apps on the Windows 10 operating system. Winappdriver complies with the JSON Wire Protocol and some application management functionalities defined by Appium. This service provides better support for using Appium to test Windows Applications.
 <br><a href="https://medium.com/software-testing-break-and-improve/tutorial-windows-app-automation-using-winappdriver-and-java-5be661335b25">WinAppDriver with Java</a><br>
 <a href="https://www.automatetheplanet.com/automate-windows-desktop-apps-winappdriver/">WinAppDriver with C#</a><br>
-<a href="
-https://www.softwaretestingmaterial.com/headless-browser-testing-using-htmlunitdriver/">HTML unit driver</a><br>
+<a href="https://www.softwaretestingmaterial.com/headless-browser-testing-using-htmlunitdriver/">HTML unit driver</a><br>
