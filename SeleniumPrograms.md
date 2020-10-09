@@ -17,15 +17,38 @@ public static void switchWindow(String text) {
     }
 }
 ```
-### :dart:How to block the pop-up windows in chrome by Selenium
+### :dart:How to block the pop-up windows by Selenium
 ```
 System.setProperty("webdriver.chrome.driver", "//chrome path in system//");
     ChromeOptions options  = new ChromeOptions();
     //options.addArguments("incognito");
-    options.addArguments("--disable-popup-blocking");
+    options.addArguments("--disable-popup-blocking");  //chrome 42 older
+    options.setExperimentalOption("excludeSwitches", "disable-popup-blocking"); // chrome 43
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability(ChromeOptions.CAPABILITY, options);
     driver = new ChromeDriver(capabilities);
+```
+```
+import org.openqa.selenium.chrome.FirefoxDriver;
+import org.openqa.selenium.chrome.Preferences;
+
+FirefoxProfile customProfile = new FirefoxProfile();
+customProfile.setPreference("dom.disable_beforeunload", true);
+FirefoxDriver driver = new FirefoxDriver(customProfile);
+```
+IE 11 Popup Blocker issue
+```
+Registry Location: HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\New Windows
+
+Registry Value Name: PopupMgr
+
+String cmd = "REG ADD \"HKEY_CURRENT_USER\\Software\\Microsoft\\
+       Internet Explorer\\New Windows\" /F /V \"PopupMgr\" /T REG_SZ /D \"yes\"";
+try {
+    Runtime.getRuntime().exec(cmd);
+} catch (Exception e) {
+    System.out.println("Error ocured!");
+}
 ```
 ### :dart:Read CSV File in selenium Sample Java code given below: <br> 
 ```
