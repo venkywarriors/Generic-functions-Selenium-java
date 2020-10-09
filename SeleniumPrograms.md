@@ -49,6 +49,15 @@ try {
 } catch (Exception e) {
     System.out.println("Error ocured!");
 }
+
+DesiredCapabilities ieCapabilities =new DesiredCapabilities();
+ieCapabilities.setCapability("disable-popup-blocking", true);
+or
+ieCapabilities.setCapability("unexpectedAlertBehaviour","accept");
+or
+ieCapabilities.setCapability("browserstack.ie.enablePopups","accept");
+
+To completely disable the pop-up, go to Tools > Options > Content and check the option for Block pop-up windows
 ```
 ### :dart:Read CSV File in selenium Sample Java code given below: <br> 
 ```
