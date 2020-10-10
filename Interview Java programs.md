@@ -1,6 +1,7 @@
 <a href="https://www.browserstack.com/guide/how-to-find-broken-links-in-selenium">Finding Broken Links in Selenium</a><br>
 <a href="https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/amp/">Read input Java</a><br>
 <a href="https://www.javatpoint.com/access-modifiers">Access Modifiers in Java</a><br>
+<a href="https://www.toolsqa.com/selenium-webdriver/webdrivermanager/">WebDriver Manager</a><br>(
 ### :dart:Java code to find length of the String without using length method
 ```
    public static void main(String args[]) throws Exception {
@@ -28,7 +29,7 @@ public final class Trial // it is the FINAL
     }
 }
 ```
-### :Are static variables inherited
+### :dart:Are static variables inherited
 ```
 public class Parent {
     static String str = "Parent";
