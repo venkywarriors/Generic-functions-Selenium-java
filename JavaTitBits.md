@@ -368,7 +368,7 @@ Rahul
 * Memory: Keeping the insertion order in both LinkedHashmap and LinkedHashset have additional associated costs, both in terms of spending additional CPU cycles and needing more memory.
 * Replacement: LinkedHashMap replace value with duplicate key while LinkedHashSet not change original value.
 Operation: LinkedHashMap does a mapping of keys to values while LinkedHashSet simply stores a collection of things.
-### Static variables are shared among all the instances of class
+### :dart: Static variables are shared among all the instances of class
 In this example, String variable is non-static and integer variable is Static. As you can see in the output that the non-static variable is different for both the objects but the static variable is shared among them, thats the reason the changes made to the static variable by object ob2 reflects in both the objects.
 ```
 class JavaExample{
