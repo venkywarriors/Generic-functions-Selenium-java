@@ -12,7 +12,7 @@
       System.out.println("Length of the given string ::"+i);
    }
 ```
-### :How to create a class which is not inheritable and static in java?
+###  :dart:How to create a class which is not inheritable and static in java?
 ```
 public final class Trial // it is the FINAL
 {
