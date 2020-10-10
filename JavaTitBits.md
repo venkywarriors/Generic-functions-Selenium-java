@@ -368,5 +368,45 @@ Rahul
 * Memory: Keeping the insertion order in both LinkedHashmap and LinkedHashset have additional associated costs, both in terms of spending additional CPU cycles and needing more memory.
 * Replacement: LinkedHashMap replace value with duplicate key while LinkedHashSet not change original value.
 Operation: LinkedHashMap does a mapping of keys to values while LinkedHashSet simply stores a collection of things.
-### sggd
+### Static variables are shared among all the instances of class
+In this example, String variable is non-static and integer variable is Static. As you can see in the output that the non-static variable is different for both the objects but the static variable is shared among them, thats the reason the changes made to the static variable by object ob2 reflects in both the objects.
+```
+class JavaExample{
+   //Static integer variable
+   static int var1=77; 
+   //non-static string variable
+   String var2;
 
+   public static void main(String args[])
+   {
+	JavaExample ob1 = new JavaExample();
+	JavaExample ob2 = new JavaExample();
+	/* static variables can be accessed directly without
+	 * any instances. Just to demonstrate that static variables
+	 * are shared, I am accessing them using objects so that 
+	 * we can check that the changes made to static variables
+	 * by one object, reflects when we access them using other
+	 * objects
+	 */
+        //Assigning the value to static variable using object ob1
+	ob1.var1=88;
+	ob1.var2="I'm Object1";
+        /* This will overwrite the value of var1 because var1 has a single 
+         * copy shared among both the objects.
+         */
+        ob2.var1=99;
+	ob2.var2="I'm Object2";
+	System.out.println("ob1 integer:"+ob1.var1);
+	System.out.println("ob1 String:"+ob1.var2);
+	System.out.println("ob2 integer:"+ob2.var1);
+	System.out.println("ob2 STring:"+ob2.var2);
+   }
+}
+```
+Output:
+```
+ob1 integer:99
+ob1 String:I'm Object1
+ob2 integer:99
+ob2 STring:I'm Object2
+```
