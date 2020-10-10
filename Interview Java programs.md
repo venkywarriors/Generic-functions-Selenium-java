@@ -28,6 +28,22 @@ public final class Trial // it is the FINAL
     }
 }
 ```
+### :Are static variables inherited
+```
+public class Parent {
+    static String str = "Parent";
+}
+
+public class Child extends Parent {
+    static String str = "Child";
+
+    public static void main(String [] args)
+    {
+        System.out.println(Child.str);
+    }
+}
+Now the output is "Child".
+```
 ### :dart:Java program to separate alphabets and numbers from string
 ```
 public static void separate(String string) {
