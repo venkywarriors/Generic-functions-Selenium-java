@@ -12,6 +12,22 @@
       System.out.println("Length of the given string ::"+i);
    }
 ```
+### :How to create a class which is not inheritable and static in java?
+```
+public final class Trial // it is the FINAL
+{
+    private static final int CONSTANT_VALUE = 666;
+
+    private Trial() // it is PRIVATE instead of PUBLIC
+    {
+    }
+
+    public static int getConstantValue()
+    {
+       return CONSTANT_VALUE;
+    }
+}
+```
 ### :dart:Java program to separate alphabets and numbers from string
 ```
 public static void separate(String string) {
