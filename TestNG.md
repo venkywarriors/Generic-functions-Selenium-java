@@ -825,6 +825,7 @@ SoftAssert softAssertion= new SoftAssert();
 System.out.println("softAssert Method Was Started");
 softAssertion.assertTrue(false);
 System.out.println("softAssert Method Was Executed");
+softAssertion.assertAll();
 }
 @Test
 public void hardAssert(){
