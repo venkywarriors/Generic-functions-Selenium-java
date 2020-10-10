@@ -73,3 +73,9 @@ WinAppDriver uses selenium-like libraries and is actively supported by the commu
 <br><a href="https://medium.com/software-testing-break-and-improve/tutorial-windows-app-automation-using-winappdriver-and-java-5be661335b25">WinAppDriver with Java</a><br>
 <a href="https://www.automatetheplanet.com/automate-windows-desktop-apps-winappdriver/">WinAppDriver with C#</a><br>
 <a href="https://www.softwaretestingmaterial.com/headless-browser-testing-using-htmlunitdriver/">HTML unit driver</a><br>
+### What is the sequence in which Maven searches for dependency libraries?
+When we execute Maven build commands, Maven starts looking for dependency libraries in the following sequence −<br>
+* Step 1 − Search dependency in local repository, if not found, move to step 2.
+* Step 2 − Search dependency in central repository, if not found and remote repository/repositories is/are mentioned then move to step 4. Else it is downloaded to local repository for future reference.
+* Step 3 − If a remote repository has not been mentioned, Maven simply stops the processing and throws error (Unable to find dependency).
+* Step 4 − Search dependency in remote repository or repositories, if found then it is downloaded to local repository for future reference. Otherwise, Maven stops processing and throws error (Unable to find dependency).
