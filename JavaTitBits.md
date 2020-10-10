@@ -368,4 +368,5 @@ Rahul
 * Memory: Keeping the insertion order in both LinkedHashmap and LinkedHashset have additional associated costs, both in terms of spending additional CPU cycles and needing more memory.
 * Replacement: LinkedHashMap replace value with duplicate key while LinkedHashSet not change original value.
 Operation: LinkedHashMap does a mapping of keys to values while LinkedHashSet simply stores a collection of things.
+### sggd
 
