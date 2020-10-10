@@ -811,7 +811,28 @@ but for our project you need to write the following command.
 Java –cp  "C:\Users\User\Desktop\Blitz\TestProject\lib\*;
   C:\Users\User\Desktop\Blitz\TestProject\bin" org.testng.TestNG testng.xml
 ```
+### :dart:How To Use Soft Assert In TestNG 
 ```
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+ 
+public class SoftAssertion {
+ 
+@Test
+public void softAssert(){
+SoftAssert softAssertion= new SoftAssert();
+System.out.println("softAssert Method Was Started");
+softAssertion.assertTrue(false);
+System.out.println("softAssert Method Was Executed");
+}
+@Test
+public void hardAssert(){
+System.out.println("hardAssert Method Was Started");
+Assert.assertTrue(false);
+System.out.println("hardAssert Method Was Executed");
+}
+}
 ```
 
 
