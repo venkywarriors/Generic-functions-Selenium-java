@@ -108,6 +108,40 @@ System.out.print(ch+" ");
 }
 System.out.print("\n");
 ```
+### :dart:Java program to revere string and maintain same case
+```
+import java.util.*;
+public class Simple{
+public static void main(String args[]){
+String name="I Have TesteD tHis";
+String[] splited=name.split(" ");
+String val="";
+for(String split:splited) {
+int i=0;
+char[] arr=split.toCharArray() ;
+int[] type=new int[arr.length];
+for(int k=0;k<arr.length;k++) {
+type[k]=Character.getType(arr[k]);
+}
+for(int j=arr.length-1;j>=0;j--) {
+if(type[i]==1) {
+char ch=arr[j];
+ch=Character.toUpperCase(ch);
+val=val+ch;
+}else if(type[i]==2) {
+char ch=arr[j];
+ch=Character.toLowerCase(ch);
+val=val+ch;
+}
+i=i+1;
+}
+val=val+" ";
+}
+System.out.println(val) ;
+}
+}
+//Output I Evah DetseT sIht
+```
 ### :dart:Java program to separate alphabets and numbers from string
 ```
 public static void separate(String string) {
