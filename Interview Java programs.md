@@ -91,6 +91,23 @@ public class Child extends Parent {
 }
 Now the output is "Child".
 ```
+### :dart:Program for Display Alphabets in Java
+```
+public static void main(String[] args) {
+        char c;
+        for(c = 'a'; c <= 'z'; ++c)
+            System.out.print(c + " ");
+    }
+```
+```
+char ch;
+//ASCII value for 'a-z' is 97-122 and 'A-Z' is 65-90
+for(ch=97; ch<=122; ch++)
+{
+System.out.print(ch+" ");
+}
+System.out.print("\n");
+```
 ### :dart:Java program to separate alphabets and numbers from string
 ```
 public static void separate(String string) {
