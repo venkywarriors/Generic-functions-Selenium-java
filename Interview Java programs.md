@@ -4,6 +4,7 @@
 <a href="https://www.toolsqa.com/selenium-webdriver/webdrivermanager/">WebDriver Manager</a><br>
 ### :dart:How to Print Pyramid Pattern in Java? 
 <a href="https://www.programiz.com/java-programming/examples/pyramid-pattern">Pyramid Pattern</a><br>
+<a href="https://www.edureka.co/blog/30-pattern-programs-in-java/amp/">Pyramid Patterns</a><br>
 ```
 public static void printTriagle(int n) 
 { 
