@@ -1,6 +1,23 @@
 ## Let’s see how to perform excel operations using Apache POI <br> 
 ### :dart:Write data to excel sheet using row number & column number: <br> 
 ```
+ public FileInputStream fis = null;
+    public FileOutputStream fos = null;
+    public XSSFWorkbook workbook = null;
+    public XSSFSheet sheet = null;
+    public XSSFRow row = null;
+    public XSSFCell cell = null;
+    String xlFilePath;
+ 
+    public ExcelApiTest(String xlFilePath) throws Exception
+    {
+        this.xlFilePath = xlFilePath;
+        fis = new FileInputStream(xlFilePath);
+        workbook = new XSSFWorkbook(fis);
+        fis.close();
+    }
+```
+```
 public boolean writeData(String sheetName, int rowNum, int colNumber,  String value)
     {
     	
