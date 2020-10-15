@@ -30,6 +30,45 @@ int n=2;
              System.out.println(i);
             }
 ```
+### :dart:How to Find Common Elements Between Two Arrays
+```
+int[] numArray1 = {1, 4, 5};
+  int[] numArray2 = {6, 1, 8, 34, 5};
+  // Outer loop
+  for(int i = 0; i < numArray1.length; i++){
+   for(int j = 0; j < numArray2.length; j++){// inner loop
+    if(numArray1[i] == numArray2[j]){
+     System.out.println(numArray1[i]);
+     break;
+    }
+   }
+
+
+List<Integer> l1 = new ArrayList<Integer>();
+
+l1.add(1);
+l1.add(2);
+l1.add(3);
+
+List<Integer> l2= new ArrayList<Integer>();
+l2.add(4);
+l2.add(2);
+l2.add(3);
+
+System.out.println("l1 == "+l1);
+System.out.println("l2 == "+l2);
+
+List<Integer> l3 = new ArrayList<Integer>(l2);
+l3.retainAll(l1);
+
+System.out.println("l3 == "+l3);
+Now, l3 should have only common elements between l1 and l2.
+
+CONSOLE OUTPUT
+l1 == [1, 2, 3]
+l2 == [4, 2, 3]
+l3 == [2, 3]
+```
 ### :dart:How to Print Pyramid Pattern in Java? 
 <a href="https://www.programiz.com/java-programming/examples/pyramid-pattern">Pyramid Pattern</a><br>
 <a href="https://www.edureka.co/blog/30-pattern-programs-in-java/amp/">Pyramid Patterns</a><br>
