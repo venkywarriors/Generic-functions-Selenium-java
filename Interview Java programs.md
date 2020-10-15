@@ -2,11 +2,10 @@
 <a href="https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/amp/">Read input Java</a><br>
 <a href="https://www.javatpoint.com/access-modifiers">Access Modifiers in Java</a><br>
 <a href="https://www.toolsqa.com/selenium-webdriver/webdrivermanager/">WebDriver Manager</a><br>
-### :dart:How to replace n occurence of char in a String? 
+### :dart:How to replace second occurence of char in a String? 
 ```
 String string1= "Helllo";
-int n=2;
-int first=string1.indexOf('l',string1.indexOf('l')+(n-1));
+int first=string1.indexOf('l',string1.indexOf('l')+1);
 StringBuilder SB = new StringBuilder(string1); 
 SB.setCharAt(first, 'k'); 
 System.out.println(SB);
@@ -14,7 +13,7 @@ System.out.println(SB);
 String string1= "Helllo";
 int n=2;
  int first=string1.indexOf('l');
- String newstr= string1.substring(0, first+(n-1));
+ String newstr= string1.substring(0, first+1);
  String newstr2= string1.substring(first+1, string1.length()).replaceFirst("l", "k");
  System.out.println(newstr+newstr2);
  
