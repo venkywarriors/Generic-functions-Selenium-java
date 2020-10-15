@@ -59,6 +59,19 @@ Output:
       System.out.println("Length of the given string ::"+i);
    }
 ```
+### Java program to delete vowels in a given string
+```
+public class RemoveVowelsInString
+{
+   public static void main(String[] args)
+   {
+      String str = "Deekshit Prasad";
+      System.out.println("Given string: " + str);
+      str = str.replaceAll("[AaEeIiOoUu]", "");
+      System.out.println("After deleting vowels in given a string: " + str);
+   }
+}
+```
 ###  :dart:How to create a class which is not inheritable and static in java?
 ```
 public final class Trial // it is the FINAL
