@@ -59,7 +59,7 @@ Output:
       System.out.println("Length of the given string ::"+i);
    }
 ```
-### Java program to delete vowels in a given string
+### :dart:Java program to delete vowels in a given string
 ```
 public class RemoveVowelsInString
 {
@@ -69,6 +69,17 @@ public class RemoveVowelsInString
       System.out.println("Given string: " + str);
       str = str.replaceAll("[AaEeIiOoUu]", "");
       System.out.println("After deleting vowels in given a string: " + str);
+   }
+}
+```
+Remove consonants from a string using regular expressions
+```
+public class RemovingConstants {
+   public static void main( String args[] ) {
+      String input = "Hi welc#ome to t$utori$alspoint";
+      String regex = "([^aeiouAEIOU0-9\\W]+)";
+      String result = input.replaceAll(regex, "");
+      System.out.println("Result: "+result);
    }
 }
 ```
