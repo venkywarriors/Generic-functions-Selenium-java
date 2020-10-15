@@ -59,6 +59,28 @@ Output:
       System.out.println("Length of the given string ::"+i);
    }
 ```
+### :dart:Split in Java
+In case you want to have the split character to end up in left hand side, use positive lookbehind by prefixing ?<= group on the pattern.
+```
+String string = "004-034556";
+String[] parts = string.split("(?<=-)");
+String part1 = parts[0]; // 004-
+String part2 = parts[1]; // 034556
+```
+In case you want to have the split character to end up in right hand side, use positive lookahead by prefixing ?= group on the pattern.
+```
+String string = "004-034556";
+String[] parts = string.split("(?=-)");
+String part1 = parts[0]; // 004
+String part2 = parts[1]; // -034556
+```
+If you'd like to limit the number of resulting parts, then you can supply the desired number as 2nd argument of split() method.
+```
+String string = "004-034556-42";
+String[] parts = string.split("-", 2); // string.split("[.-]") multiple delimited 
+String part1 = parts[0]; // 004
+String part2 = parts[1]; // 034556-42
+```
 ### :dart:Java program to delete vowels in a given string
 ```
 public class RemoveVowelsInString
