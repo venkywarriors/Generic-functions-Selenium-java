@@ -8,7 +8,7 @@
     public XSSFRow row = null;
     public XSSFCell cell = null;
     String xlFilePath;
- 
+
     public ExcelApiTest(String xlFilePath) throws Exception
     {
         this.xlFilePath = xlFilePath;
@@ -52,7 +52,7 @@ public String readExcelData(String sheetName,int rowNum, int colNum)
             sheet = workbook.getSheet(sheetName);
             row = sheet.getRow(rowNum-1);
             cell = row.getCell(colNum-1);
-     
+      HSSFDataFormatter formatter = new HSSFDataFormatter();
             return (formatter.formatCellValue(cell).trim());
         }
         catch(Exception e)
