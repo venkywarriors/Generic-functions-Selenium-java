@@ -2,6 +2,35 @@
 <a href="https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/amp/">Read input Java</a><br>
 <a href="https://www.javatpoint.com/access-modifiers">Access Modifiers in Java</a><br>
 <a href="https://www.toolsqa.com/selenium-webdriver/webdrivermanager/">WebDriver Manager</a><br>
+### :dart:How to replace n occurence of char in a String? 
+```
+String string1= "Helllo";
+int n=2;
+int first=string1.indexOf('l',string1.indexOf('l')+(n-1));
+StringBuilder SB = new StringBuilder(string1); 
+SB.setCharAt(first, 'k'); 
+System.out.println(SB);
+    
+String string1= "Helllo";
+int n=2;
+ int first=string1.indexOf('l');
+ String newstr= string1.substring(0, first+(n-1));
+ String newstr2= string1.substring(first+1, string1.length()).replaceFirst("l", "k");
+ System.out.println(newstr+newstr2);
+ 
+  String word, letter;
+        word = "test";
+        letter = "t";
+        int i = 0;
+
+        i = word.indexOf(letter);
+
+        while (i > -1) {
+            // store i in arrayList
+            i = word.indexOf(letter, i + 1);
+             System.out.println(i);
+            }
+```
 ### :dart:How to Print Pyramid Pattern in Java? 
 <a href="https://www.programiz.com/java-programming/examples/pyramid-pattern">Pyramid Pattern</a><br>
 <a href="https://www.edureka.co/blog/30-pattern-programs-in-java/amp/">Pyramid Patterns</a><br>
