@@ -14,7 +14,8 @@ This repository contains generic functions used in selenium java <br>
 ## Why Do We Need Waits In Selenium?
 Most of the web applications are developed using Ajax and Javascript. When a page is loaded by the browser the elements which we want to interact with may load at different time intervals.<br>
 <a href="https://www.browserstack.com/guide/wait-commands-in-selenium-webdriver">Selenium Wait</a><br>
-<a href="https://www.toolsqa.com/selenium-webdriver/wait-commands/">Wait commands</a>
+<a href="https://www.toolsqa.com/selenium-webdriver/wait-commands/">Wait commands</a><br>
+<a href="https://www.toolsqa.com/selenium-cucumber-framework/handle-ajax-call-using-javascriptexecutor-in-selenium/">Handle Ajax call Using JavaScriptExecut</a><br>
 ## Action Class in Selenium
 Action Class in Selenium is a built-in feature provided by the selenium for handling keyboard and mouse events. It includes various operations such as multiple events clicking by control key, drag and drop events and many more. These operations from the action class are performed using the advanced user interaction API in Selenium Webdriver.
 <br>
