@@ -182,8 +182,7 @@ screen.click(image3);
 	    <version>3.2.1</version>
 </dependency>
 ```
-Below code snippet to perform OCR
-https://www.geeksforgeeks.org/tesseract-ocr-with-java-with-examples/
+Below code snippet to perform <a href="https://www.geeksforgeeks.org/tesseract-ocr-with-java-with-examples/" title="Below code snippet to perform OCR">*OCR* </a><br>
 ```
 public static void main(String []args) {
 	 Tesseract tesseract = new Tesseract();
