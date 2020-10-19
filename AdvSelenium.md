@@ -174,6 +174,28 @@ screen.click(image3);
 }
 }
 ```
+### :dart:Image to text converter
+```
+<dependency>
+	    <groupId>net.sourceforge.tess4j</groupId>
+	    <artifactId>tess4j</artifactId>
+	    <version>3.2.1</version>
+</dependency>
+```
+Below code snippet to perform OCR
+https://www.geeksforgeeks.org/tesseract-ocr-with-java-with-examples/
+```
+public static void main(String []args) {
+	 Tesseract tesseract = new Tesseract();
+	 try {
+		tesseract.setDatapath("D:/DataScienceCollection/Jars/tessdata");
+		String text = tesseract.doOCR(new File("D:/DataScienceCollection/Images/digit.jpg"));		
+		System.out.print(text);
+	 } catch (TesseractException e) {		
+		e.printStackTrace();
+	}
+ }
+```
 ### :dart:How to read QR Code or Barcode from Images: <br> 
 Add Zxing libraries 'zxing-core-*.*.jar' , 'zxing-javase-*.*.jar' from the maven repository.
 ```
