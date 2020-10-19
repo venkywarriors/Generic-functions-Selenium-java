@@ -131,7 +131,9 @@ public void navigation() throws Exception{
 
 }
 ```
-
+### :dart:Sample Script-Integrate Sikuli with Selenium Webdriver
+```
+```
 ### :dart:How to read QR Code or Barcode from Images: <br> 
 Add Zxing libraries 'zxing-core-*.*.jar' , 'zxing-javase-*.*.jar' from the maven repository.
 ```
