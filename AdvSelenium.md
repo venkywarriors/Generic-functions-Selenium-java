@@ -131,10 +131,9 @@ public void navigation() throws Exception{
 
 }
 ```
-### :dart:Sample Script-Integrate Sikuli with Selenium Webdriver
-```
-//Loading an existing document
-      
+### :dart:Read data from File
+Java Program to extract text line by line from PDF using Apache PDFBox
+```    
       File file = new File("C:/PdfBox_Examples/new.pdf"); 
       or
       URL url = new URL ("url of web pdf");
@@ -149,6 +148,144 @@ public void navigation() throws Exception{
       //Retrieving text from PDF document
       String text = pdfStripper.getText(document);
       System.out.println(text);
+```
+```
+PDDocument
+document
+ 
+=
+ 
+null
+;
+        
+String
+ 
+fileName
+ 
+=
+ 
+"apache.pdf"
+;
+        
+try
+ {
+            
+document
+ 
+=
+ 
+PDDocument
+.
+load
+( 
+new
+ 
+File
+(
+fileName
+) );
+            
+PDFTextStripper
+stripper
+ 
+=
+ 
+new
+ 
+GetLinesFromPDF
+();
+            
+stripper
+.
+setSortByPosition
+( 
+true
+ );
+            
+stripper
+.
+setStartPage
+( 
+0
+ );
+            
+stripper
+.
+setEndPage
+( 
+document
+.
+getNumberOfPages
+() );
+            
+Writer
+dummy
+ 
+=
+ 
+new
+ 
+OutputStreamWriter
+(
+new
+ 
+ByteArrayOutputStream
+());
+            
+stripper
+.
+writeText
+(
+document
+, 
+dummy
+);
+            
+            
+// print lines
+            
+for
+(
+String
+ 
+line
+:
+lines
+){
+                
+System
+.
+out
+.
+println
+(
+line
+); 
+            
+}
+        
+}
+        
+finally
+ {
+            
+if
+( 
+document
+ 
+!=
+ 
+null
+ ) {
+                
+document
+.
+close
+();
+            
+}
+        
+}
 ```
 ### :dart:Sample Script-Integrate Sikuli with Selenium Webdriver
 ```
