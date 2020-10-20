@@ -281,7 +281,7 @@ FileUtils.copyFile(screenshot, screenshotLocation);
  	}
 
 ```
-### :dart:Get Browser Name Using JavascriptExecutor : <br> 
+### :dart:Open New Tab Using Selenium WebDriver 
 ```
 	 public void openNewTab(WebDriver driver) throws InterruptedException
 	 {
@@ -290,7 +290,7 @@ FileUtils.copyFile(screenshot, screenshotLocation);
 		Thread.sleep(5000);
    	 }
 ```
-### :dart:Open New Tab Using Selenium WebDriver : <br> 
+### :dart:Get Browser Name Using JavascriptExecutor : <br> 
 ```
 	public String browserName(Webdriver driver)
  	{
