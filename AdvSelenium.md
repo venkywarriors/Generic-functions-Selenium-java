@@ -149,6 +149,7 @@ Java Program to extract text line by line from PDF using Apache PDFBox
       String text = pdfStripper.getText(document);
       System.out.println(text);
 ```
+<a href="https://github.com/red6/pdfcompare">PdfCompare</a>
 ```
 ```
 ### :dart:Sample Script-Integrate Sikuli with Selenium Webdriver
