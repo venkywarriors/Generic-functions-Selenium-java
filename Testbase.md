@@ -33,6 +33,32 @@
 
 	}
 ```
+### :dart:How to switch to another Tab using Selenium WebDriver with Java
+```
+public boolean switchToTab(String tabName){
+    //count no of tab
+    ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+    System.out.println("No. of tabs: " + tabs.size());
+    ArrayList<String> tabList = new ArrayList<>();
+    for (int i =0;i<tab.size();i++){
+        tabList.add(i,driver.switchTo().window(tab.get(i)).getTitle());
+        driver.switchTo().window(tab.get(0));
+        if(tabList.get(i).equals(tabName)){
+            driver.switchTo().window(tab.get(i));
+                return true;
+        }
+    }
+    return false;
+}
+```
+```
+Robot r = new Robot();
+        r.keyPress(KeyEvent.VK_CONTROL);
+        r.keyPress(KeyEvent.VK_T);
+        r.keyRelease(KeyEvent.VK_CONTROL);
+        r.keyRelease(KeyEvent.VK_T);
+        Thread.sleep(1000);
+```
 ### :dart:WebDriver Wait For Page to Load: <br> 
 ```	
 	public void waitForPageLoaded(WebDriver driver) {
