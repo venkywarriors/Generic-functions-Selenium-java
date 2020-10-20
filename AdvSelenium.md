@@ -133,6 +133,25 @@ public void navigation() throws Exception{
 ```
 ### :dart:Sample Script-Integrate Sikuli with Selenium Webdriver
 ```
+//Loading an existing document
+      
+      File file = new File("C:/PdfBox_Examples/new.pdf"); 
+      or
+      URL url = new URL ("url of web pdf");
+      Inputstream ip = url.openstream();
+      BuffedInputstream file=new BuffedInputstream(IP); 
+
+      PDDocument document = PDDocument.load(file);
+
+      //Instantiate PDFTextStripper class
+      PDFTextStripper pdfStripper = new PDFTextStripper();
+
+      //Retrieving text from PDF document
+      String text = pdfStripper.getText(document);
+      System.out.println(text);
+```
+### :dart:Sample Script-Integrate Sikuli with Selenium Webdriver
+```
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.sikuli.script.FindFailed;
