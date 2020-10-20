@@ -150,7 +150,7 @@ public static void clearAndEnterText(WebElement element, String value)
 		js.executeScript("arguments[0].style.border=''", element);
 	}
 ```
-### :dart:Highlight Webelement: <br> 
+#### Highlight Webelement: <br> 
 ```	
 	public static void highlightElement(WebDriver driver, WebElement element) throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -179,7 +179,7 @@ public static void clearAndEnterText(WebElement element, String value)
 	}
 
 ```
-### :dart:Capture Screenshot Using Robot Class: <br> 
+#### Capture Screenshot Using Robot Class: <br> 
 ```	
 	public static String captureScreen(String screenshotPath, String fileName) {
 		if (fileName == "") {
@@ -200,7 +200,7 @@ public static void clearAndEnterText(WebElement element, String value)
 	}
 
 ```
-### :dart:Capture full Page ScreenShot using AShot : <br> 
+#### Capture full Page ScreenShot using AShot : <br> 
 ```	
 	public static String fullPageScreenshot (WebDriver driver, String screenshotPath, String fileName, String status) {
 		if (fileName == "") {
@@ -219,6 +219,39 @@ public static void clearAndEnterText(WebElement element, String value)
 		}
 		return destFile;
 	}
+```
+#### How to Capture WebElement Screenshot
+```
+WebElement element = driver.findElement(By.id("imagetrgt"));
+         
+        File source = ((TakesScreenshot)element).getScreenshotAs(OutputType.FILE);
+        FileHandler.copy(source, new File("./screenshots/element.png"));
+        Thread.sleep(3000);
+```
+Element screenshot by cropping entire page 
+```
+driver.get("http://www.google.com");
+WebElement ele = driver.findElement(By.id("hplogo"));
+
+// Get entire page screenshot
+File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+BufferedImage  fullImg = ImageIO.read(screenshot);
+
+// Get the location of element on the page
+Point point = ele.getLocation();
+
+// Get width and height of the element
+int eleWidth = ele.getSize().getWidth();
+int eleHeight = ele.getSize().getHeight();
+
+// Crop the entire page screenshot to get only element screenshot
+BufferedImage eleScreenshot= fullImg.getSubimage(point.getX(), point.getY(),
+    eleWidth, eleHeight);
+ImageIO.write(eleScreenshot, "png", screenshot);
+
+// Copy the element screenshot to disk
+File screenshotLocation = new File("C:\\images\\GoogleLogo_screenshot.png");
+FileUtils.copyFile(screenshot, screenshotLocation);
 ```
 ### :dart:Press Tab Key Using Action Class : <br> 
 ```
