@@ -107,6 +107,8 @@ getStarted.click();
 }
 ```
 ### :dart:How read Docx file in java?
+<a href="https://www.devglan.com/corejava/parsing-word-document-example
+">'Read data from Docx file'</a>
 ```
 import java.io.*;
 import org.apache.poi.hwpf.HWPFDocument;
@@ -164,7 +166,7 @@ public void navigation() throws Exception{
 
 }
 ```
-### :dart:Read data from File
+### :dart:Read data from PDF File
 Java Program to extract text line by line from PDF using Apache PDFBox
 ```    
       File file = new File("C:/PdfBox_Examples/new.pdf"); 
