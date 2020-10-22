@@ -836,7 +836,9 @@ System.out.println("hardAssert Method Was Executed");
 }
 ```
 ### :dart: what is verbose in testng.xml
-verbose attribute is used in the <suite> tag of testng.xml configuration file as shown below:
+Verbose Attribute lets you obtain clear reports through IDE console. This attribute will be placed inside the <Suite> tag of testng.xml as shown below
+<img src="http://1.bp.blogspot.com/-6VeGziyKtYI/UZs9AcKhB2I/AAAAAAAATrc/1tHdY9ihZdI/s1600/1.jpg" alt="Flowers in Chania">
+http://seleniumworks.blogspot.com/2014/01/testng-verbose-attribute-selenium-users.html?m=1
 
 
 
