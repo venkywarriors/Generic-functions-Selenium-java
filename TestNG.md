@@ -835,6 +835,11 @@ System.out.println("hardAssert Method Was Executed");
 }
 }
 ```
+### :dart: what is verbose in testng.xml
+verbose attribute is used in the <suite> tag of testng.xml configuration file as shown below:
+
+
+
 
 
 
