@@ -11,7 +11,6 @@ SB.setCharAt(first, 'k');
 System.out.println(SB);
     
 String string1= "Helllo";
-int n=2;
  int first=string1.indexOf('l');
  String newstr= string1.substring(0, first+1);
  String newstr2= string1.substring(first+1, string1.length()).replaceFirst("l", "k");
