@@ -2,6 +2,23 @@
 <a href="https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/amp/">Read input Java</a><br>
 <a href="https://www.javatpoint.com/access-modifiers">Access Modifiers in Java</a><br>
 <a href="https://www.toolsqa.com/selenium-webdriver/webdrivermanager/">WebDriver Manager</a><br>
+### :dart:Java Program to Check Armstrong Number
+```
+int c=0,a,temp;  
+    int n=153;//It is the number to check armstrong  
+    temp=n;  
+    while(n>0)  
+    {  
+    a=n%10;  
+    n=n/10;  
+    c=c+(a*a*a);  
+    }  
+    if(temp==c)  
+    System.out.println("armstrong number");   
+    else  
+        System.out.println("Not armstrong number");   
+   }  
+```
 ### :dart:How to replace second occurence of char in a String? 
 ```
 String string1= "Helllo";
