@@ -412,3 +412,5 @@ ob2 integer:99
 ob2 STring:I'm Object2
 ```
 <br><a href="https://www.javatpoint.com/final-keyword">Final keyword in java</a>
+<br><a href="https://beginnersbook.com/2013/05/abstract-class-vs-interface-in-java/">Difference Between Abstract Class and Interface in Java">
+<br><a href="https://howtodoinjava.com/java9/java9-private-interface-methods/">Private Methods in Interface – Java 9</a>
