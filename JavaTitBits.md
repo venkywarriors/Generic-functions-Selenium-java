@@ -416,3 +416,4 @@ ob2 STring:I'm Object2
 <br><a href="https://howtodoinjava.com/java9/java9-private-interface-methods/">Private Methods in Interface – Java 9</a>
 <br><a href="https://www.tutorialspoint.com/why-an-interface-doesn-t-have-a-constructor-whereas-an-abstract-class-have-a-constructor-in-java">Why an interface doesn't have a constructor whereas an abstract class have a constructor in Java?</a>
 <br><a href="https://way2java.com/oops-concepts/java-made-simple-java-private-abstract-method-with-example/">why abstract class private Method</a>
+<br><a href="https://www.tutorialspoint.com/Can-we-overload-or-override-a-static-method-in-Java">Can we overload or override a static method in Java?</a>
