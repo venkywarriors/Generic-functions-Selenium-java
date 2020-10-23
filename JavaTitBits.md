@@ -418,3 +418,4 @@ ob2 STring:I'm Object2
 <br><a href="https://way2java.com/oops-concepts/java-made-simple-java-private-abstract-method-with-example/">why abstract class private Method</a>
 <br><a href="https://www.tutorialspoint.com/Can-we-overload-or-override-a-static-method-in-Java">Can we overload or override a static method in Java?</a>
 <br><a href="https://www.java67.com/2015/06/can-you-overload-or-override-main-in-java.html?m=1">Can you Overload or Override main method in Java?</a>
+<br><a href="https://cs-fundamentals.com/tech-interview/java/why-does-main-method-have-to-be-static">Why is main method public static and void in Java</a>
