@@ -19,6 +19,97 @@ int c=0,a,temp;
         System.out.println("Not armstrong number");   
    }  
 ```
+### :dart:Java balanced expressions check {[()]}
+```
+import java.util.Stack;
+
+public class BalancedParenthensies {
+
+    public static void main(String args[]) {
+
+        System.out.println(balancedParenthensies("{(a,b)}"));
+        System.out.println(balancedParenthensies("{(a},b)"));
+        System.out.println(balancedParenthensies("{)(a,b}"));
+    }
+
+    public static boolean balancedParenthensies(String s) {
+        Stack<Character> stack  = new Stack<Character>();
+        for(int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if(c == '[' || c == '(' || c == '{' ) {     
+                stack.push(c);
+            } else if(c == ']') {
+                if(stack.isEmpty() || stack.pop() != '[') {
+                    return false;
+                }
+            } else if(c == ')') {
+                if(stack.isEmpty() || stack.pop() != '(') {
+                    return false;
+                }           
+            } else if(c == '}') {
+                if(stack.isEmpty() || stack.pop() != '{') {
+                    return false;
+                }
+            }
+
+        }
+        return stack.isEmpty();
+    }
+}
+```
+```
+import java.util.Stack;
+
+public class Balanced {
+    public static void main (String [] args)
+    {
+        String test_good = "()(){}{}{()}";
+        String test_bad = "((({}{}))()";
+
+        System.out.println(checkBalanced(test_good));
+        System.out.println(checkBalanced(test_bad));
+    }
+
+    public static boolean checkBalanced(String check)
+    {
+        Stack<Character> S = new Stack<Character>();
+        for(int a = 0; a < check.length(); a++)
+        {
+            char let = check.charAt(a);
+            if(let == '[' || let == '{' || let == '(')
+                S.push(let);
+            else if(let == ']' || let == '}' || let == ')')
+            {
+                if(S.empty())
+                    return false;
+                switch(let)
+                {
+                    // Opening square brace
+                    case ']':
+                        if (S.pop() != '[')
+                            return false;
+                        break;
+                    // Opening curly brace
+                    case '}':
+                        if (S.pop() != '{')
+                            return false;
+                        break;
+                    // Opening paren brace
+                    case ')':
+                        if (S.pop() != '(')
+                            return false;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        if(S.empty())
+            return true;
+        return false;
+    }
+}
+```
 ### :dart:How to replace second occurence of char in a String? 
 ```
 String string1= "Helllo";
