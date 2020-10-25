@@ -111,19 +111,26 @@ public class Balanced {
 }
 ```
 ### :dart:How to replace second occurence of char in a String? 
+The indexOf() method returns the position of the first occurrence of specified character(s) in a string.
+<br>
+Tip: Use the lastIndexOf method to return the position of the last occurrence of specified character(s) in a string.
 ```
 String string1= "Helllo";
 int first=string1.indexOf('l',string1.indexOf('l')+1);
 StringBuilder SB = new StringBuilder(string1); 
 SB.setCharAt(first, 'k'); 
 System.out.println(SB);
-    
+```
+public int indexOf(String str, int fromIndex, char)
+```
 String string1= "Helllo";
  int first=string1.indexOf('l');
  String newstr= string1.substring(0, first+1);
  String newstr2= string1.substring(first+1, string1.length()).replaceFirst("l", "k");
  System.out.println(newstr+newstr2);
- 
+ ```
+Returns: An int value, representing the index of the first occurrence of the character in the string, or -1 if it never occurs
+```
   String word, letter;
         word = "test";
         letter = "t";
