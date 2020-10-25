@@ -2,7 +2,7 @@
 <a href="https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/amp/">Read input Java</a><br>
 <a href="https://www.javatpoint.com/access-modifiers">Access Modifiers in Java</a><br>
 <a href="https://www.toolsqa.com/selenium-webdriver/webdrivermanager/">WebDriver Manager</a><br>
-<a href="https://www.tutorialspoint.com/how-to-delete-a-string-inside-a-file-txt-in-java">How to delete a string inside a file(.txt) in java</a><br>
+<a href="https://www.tutorialspoint.com/how-to-delete-a-string-inside-a-file-txt-in-java">How to delete a string inside a file(.txt)</a><br>
 ### :dart:Java Program to Check Armstrong Number
 ```
 int c=0,a,temp;  
