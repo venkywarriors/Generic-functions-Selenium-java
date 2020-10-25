@@ -111,6 +111,49 @@ public class Balanced {
     }
 }
 ```
+### :dart:How to count occurrences of a substring in string in Java?
+```       
+        String str = "JavaExamplesJavaCodeJavaProgram";
+        
+        String strFind = "Java";
+        int count = 0, fromIndex = 0;
+        
+        while ((fromIndex = str.indexOf(strFind, fromIndex)) != -1 ){
+            count++;
+            fromIndex++;            
+        }
+        
+        System.out.println("Total occurrences: " + count);
+```
+```
+String str = "JavaExamplesJavaCodeJavaProgram";
+ 
+int count = ( str.split(Pattern.quote("Java"), -1)).length ) - 1;
+System.out.println("Total occurrences: " + count);
+```
+Using the Apache Commons library
+```
+String str = "JavaExamplesJavaCodeJavaProgram";
+ 
+int count = StringUtils.countMatches(str, "Java"); 
+System.out.println("Total occurrences: " + count);
+```
+Using regular expression
+```
+String str = "JavaExamplesJavaCodeJavaProgram";
+ 
+int count = 0, startIndex = 0;
+ 
+Pattern p = Pattern.compile("Java", Pattern.LITERAL);
+Matcher m = p.matcher(str);
+ 
+while(m.find(startIndex)){
+    count++;
+    startIndex = m.start() + 1;
+}
+ 
+System.out.println("Total occurrences: " + count);
+```
 ### :dart:How to replace second occurence of char in a String? 
 The indexOf() method returns the position of the first occurrence of specified character(s) in a string.
 <br>
