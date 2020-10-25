@@ -137,6 +137,21 @@ String string1= "Helllo";
              System.out.println(i);
             }
 ```
+### :dart:Merge two arrays and remove duplicates in Java
+public static void arraycopy(Object source, int source_position, Object destination, int destination_position, int length)
+```
+public int[] mergeArrays2(int[] arr1, int[] arr2){
+    int[] merged = new int[arr1.length + arr2.length];
+    System.arraycopy(arr1, 0, merged, 0, arr1.length);
+    System.arraycopy(arr2, 0, merged, arr1.length, arr2.length);
+
+    Set<Integer> nodupes = new HashSet<Integer>();
+
+    for(int i=0;i<merged.length;i++){
+        nodupes.add(merged[i]);
+    }
+System.out.println(nodupes);
+```
 ### :dart:How to Find Common Elements Between Two Arrays
 ```
 int[] numArray1 = {1, 4, 5};
@@ -149,8 +164,8 @@ int[] numArray1 = {1, 4, 5};
      break;
     }
    }
-
-
+```
+```
 List<Integer> l1 = new ArrayList<Integer>();
 
 l1.add(1);
