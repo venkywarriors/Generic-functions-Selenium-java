@@ -20,6 +20,16 @@ int c=0,a,temp;
         System.out.println("Not armstrong number");   
    }  
 ```
+### :dart:Java program to replace ab with bba recursively
+```
+static String replace(String string, String pattern, String replacement) {
+  int index = string.indexOf(pattern);
+  if(index < 0) return string;
+  int endIndex = index+pattern.length();
+  return string.substring(0, index) + replacement +
+      replace(string.substring(endIndex), pattern, replacement);
+}
+```
 ### :dart:Java balanced expressions check {[()]}
 ```
 import java.util.Stack;
