@@ -20,22 +20,19 @@ int c=0,a,temp;
         System.out.println("Not armstrong number");   
    }  
 ```
-Longest Prefix in string array
+### :dart:Longest Prefix in string array
 ```
 String[] strArr={"java2blog","javaworld","javabean","javatemp"};
 
 String longestPrefix=getLongestCommonPrefix(strArr);
 
 System.out.println("Longest Prefix : "+longestPrefix);
-
 }
 
 public static String getLongestCommonPrefix(String[] strArr) {
-
 if(strArr.length==0) return "";
 
 // Find minimum length String
-
 String minStr=getMinString(strArr);
 
 int minPrefixStrLength=minStr.length();
@@ -45,34 +42,22 @@ for(int i=0;i<strArr.length;i++){
 for( int j=0;j<minPrefixStrLength;j++){
 
 if(minStr.charAt(j)!=strArr[i].charAt(j))
-
 break;
-
 }
 
 if(j<minPrefixStrLength)
-
 minPrefixStrLength=j;
-
 }
-
 return minStr.substring(0,minPrefixStrLength);
 }
 
 public static String getMinString(String[] strArr)
-
 {
-
 String minStr=strArr[0];
-
 for(int i=1;i<strArr.length;i++){
-
 if(strArr[i].length()<minStr.length())
-
 minStr=strArr[i];
-
 }
-
 return minStr;
 }
 ```
