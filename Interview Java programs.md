@@ -3,6 +3,26 @@
 <a href="https://www.javatpoint.com/access-modifiers">Access Modifiers in Java</a><br>
 <a href="https://www.toolsqa.com/selenium-webdriver/webdrivermanager/">WebDriver Manager</a><br>
 <a href="https://www.tutorialspoint.com/how-to-delete-a-string-inside-a-file-txt-in-java">How to delete a string inside a file(.txt)</a><br>
+### :dart:Java Program to Print a1b9
+```
+String name="a1b5";
+        char[] arr=name.toCharArray();
+        int iter=0;
+        String temp="";
+        for(int i=0;i<arr.length;i++) {
+        	try {
+        		String value=String.valueOf(arr[i]);
+        		//print();
+        		iter=Integer.parseInt(value);
+        		for(int j=0;j<iter;j++) {
+        			System.out.print(temp);
+        		}
+        		temp="";
+        	}catch(Exception e) {
+        		temp=temp+arr[i];
+        	}
+// abbbbb
+```
 ### :dart:Java Program to Check Armstrong Number
 ```
 int c=0,a,temp;  
