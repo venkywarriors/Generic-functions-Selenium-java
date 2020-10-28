@@ -25,6 +25,7 @@ String name="a1b5";
 ```
 ### :dart:Java Program to Check Armstrong Number
 ```
+//1*1*1+5*5*5+3*3*3=153
 int c=0,a,temp;  
     int n=153;//It is the number to check armstrong  
     temp=n;  
