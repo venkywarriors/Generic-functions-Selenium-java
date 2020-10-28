@@ -151,6 +151,15 @@ public class RetriveAllLinks
 }
 ```
 ### :dart:Connect DB Using Java Selenium: <br> 
+Before building a connection, make sure to add connector dependency in your POM [Ex. MySQL Connector].
+<br>
+DriverManager – to establish a connection | Connection – to create a Statement object | Statement – to execute the query | Resultset – to store the query results.
+* Load & register the driver | Class.forName("com.mysql.jdbc.Driver");
+* Establish connection | Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/Employee","user","pwd");
+* Create a Statement object | Statement st= con.createStatement();
+* Execute a query & get the Resultset | Resultset rs = st.executeQuery("Select * from Employee");
+
+Note: PreparedStatement [instead of Statement] has methods to bind various object types, including files and arrays.
 ```
 public static ArrayList<String> tableSQL(String dbURL,String dbUserID,String dbPwd,String query) throws ClassNotFoundException, SQLException {
 	
