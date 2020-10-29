@@ -1,4 +1,5 @@
 <a href="https://www.softwaretestingmaterial.com/webdriver-driver-new-firefoxdriver/">why-we-assign-firefoxdriver-instance-to-webdriver</a><br> 
+<a href="https://youtu.be/I2Dc6TOzPVQ">Type casting of webdriver instance to javascript</a><br>
 ### :dart:How to switch to a specific window? <br> 
 ```
 public static void switchWindow(String text) {
