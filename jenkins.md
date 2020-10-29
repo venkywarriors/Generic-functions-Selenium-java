@@ -21,3 +21,4 @@ In Jenkins Build section under Goals and options add following value
 ```
 clean install -Dbrowser=$Browser -DxmlFile=$XMLSuite
 ```
+<a href="https://www.tothenew.com/blog/how-to-setup-jenkins-for-a-maven-project/">How to setup Jenkins for a Maven project</a>
