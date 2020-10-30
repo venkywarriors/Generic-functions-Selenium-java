@@ -420,4 +420,52 @@ ob2 STring:I'm Object2
 <br><a href="https://www.java67.com/2015/06/can-you-overload-or-override-main-in-java.html?m=1">Can you Overload or Override main method in Java?</a>
 <br><a href="https://cs-fundamentals.com/tech-interview/java/why-does-main-method-have-to-be-static">Why is main method public static and void in Java</a>
 <br><a href="https://www.geeksforgeeks.org/understanding-public-static-void-mainstring-args-in-java/amp/">Understanding public static void main(String[] args) in Java</a>
-<br><a href="https://beginnersbook.com/2013/05/java-multiple-inheritance/">Does Java support Multiple inheritance?</a>
+ ### :dart:<a href="https://beginnersbook.com/2013/05/java-multiple-inheritance/">Does Java support Multiple inheritance?</a>
+```
+// A simple Java program to demonstrate multiple 
+// inheritance through default methods. 
+interface PI1 
+{ 
+    // default method 
+    default void show() 
+    { 
+        System.out.println("Default PI1"); 
+    } 
+} 
+
+interface PI2 
+{ 
+    // Default method 
+    default void show() 
+    { 
+        System.out.println("Default PI2"); 
+    } 
+} 
+ 
+// Implementation class code 
+class TestClass implements PI1, PI2 
+{ 
+    // Overriding default show method 
+    public void show() 
+    { 
+        // use super keyword to call the show 
+        // method of PI1 interface 
+        PI1.super.show();   
+
+        // use super keyword to call the show 
+        // method of PI2 interface 
+
+        PI2.super.show(); 
+    } 
+
+    public static void main(String args[]) 
+    { 
+        TestClass d = new TestClass(); 
+        d.show(); 
+    } 
+} 
+```
+```
+Default PI1
+Default PI2
+```
