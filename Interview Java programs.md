@@ -23,6 +23,40 @@ String name="a1b5";
         	}
 // abbbbb
 ```
+### :dart:Display Fibonacci series up to a given number
+```
+int n = 100, t1 = 0, t2 = 1;
+        
+        System.out.print("Upto " + n + ": ");
+        while (t1 <= n)
+        {
+            System.out.print(t1 + " ");
+
+            int sum = t1 + t2;
+            t1 = t2;
+            t2 = sum;
+        }
+```
+### :dart:Prime Number using a for loop
+```
+int num = 29;
+        boolean flag = false;
+        for(int i = 2; i <= num/2; ++i)
+        {
+            // condition for nonprime number
+            if(num % i == 0)
+            {
+                flag = true;
+                break;
+            }
+        }
+
+        if (!flag)
+            System.out.println(num + " is a prime number.");
+        else
+            System.out.println(num + " is not a prime number.");
+    }
+```
 ### :dart:Java Program to Check Armstrong Number
 ```
 //1*1*1+5*5*5+3*3*3=153
