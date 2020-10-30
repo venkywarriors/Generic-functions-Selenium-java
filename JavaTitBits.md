@@ -420,3 +420,4 @@ ob2 STring:I'm Object2
 <br><a href="https://www.java67.com/2015/06/can-you-overload-or-override-main-in-java.html?m=1">Can you Overload or Override main method in Java?</a>
 <br><a href="https://cs-fundamentals.com/tech-interview/java/why-does-main-method-have-to-be-static">Why is main method public static and void in Java</a>
 <br><a href="https://www.geeksforgeeks.org/understanding-public-static-void-mainstring-args-in-java/amp/">Understanding public static void main(String[] args) in Java</a>
+<br><a href="https://beginnersbook.com/2013/05/java-multiple-inheritance/">Does Java support Multiple inheritance?</a>
