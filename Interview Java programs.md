@@ -922,28 +922,6 @@ Output:
 
 skeeGrofskeeG
 ```
-```
-// Java program to ReverseString using StringBuilder 
-class ReverseString { 
-
-    public static void main(String[] args) 
-    { 
-        String input = "Geeks for Geeks"; 
-        StringBuilder input1 = new StringBuilder(); 
-        // append a string into StringBuilder input1 
-
-        input1.append(input); 
- 
-        // reverse StringBuilder input1 
-        input1 = input1.reverse(); 
-        // print reversed String 
-        System.out.println(input1); 
-    } 
-} 
-Output:
-
-skeeG rof skeeG
-```
 ### :dart:By Reverse Iteration :<br> 
 ```
 class ReverseString
@@ -973,26 +951,11 @@ Output:
 nahk si eman ym
 lawsiaj oonos ma I
 ```
-### :dart:Write a program to reverse an array or string:<br> 
+Java Program to Reverse a String using Recursion
 ```
-int []arr = {1, 2, 3, 4, 5, 6};
-  end = arr.length()- 1;
-  start = 0;
+```
+```
 
-        int temp;
-        while (start < end)
-        {
-           temp = arr[start]; 
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
-        } 
-  //Output contents of now-reversed array.
-  for(i = 0; i < len-1; i++)
-    printf("%d ", a[i])
-```
-```
 // Java program to Reverse a String using swapping 
 // of variables 
 class ReverseString { 
