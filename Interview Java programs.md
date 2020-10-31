@@ -39,7 +39,7 @@ public class ReadingFromFile
   } 
 } 
 ```
-### :dart:Java Program to Print a1b9
+### :dart:Java Program to Write Text File
 ```
 public static void main(String[] args) {
         try {
