@@ -2,7 +2,73 @@
 <a href="https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/amp/">Read input Java</a><br>
 <a href="https://www.javatpoint.com/access-modifiers">Access Modifiers in Java</a><br>
 <a href="https://www.toolsqa.com/selenium-webdriver/webdrivermanager/">WebDriver Manager</a><br>
-<a href="https://www.tutorialspoint.com/how-to-delete-a-string-inside-a-file-txt-in-java">How to delete a string inside a file(.txt)</a><br>
+### :dart:Read text file in java
+```
+// Java Program to illustrate reading from FileReader 
+// using BufferedReader 
+import java.io.*; 
+public class ReadFromFile2 
+{ 
+  public static void main(String[] args)throws Exception 
+  { 
+  File file = new File("C:\\Users\\pankaj\\Desktop\\test.txt"); 
+  
+  BufferedReader br = new BufferedReader(new FileReader(file)); 
+  
+  String st; 
+  while ((st = br.readLine()) != null) 
+    System.out.println(st); 
+  } 
+} 
+```
+```
+// Java Program to illustrate reading from 
+// FileReader using FileReader 
+import java.io.*; 
+public class ReadingFromFile 
+{ 
+  public static void main(String[] args) throws Exception 
+  { 
+    // pass the path to the file as a parameter 
+    FileReader fr = 
+      new FileReader("C:\\Users\\pankaj\\Desktop\\test.txt"); 
+  
+    int i; 
+    while ((i=fr.read()) != -1) 
+      System.out.print((char) i); 
+  } 
+} 
+```
+### :dart:Java Program to Print a1b9
+```
+public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("MyFile.txt", true);
+            writer.write("Hello World");
+            writer.write("\r\n");   // write new line
+            writer.write("Good Bye!");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } 
+    }
+```
+```
+public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("MyFile.txt", true);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+ 
+            bufferedWriter.write("Hello World");
+            bufferedWriter.newLine();
+            bufferedWriter.write("See You Again!");
+ 
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } 
+    }
+```
 ### :dart:Java Program to Print a1b9
 ```
 String name="a1b5";
