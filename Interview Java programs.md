@@ -2,6 +2,7 @@
 <a href="https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/amp/">Read input Java</a><br>
 <a href="https://www.javatpoint.com/access-modifiers">Access Modifiers in Java</a><br>
 <a href="https://www.toolsqa.com/selenium-webdriver/webdrivermanager/">WebDriver Manager</a><br>
+<a href="https://beginnersbook.com/2014/08/java-regex-tutorial/">Java Regular Expressions</a><br>
 ### :dart:Read text file in java
 ```
 // Java Program to illustrate reading from FileReader 
