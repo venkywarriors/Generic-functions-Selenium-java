@@ -922,40 +922,35 @@ Output:
 
 skeeGrofskeeG
 ```
-### :dart:By Reverse Iteration :<br> 
+### :dart: Java Program to Reverse a String using Recursion
 ```
-class ReverseString
-{
-  public static void main(String args[])
-  {
-    String original, reverse = "";
-    Scanner in = new Scanner(System.in);
+import java.util.Scanner;
+public class JavaExample {
 
-    System.out.println("Enter a string to reverse");
-    original = in.nextLine();
+    public static void main(String[] args) {
+        String str;
+        System.out.println("Enter your username: ");
+        Scanner scanner = new Scanner(System.in);
+        str = scanner.nextLine();
+        scanner.close();
+        String reversed = reverseString(str);
+        System.out.println("The reversed string is: " + reversed);
+    }
 
-    int length = original.length();
-
-    for (int i = length - 1 ; i >= 0 ; i--)
-      reverse = reverse + original.charAt(i);
-
-    System.out.println("Reverse of the string: " + reverse);
-  }
+    public static String reverseString(String str)
+    {
+        if (str.isEmpty())
+            return str;
+        //Calling Function Recursively
+        return reverseString(str.substring(1)) + str.charAt(0);
+    }
 }
-Input:
-"my name is khan"
-"I am sonoo jaiswal"    
-   
 Output:
-
-nahk si eman ym
-lawsiaj oonos ma I
-```
-Java Program to Reverse a String using Recursion
+Enter your username: 
+How are you doing?
+The reversed string is: ?gniod uoy era woH
 ```
 ```
-```
-
 // Java program to Reverse a String using swapping 
 // of variables 
 class ReverseString { 
