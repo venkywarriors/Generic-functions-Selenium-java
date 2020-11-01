@@ -93,6 +93,7 @@ String name="a1b5";
 ### :dart:Java Program to add two matrices
 <a href="https://www.javatpoint.com/java-program-to-add-two-matrices">Matrix addition in Java</a><br>
 <a href="https://www.programmingsimplified.com/java/source-code/java-program-multiply-two-matrices">Java matrix multiplication</a><br>
+<a href="https://www.programmingsimplified.com/java/source-code/java-program-transpose-matrix">Matrix transpose in Java</a><br>
 ```
 import java.util.Scanner;
 class AddTwoMatrix
