@@ -4,9 +4,24 @@ Click this link to view <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/Over
 ### WCAG 2.0 Principles
 The four guiding principles of WCAG 2.0 say that Web content must be Perceivable, Operable, Understandable and Robust (POUR) in order to be accessible to people with disabilities.
 <details>
-  <summary>Perceivable</summary>    
-:fleur_de_lis: Information and user interface components must be presentable to users in ways they can perceive.
-<p>Plain text is the most adaptable alternate format because it can be easily converted into a variety of forms to make content perceivable across a wide range of accessibility needs.</p>
+  <summary>Perceivable</summary>  
+Information and user interface components must be presentable to users in ways they can perceive.
+  
+**1.1 – Text Alternatives**
+* Do images have alternative text?
+
+**1.2 – Time-based Media**
+- Does video have captions and does audio have a transcript?
+
+**1.3 – Adaptable**
+- Does the web page or document include headings, lists, and other semantic elements to communicate document structure?
+ 
+**1.4 – Distinguishable**
+- Is the tab order and read order logical and intuitive?
+- Do form fields within web pages and documents have appropriately coded labels and prompts?
+- Have you avoided using visual characteristics to communicate information (e.g., “click the circle on the right” or “required fields are in red”)?
+- Does the interface have sufficient contrast between text color and background color?
+- Does the content scale well when page is zoomed?
 </details>
 <details>
   <summary>Operable</summary>   
