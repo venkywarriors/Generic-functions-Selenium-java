@@ -13,6 +13,8 @@ There are a total of <b>61 </b>WCAG 2.0 success criteria, and a total of <b>78</
 :+1: <a href="https://www.youtube.com/watch?v=f5qv7AnTUHk" title="Click here to view What’s new in WCAG 2.1?">*What’s new in WCAG 2.1?* </a><br>
 :+1: <a href="https://www.youtube.com/watch?v=0hqhAIjE_8I" title="Click here to view What is ARIA & Why it's Important to Use!">*What is ARIA & Why it's Important to Use!* </a><br>
 ## Web Accessibility Testing Checklist
+View [`Manuel Testing Checklist`](https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/Accessibility-Testing-Checklist3.pdf):clipboard:<br>
+View [`a11y Checklist`](https://www.a11yproject.com/checklist/):spiral_notepad:<br>
 **Keyboard only operation**
 - [x] Check focus (tab) order
 - [x]  check visual indication of keyboard focus (make more visual)
