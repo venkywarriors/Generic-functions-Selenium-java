@@ -70,6 +70,7 @@ Content must be robust enough that it can be interpreted reliably by a wide vari
 - Do rich, dynamic, web interfaces, such as modal windows, drop-down menus, slideshows, and carousels, include ARIA markup?
 <p>This means that users must be able to access the content as technologies advance (as technologies and user agents evolve, the content should remain accessible)</p>
 </details>
+View [`WCAG 2.0 Guidelines`](https://accessibility.psu.edu/guidelines/wcag2/):books:<br>
 
 ## WCAG 2.0 Conformance Levels<br> 
 **Conformance Level:** One of the following levels of conformance is met in full.<br>
