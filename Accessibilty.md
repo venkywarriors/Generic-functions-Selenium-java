@@ -1,30 +1,37 @@
 ## Accessibility Testing <br> 
 ### Accessibility Testing is defined as a type of Software Testing performed to ensure that the application being tested is usable by people with disabilities like hearing, color blindness, old age and other disadvantaged groups. It is a subset of Usability Testing.<br> 
 Click this link to view <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/Overview.html#contents" title="Click here to view WCAG Official Website">*WCAG Official Website* </a><br>
-## How many total WCAG success criteria are there?<br> 
-There are a total of <b>61 </b>WCAG 2.0 success criteria, and a total of <b>78</b> WCAG 2.1 success criteria (not including conformance criteria). WCAG 2.0 is a subset of WCAG 2.1, meaning that all 61 WCAG 2.0 guidelines are a part of WCAG 2.1. WCAG 2.1 adds 17 new success criteria.<br>
 ### WCAG 2.0 Principles
 The four guiding principles of WCAG 2.0 say that Web content must be Perceivable, Operable, Understandable and Robust (POUR) in order to be accessible to people with disabilities.
 <details>
   <summary>Perceivable</summary>    
 :fleur_de_lis: Information and user interface components must be presentable to users in ways they can perceive.
-<p>This means that users must be able to perceive the information being presented (it can't be invisible to all of their senses)</p>
+<p>Plain text is the most adaptable alternate format because it can be easily converted into a variety of forms to make content perceivable across a wide range of accessibility needs.</p>
 </details>
 <details>
   <summary>Operable</summary>   
  :fleur_de_lis: User interface components and navigation must be operable.
-<p>This means that users must be able to operate the interface (the interface cannot require interaction that a user cannot perform)</p>
+<p>All functional elements in Web content that operate with a mouse must also operate with a keyboard.</p>
 </details>
 <details>
   <summary>Understandable</summary>  
  :fleur_de_lis: Information and the operation of user interface must be understandable
-<p>This means that users must be able to understand the information as well as the operation of the user interface (the content or operation cannot be beyond their understanding)</p>
+<p>Use simple, consistent, predictable navigation elements throughout a website.</p>
 </details>
 <details>
   <summary>Robust</summary> 
   :fleur_de_lis: Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.
 <p>This means that users must be able to access the content as technologies advance (as technologies and user agents evolve, the content should remain accessible)</p>
 </details>
+
+## WCAG 2.0 Conformance Levels<br> 
+**Conformance Level:** One of the following levels of conformance is met in full.<br>
+**Level A:** For Level A conformance (the minimum level of conformance), the Web page satisfies all the Level A Success Criteria, or a conforming alternate version is provided.<br>
+**Level AA:** For Level AA conformance, the Web page satisfies all the Level A and Level AA Success Criteria, or a Level AA conforming alternate version is provided.<br>
+**Level AAA:** For Level AAA conformance, the Web page satisfies all the Level A, Level AA and Level AAA Success Criteria, or a Level AAA conforming alternate version is provided.<br>
+
+## How many total WCAG success criteria are there?<br> 
+There are a total of <b>61 </b>WCAG 2.0 success criteria, and a total of <b>78</b> WCAG 2.1 success criteria (not including conformance criteria). WCAG 2.0 is a subset of WCAG 2.1, meaning that all 61 WCAG 2.0 guidelines are a part of WCAG 2.1. WCAG 2.1 adds 17 new success criteria.<br>
 
 :+1: <a href="https://www.youtube.com/watch?v=-v4LyAH4xmg" title="Click here to know What is Accessibility Testing">*What is Accessibility Testing* </a><br>
 :+1: Click this link to view <a href="https://youtube.com/playlist?list=PLXLyB_RNO9mAfETLhJsTaSEiL8vmoBsQe" title="Click here to view YouTube Tutorial">*Tutorial* </a><br>
