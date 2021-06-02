@@ -12,81 +12,76 @@ There are a total of <b>61 </b>WCAG 2.0 success criteria, and a total of <b>78</
 :+1: <a href="https://www.youtube.com/watch?v=6V0zl-pSCSs" title="Click here to view What's the difference between WCAG Levels A and AA?">*What's the difference between WCAG Levels A and AA?* </a><br>
 :+1: <a href="https://www.youtube.com/watch?v=f5qv7AnTUHk" title="Click here to view What’s new in WCAG 2.1?">*What’s new in WCAG 2.1?* </a><br>
 :+1: <a href="https://www.youtube.com/watch?v=0hqhAIjE_8I" title="Click here to view What is ARIA & Why it's Important to Use!">*What is ARIA & Why it's Important to Use!* </a><br>
-
-<details>
-  <summary>Click to expand!</summary>
-  
-  ## Heading
-  1. A numbered
-  2. list
-     * With some
-     * Sub bullets
-</details>
-
 ## Web Accessibility Testing Checklist
 **Keyboard only operation**
-- Check focus (tab) order
-- check visual indication of keyboard focus (make more visual)
-- any keyboard traps?
-- does any hidden content get focus?
-- does anything which is mous-operable not get keyboard focus?
-- are there any custom controls or widgets which cannot be operated with keyboard-only use?
+- [x] Check focus (tab) order
+- [x]  check visual indication of keyboard focus (make more visual)
+- [x] any keyboard traps?
+- [x] does any hidden content get focus?
+- [x] does anything which is mous-operable not get keyboard focus?
+- [x] are there any custom controls or widgets which cannot be operated with keyboard-only use?
 
 **Activate Assistive Tech**
-- activate the AT you are testing with before opening the program or browser
-- Open the program or the browser and website you are testing
+- [x] activate the AT you are testing with before opening the program or browser
+- [x] Open the program or the browser and website you are testing
   - IE11/JAWS
   - NVDA/Firefox (pre quantum updates)
   - VoiceOver/Safari
-- Use the AT to access the feature or page to be tested
+- [x] Use the AT to access the feature or page to be tested
   - try not to use the mouse - no errors, but bad testing habits
 **Visual Testing with a screen reader**
-- Using JAWS on a webpage in IE11
+- [x] Using JAWS on a webpage in IE11
   - use down arrow key to read through the page
   - order matches visual order
   - anything skipped
   - anything read which isn't visible
-- Use tab key and shift-tab to read through the page
+- [x] Use tab key and shift- [x]tab to read through the page
   - only controls receive focus
   - anything skipped
   - can every link button and custom control be operated
   - does the announced role match the result
   - does a link go somewhere or does it open a dialog
-- Shortcuts
+- [x] Shortcuts
   - Insert-F6 to see struct of headings
   - Insert-F7 to see a list of links (check for meaning in context or in list)
   - 'L' key to see order of lists
   - 'F' key to see order from form fields (Insert-F5)
   - 'T' key to see order of tables
+  
 **Image Testing**
-- Inspect all images for "alt" attributes
+- [x] Inspect all images for "alt" attributes
   - if no alt, usually will read file name
-- which images are purely decorative
+- [x] which images are purely decorative
   - remove colors (IE a11y tools) - is the message being indicated by color alone? (red for error)
   - determine if color is an indicator
-- both colorblind and screenreader
-- looking at the page is info indicated with styling (bold italic shading etc)
+- [x] both colorblind and screenreader
+- [x] looking at the page is info indicated with styling (bold italic shading etc)
+
 **Font and background color testing**
-- change text and background colors in browser, is everything that is informative still visible?
+- [x] change text and background colors in browser, is everything that is informative still visible?
   - test high contrast modes
-- Exit responsive design view, reduce size to default and activate color contrast checker (level access tool)
+- [x] Exit responsive design view, reduce size to default and activate color contrast checker (level access tool)
+
 **Enlarging Text**
-- Increase size to 200% open responsive design view (ctrl-shift-m in firefox), and sclae down to 1366x768 (most common screen size)
-- Does text wrap properly
-- wcag requires up to 200% ******
-- is any feature lost / hidden?
-- does text blur as it's larger? - possibly yes bc it's an image and not actual text
+- [x] Increase size to 200% open responsive design view (ctrl-shift-m in firefox), and sclae down to 1366x768 (most common screen size)
+- [x] Does text wrap properly
+- [x] wcag requires up to 200% ******
+- [x] is any feature lost / hidden?
+- [x] does text blur as it's larger? - possibly yes bc it's an image and not actual text
+
 **CSS Testing**
 Testing the Information provided and the CSS relationship
-- Remove CSS
+- [x] Remove CSS
   - in firefox go to view > page style > no style to remove css
   - view dom order on screen
+  
 **Visual Aria Testing**
-- If the product uses ARIA
+- [x] If the product uses ARIA
   - Use the visual ARIA bookmarklet
-- Tab through all custom widgets, open menus, etc
-- Example Normal view vs Example ARIA bookmarklet view
+- [x] Tab through all custom widgets, open menus, etc
+- [x] Example Normal view vs Example ARIA bookmarklet view
+
 **Automated Testing**
-- run automated web accessibility tests, using one of the number of different tools
-- cross-references those results with the ones from manual testing
-- remove duplication and check for false positives 
+- [x] run automated web accessibility tests, using one of the number of different tools
+- [x] cross-references those results with the ones from manual testing
+- [x] remove duplication and check for false positives 
