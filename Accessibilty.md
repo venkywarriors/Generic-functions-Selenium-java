@@ -15,15 +15,14 @@ There are a total of <b>61 </b>WCAG 2.0 success criteria, and a total of <b>78</
 ## Web Accessibility Testing Checklist
 View [`Manuel Testing Checklist`](https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/Accessibility-Testing-Checklist3.pdf):clipboard:<br>
 View [`a11y Checklist`](https://www.a11yproject.com/checklist/):spiral_notepad:<br>
-**Keyboard only operation**
+### :pushpin: Keyboard only operation
 - [x] Check focus (tab) order
 - [x]  check visual indication of keyboard focus (make more visual)
 - [x] any keyboard traps?
 - [x] does any hidden content get focus?
 - [x] does anything which is mous-operable not get keyboard focus?
 - [x] are there any custom controls or widgets which cannot be operated with keyboard-only use?
-
-**Activate Assistive Tech**
+### :pushpin: Activate Assistive Tech
 - [x] activate the AT you are testing with before opening the program or browser
 - [x] Open the program or the browser and website you are testing
   - IE11/JAWS
@@ -31,7 +30,7 @@ View [`a11y Checklist`](https://www.a11yproject.com/checklist/):spiral_notepad:<
   - VoiceOver/Safari
 - [x] Use the AT to access the feature or page to be tested
   - try not to use the mouse - no errors, but bad testing habits
-**Visual Testing with a screen reader**
+### :pushpin: Visual Testing with a screen reader
 - [x] Using JAWS on a webpage in IE11
   - use down arrow key to read through the page
   - order matches visual order
@@ -48,9 +47,8 @@ View [`a11y Checklist`](https://www.a11yproject.com/checklist/):spiral_notepad:<
   - Insert-F7 to see a list of links (check for meaning in context or in list)
   - 'L' key to see order of lists
   - 'F' key to see order from form fields (Insert-F5)
-  - 'T' key to see order of tables
-  
-**Image Testing**
+  - 'T' key to see order of tables 
+### :pushpin: Image Testing
 - [x] Inspect all images for "alt" attributes
   - if no alt, usually will read file name
 - [x] which images are purely decorative
@@ -58,32 +56,27 @@ View [`a11y Checklist`](https://www.a11yproject.com/checklist/):spiral_notepad:<
   - determine if color is an indicator
 - [x] both colorblind and screenreader
 - [x] looking at the page is info indicated with styling (bold italic shading etc)
-
-**Font and background color testing**
+### :pushpin: Font and background color testing
 - [x] change text and background colors in browser, is everything that is informative still visible?
   - test high contrast modes
 - [x] Exit responsive design view, reduce size to default and activate color contrast checker (level access tool)
-
-**Enlarging Text**
+### :pushpin: Enlarging Text
 - [x] Increase size to 200% open responsive design view (ctrl-shift-m in firefox), and sclae down to 1366x768 (most common screen size)
 - [x] Does text wrap properly
 - [x] wcag requires up to 200% ******
 - [x] is any feature lost / hidden?
 - [x] does text blur as it's larger? - possibly yes bc it's an image and not actual text
-
-**CSS Testing**
+### :pushpin: CSS Testing
 Testing the Information provided and the CSS relationship
 - [x] Remove CSS
   - in firefox go to view > page style > no style to remove css
   - view dom order on screen
-  
-**Visual Aria Testing**
+### :pushpin: Visual Aria Testing
 - [x] If the product uses ARIA
   - Use the visual ARIA bookmarklet
 - [x] Tab through all custom widgets, open menus, etc
 - [x] Example Normal view vs Example ARIA bookmarklet view
-
-**Automated Testing**
+### :pushpin: Automated Testing
 - [x] run automated web accessibility tests, using one of the number of different tools
 - [x] cross-references those results with the ones from manual testing
 - [x] remove duplication and check for false positives 
