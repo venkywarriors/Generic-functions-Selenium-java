@@ -7,16 +7,16 @@ The four guiding principles of WCAG 2.0 say that Web content must be Perceivable
   <summary>Perceivable</summary>  
 Information and user interface components must be presentable to users in ways they can perceive.
   
-**1.1 – Text Alternatives**
+*1.1 – Text Alternatives*
 * Do images have alternative text?
 
-**1.2 – Time-based Media**
+*1.2 – Time-based Media*
 - Does video have captions and does audio have a transcript?
 
-**1.3 – Adaptable**
+*1.3 – Adaptable*
 - Does the web page or document include headings, lists, and other semantic elements to communicate document structure?
  
-**1.4 – Distinguishable**
+*1.4 – Distinguishable*
 - Is the tab order and read order logical and intuitive?
 - Do form fields within web pages and documents have appropriately coded labels and prompts?
 - Have you avoided using visual characteristics to communicate information (e.g., “click the circle on the right” or “required fields are in red”)?
@@ -25,17 +25,49 @@ Information and user interface components must be presentable to users in ways t
 </details>
 <details>
   <summary>Operable</summary>   
- :fleur_de_lis: User interface components and navigation must be operable.
+User interface components and navigation must be operable.
+ 
+ *2.1 – Keyboard Accessible*
+- Can all menus, links, buttons, and other controls be operated by keyboard, to make them accessible to users who are unable to use a mouse?
+- Does the web page include a visible focus indicator so all users, especially those using a keyboard, can easily track their current position?
+
+*2.2 – Enough Time*
+- Does your site have a slideshow? If so, please reconsider.
+- Do features that scroll or update automatically (e.g., slideshows, carousels) have prominent accessible controls that enable users to pause or advance these features on their own?
+- Do pages that have time limits include mechanisms for adjusting those limits for users who need more time?
+
+*2.3 – Seizures*
+- Have you avoided using content that flashes or flickers?
+
+*2.4 – Navigable*
+- Does the web page or document have a title that describes its topic or purpose?
+- Are mechanisms in place that allow users to bypass blocks of content (e.g., a “skip to main content” link on a web page or bookmarks in a PDF)?
+- Does the website include two or more ways of finding content, such as a navigation menu, search feature, or site map?
+- Is link text meaningful, independent of context?
 <p>All functional elements in Web content that operate with a mouse must also operate with a keyboard.</p>
 </details>
 <details>
   <summary>Understandable</summary>  
- :fleur_de_lis: Information and the operation of user interface must be understandable
+Information and the operation of user interface must be understandable
+  
+*3.1 – Readable*
+- Has the language of the web page or document been defined?
+  
+*3.2 – Predictable*
+- Have you avoided links, controls, or form fields that automatically trigger a change in context?
+- Does the website include consistent and persistent navigation?
+  
+*3.3 – Input Assistance*
+- Do online forms provide helpful, accessible error and verification messages?
 <p>Use simple, consistent, predictable navigation elements throughout a website.</p>
 </details>
 <details>
   <summary>Robust</summary> 
-  :fleur_de_lis: Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.
+Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.
+  
+*4.1 – Compatible*
+- Is the web page coded using valid HTML?
+- Do rich, dynamic, web interfaces, such as modal windows, drop-down menus, slideshows, and carousels, include ARIA markup?
 <p>This means that users must be able to access the content as technologies advance (as technologies and user agents evolve, the content should remain accessible)</p>
 </details>
 
