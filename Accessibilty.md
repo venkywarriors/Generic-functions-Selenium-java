@@ -163,5 +163,5 @@ Deque Labs developed an accessibility engine called aXe accessibility tools to t
 * Engine powering browser extensions, test integrations
 * A handy unit testing tool
 * Open Source
-:+1: <a href="https://www.youtube.com/watch?v=f_pW2EpwqG8" title="Click here to view Accessibility Testing using AXE Tool">*Accessibility Testing using AXE Tool Tutorial 1* </a><br>
+<br>:+1: <a href="https://www.youtube.com/watch?v=f_pW2EpwqG8" title="Click here to view Accessibility Testing using AXE Tool">*Accessibility Testing using AXE Tool Tutorial 1* </a><br>
 :+1: <a href="https://www.youtube.com/watch?v=UF0WchPCKCo&list=PLsvet3tE97XetxAvwTeG8ttKggrbG6Tm1&index=4" title="Click here to view Accessibility Testing using AXE Tool">*Accessibility Testing using AXE Tool* </a><br> Tool">*Accessibility Testing using AXE Tutorial 2* </a><br>
