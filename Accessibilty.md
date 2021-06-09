@@ -165,3 +165,9 @@ Deque Labs developed an accessibility engine called aXe accessibility tools to t
 * Open Source
 <br>:+1: <a href="https://www.youtube.com/watch?v=f_pW2EpwqG8" title="Click here to view Accessibility Testing using AXE Tool">*Accessibility Testing using AXE Tool Tutorial 1* </a><br>
 :+1: <a href="https://www.youtube.com/watch?v=UF0WchPCKCo&list=PLsvet3tE97XetxAvwTeG8ttKggrbG6Tm1&index=4" title="Click here to view Accessibility Testing using AXE Tool">*Accessibility Testing using AXE Tutorial 2* </a><br>
+## JAWS Screen Reader
+JAWS is a popular screen reader for Windows computer. This article is designed to help users who are new to JAWS learn the basic controls for testing web content, and to serve as a reference for the occasional JAWS user.
+View [`JAWS Keyboard Shortcuts`](https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts):spiral_notepad:<br>
+<br>:+1: <a href="https://www.youtube.com/watch?v=_8W4a2ddmvA" title="Click here to view JAWS: Screen Reader Basics (Part 1)">*JAWS: Screen Reader Basics (Part 1)* </a><br>
+:+1: <a href="https://www.youtube.com/watch?v=DjUr3GvFNsA" title="Click here to view JAWS: Screen Reader Basics (Part 2)">*JAWS: Screen Reader Basics (Part  2)* </a><br>
+:+1: <a href="https://www.youtube.com/watch?v=YVGNaKoVyzA" title="Click here to view JAWS Hot Keys?">*JAWS Hot Keys?* </a><br>
