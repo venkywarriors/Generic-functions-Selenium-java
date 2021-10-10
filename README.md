@@ -87,4 +87,24 @@ When we execute Maven build commands, Maven starts looking for dependency librar
 * Step 4 − Search dependency in remote repository or repositories, if found then it is downloaded to local repository for future reference. Otherwise, Maven stops processing and throws error (Unable to find dependency).
 ### Execute script in Remote cloud 
 <a href="https://github.com/PerfectoMobileSA/PerfectoSampleProject">PerfectoSampleProject</a><br>
+### Selenium Hierarchy
+<a href="https://www.softwaretestingo.com/selenium-webdriver-interface-classes-hierarchy/">Selenium Webdriver Interface & Classes Hierarchy</a><br>
+<a href="http://makeseleniumeasy.com/2017/04/02/hierarchy-of-selenium-classes-and-interfaces/">Hierarchy Of Classes & Interfaces Of WebDriver Interface In Selenium WebDriver</a><br>
+<a href="https://selenium-by-arun.blogspot.com/2014/07/209-downcasting.html">Upcasting & downcasting Classes</a><br>
+<a href="http://makeseleniumeasy.com/2018/02/08/why-do-we-up-cast-browser-driver-class-object-to-webdriver/">Why Should We Upcast Browser Driver Class Object To WebDriver?</a><br>
+```
+        // Running javascript command
+		// Need to downcast to JavascriptExecutor
+        WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,250)");
+        
+        or
+        
+		ChromeDriver driver = new ChromeDriver();
+		driver.executeScript("window.scrollBy(0,250)");
+```
+### Selenium architecture
+
  
