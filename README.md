@@ -106,5 +106,8 @@ When we execute Maven build commands, Maven starts looking for dependency librar
 		driver.executeScript("window.scrollBy(0,250)");
 ```
 ### Selenium architecture
+ <a href="http://makeseleniumeasy.com/2017/03/03/architecture-of-selenium-webdriver/">Architecture Of Selenium</a><br>
+ selenium < 3.8 -Json wire protocol<br>
+  selenium > 3.8 -W3C Protocol<br>
+ http://makeseleniumeasy.com/home/seleniumbytopic/
 
- 
