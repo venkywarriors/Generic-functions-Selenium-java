@@ -79,6 +79,7 @@ WinAppDriver uses selenium-like libraries and is actively supported by the commu
 ### What is the sequence in which Maven searches for dependency libraries?
 <a href="https://www.learntek.org/blog/apache-maven-interview-questions/">Maven-interview-questions</a><br>
 <a href="https://octopus.com/blog/selenium/2-the-maven-pom-file/the-maven-pom-file">Maven-POM.xml</a><br>
+<a href="https://maven.apache.org/surefire/maven-surefire-plugin/index.html">Maven Surefire Plugin</a><br>
 When we execute Maven build commands, Maven starts looking for dependency libraries in the following sequence −<br>
 * Step 1 − Search dependency in local repository(.m2), if not found, move to step 2.
 * Step 2 − Search dependency in central repository(https://mvnrepository.com), if not found and remote repository/repositories is/are mentioned then move to step 4. Else it is downloaded to local repository for future reference.
