@@ -1,4 +1,27 @@
+### :dart: What is the difference between @Factory and @Dataprovider annotations?
+```
+@Factory()
+	public Object[] getTestClasses() {
+		Object[] tests = new Object[2];
+		tests[0] = new Test1();
+		tests[1] = new Test2();
+		return tests;
+}
+```
+@Factory: The use of the factory annotation is when the tester needs to execute the test methods multiple times, which are present in the same class. Additionally, we achieve this by creating different instances of the same class.
+
+@Dataprovider: The dataprovider annotation enables the tester to run a test method multiple times using a different set of data provided by the dataprovider.
+
+### :dart: Define the correct order of tags in the TestNG XML file
+```
+<suite>
+  <test>
+    <classes>
+   <class>
+<methods>
+```
 ### :dart: Annotations In JUnit and TestNG <br>
+[Click here to read about TestNG Listeners](https://www.toolsqa.com/testng/testng-listeners/)
 [Click here to read about TestNG vs JUnit](https://www.toolsqa.com/testng/testng-vs-junit/)
 
 | Feature                                 | JUnit 5                        | TestNG                               |
@@ -191,6 +214,21 @@ public class DependsonTest
  System.out.println("Logout");
  }
 }
+```
+```
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestNG XML Dependency Suite" >
+   <test name="ToolsQA" >
+   	<groups>
+   		<dependencies>
+   			<group depends-on= "openbrowser" name= "login"></group>
+   		</dependencies>
+   		</groups>
+       <classes> 
+          <class name="GroupDependency" />
+       </classes>
+   </test>
+ </suite>
 ```
 ### :dart:TestNg Description Annotation: <br> 
 ```
