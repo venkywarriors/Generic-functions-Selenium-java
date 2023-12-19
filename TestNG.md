@@ -1,3 +1,34 @@
+### :dart:TestNG Parallel Execution: <br> 
+The TestNG has a default value of thread = 5 for parallel testing. To run them parallelly, head over to the testng.xml file, and write the following code:
+```
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "Parallel Testing Suite">
+   <test name = "Parallel Tests" parallel = "methods">
+      <classes>
+         <class name = "ParallelTest" />
+      </classes>
+   </test>
+</suite>
+```
+Methods: This will run the parallel tests on all @Test methods in TestNG.
+Tests: All the test cases present inside the <test> tag will run with this value.
+Classes: All the test cases present inside the classes that exist in the XML will run in parallel.
+Instances: This value will run all the test cases parallelly inside the same instance.
+```
+The function that returns the thread id is Thread.currentThread().getId() method as in the following code snippet:
+```
+Mention the thread-count inside the XML file.
+```
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "Parallel Testing Suite">
+   <test name = "Parallel Tests" parallel = "methods" thread-count = "2">
+      <classes>
+         <class name = "ParallelTest" />
+      </classes>
+   </test>
+</suite>
+
+```
 ### :dart:TestNG Group Annotation: <br> 
 ```
 public class GroupingTests 
