@@ -94,6 +94,7 @@ With Exclude Option:
 </suite> 
 ```
 ### :dart:TestNG Dependson Annotation: <br> 
+In this example, search depends on the successful execution of login. If login fails, search will be skipped. If login passes, search will be executed.
 ```
 public class DependsonTest
 {
@@ -145,7 +146,7 @@ public class RerunFailedtestcases
  }
 }
 ```
-### :dart:Run Failed Test Cases Using TestNG in Selenium WebDriver: <br> 
+### :dart:Re-Run Failed Test Cases Using TestNG in Selenium WebDriver: <br> 
 Create a class to implement IRetryAnalyzer. The steps are explained further below.
 
 ```
@@ -239,7 +240,97 @@ Once we have the implementation of IAnnotationTransformer, we just need to add i
     </classes>
   </test>
 </suite>
-``` 
+```
+### :dart:Retry Failed tests in TestNG using Custom Java Annotation <br>
+Lets say the name of the annotation is RetryCountIfFailed. This annotation is a pure Java annotation
+```
+package CustomAnnotations;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Retention(RetentionPolicy.RUNTIME)
+public @interface RetryCountIfFailed  {
+
+	// Specify how many times you want to 
+	// retry the test if failed.
+	// Default value of retry count is 0
+	int value() default 0;
+}
+```
+You can see that there is only one variable "value" inside the RetryCountIfFailed annotation. This value specifies how many times a test needs to be re-executed in case of failures. Note that the default value is set to 0. Also, one key point to note is that its a runtime annotation. 
+```
+@Retention(RetentionPolicy.RUNTIME)
+```
+# Use the Custom Created Java Annotation in TestNG Automation Test
+```
+package Tests;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import CustomAnnotations.RetryCountIfFailed;
+
+public class Test001 {
+
+	@Test
+	@RetryCountIfFailed(10)
+	public void Test1()
+	{
+		Assert.assertEquals(false, true);
+	}
+
+	@Test
+	public void Test2()
+	{
+		Assert.assertEquals(false, true);
+	}
+}
+```
+# Implement IRetryAnalyzer to Retry Failed Test in TestNG Framework <br>
+Check if the Test method for which retry is called has RetryCountIfFailed annotation, Then compare current retry attempt with value of this annotation.
+Here is the new implementation of RetryAnalyzer Class
+```
+
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
+
+import CustomAnnotations.RetryCountIfFailed;
+
+public class RetryAnalyzer implements IRetryAnalyzer {
+
+	int counter = 0;
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.testng.IRetryAnalyzer#retry(org.testng.ITestResult)
+	 * 
+	 * This method decides how many times a test needs to be rerun. TestNg will
+	 * call this method every time a test fails. So we can put some code in here
+	 * to decide when to rerun the test.
+	 * 
+	 * Note: This method will return true if a tests needs to be retried and
+	 * false it not.
+	 *
+	 */
+
+	@Override
+	public boolean retry(ITestResult result) {
+
+		// check if the test method had RetryCountIfFailed annotation
+		RetryCountIfFailed annotation = result.getMethod().getConstructorOrMethod().getMethod()
+				.getAnnotation(RetryCountIfFailed.class);
+		// based on the value of annotation see if test needs to be rerun
+		if((annotation != null) && (counter < annotation.value()))
+		{
+			counter++;
+			return true;
+		}
+		return false;
+	}
+}
+```
+This way retry decision is taken based on the count specified in the RetryCountIfFailed annotation <br>
 ### :dart:Run Test Multiple Times Using TestNG: <br> 
 ```
 public class RunTestMultipleTime 
