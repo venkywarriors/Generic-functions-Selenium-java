@@ -1,3 +1,42 @@
+### :dart: Annotations In JUnit and TestNG <br>
+
+| Feature                                 | JUnit 5                        | TestNG                               |
+| ----------------------------------------|---------------------------------|--------------------------------------|
+| Test annotation                         | `@Test`                         | `@Test`                              |
+| Execute before the first test method in the current class is invoked. | `@BeforeAll`                    | `@BeforeClass`                       |
+| Execute after all the test methods in the current class have been run. | `@AfterAll`                     | `@AfterClass`                        |
+| Execute before each test method         | `@BeforeEach`                   | `@BeforeMethod`                      |
+| Execute after each test method          | `@AfterEach`                    | `@AfterMethod`                       |
+| Ignore Test                             | `@Ignore`                       | `@Test(enabled = false)`             |
+| Expected exception                      | `@Test(expected=ArithmeticException.class)` | `@Test(expectedException=ArithmeticException.class)` |
+| Timeout                                 | `@Test(timeout = 1000)`         | `@Test(timeout = 1000)`              |
+| Execute before all tests in this suite have run | N/A                         | `@BeforeSuite`                       |
+| Execute after all tests in this suite have run. | N/A                        | `@AfterSuite`                        |
+| Execute before the test                 | N/A                             | `@BeforeTest`                        |
+| Execute after the test                  | N/A                             | `@AfterTest`                         |
+| Execute before the first test method that belongs to any of these groups is invoked | N/A | `@BeforeGroups`                    |
+| Execute after the last test method that belongs to any of these groups is invoked | N/A | N/A                                |
+
+| **Annotation** | **JUnit** | **TestNG** | **Description** |
+| --------------- | --------- | ---------- | --------------- |
+| `@Test`         | ✔         | ✔          | Identifies a method as a test method. |
+| `@Before`       | ✔         | ✘          | Executed before each test method. |
+| `@After`        | ✔         | ✘          | Executed after each test method. |
+| `@BeforeClass`  | ✔         | ✔          | Executed once before any test method in the class. |
+| `@AfterClass`   | ✔         | ✔          | Executed once after all test methods in the class. |
+| `@BeforeMethod` | ✘         | ✔          | Executed before each test method. |
+| `@AfterMethod`  | ✘         | ✔          | Executed after each test method. |
+| `@Ignore`       | ✔         | ✔          | Skips the annotated test or class. |
+| `@RunWith`      | ✔         | ✘          | Specifies a custom test runner. |
+| `@DataProvider` | ✘         | ✔          | Provides data for parameterized tests. |
+| `@Parameters`   | ✘         | ✔          | Provides parameters for test methods. |
+| `@Listeners`    | ✘         | ✔          | Specifies test listeners. |
+| `@Factory`      | ✘         | ✔          | Marks a method as a factory for test instances. |
+| `@TestInstance` | ✘         | ✔          | Defines the test instance lifecycle (per class or per method). |
+| `@Test(groups)` | ✘         | ✔          | Groups tests for configuration and execution. |
+| `@DataProvider` | ✘         | ✔          | Provides data for parameterized tests. |
+| `@Parameters`   | ✘         | ✔          | Provides parameters for test methods. |
+
 ### :dart:TestNG Parallel Execution: <br> 
 The TestNG has a default value of thread = 5 for parallel testing. To run them parallelly, head over to the testng.xml file, and write the following code:
 ```
