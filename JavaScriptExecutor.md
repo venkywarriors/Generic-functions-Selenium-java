@@ -13,14 +13,15 @@ The executeScript method executes JavaScript code synchronously, meaning that it
 On the other hand, the executeAsyncScript method executes JavaScript code asynchronously, allowing other operations to be performed simultaneously. This is particularly useful when dealing with long-running JavaScript operations or when you want to perform multiple operations in parallel.
 
 The JavaScriptExecutor interface provides several methods that can be used to interact with the web page using JavaScript. Here are some commonly used methods:
+<br>
+- executeScript: Executes synchronous JavaScript code and returns a value.<br>
+- executeAsyncScript: Executes asynchronous JavaScript code without returning a value directly.<br>
+- scrollIntoView: Scrolls the web page to bring a specific element into view.<br>
+- click: Performs a click operation on a web element.<br>
+- getElement: Retrieves a web element using a specified locator.<br>
+- performSnippet: Executes a snippet of JavaScript code without returning a value.<br>
+- executeVoidScript: Executes JavaScript code without returning a value.<br>
 
-executeScript: Executes synchronous JavaScript code and returns a value.
-executeAsyncScript: Executes asynchronous JavaScript code without returning a value directly.
-scrollIntoView: Scrolls the web page to bring a specific element into view.
-click: Performs a click operation on a web element.
-getElement: Retrieves a web element using a specified locator.
-performSnippet: Executes a snippet of JavaScript code without returning a value.
-executeVoidScript: Executes JavaScript code without returning a value.
 These methods provide a flexible approach to interact with web elements, handle alerts, perform scrolling, and execute custom JavaScript operations within your Selenium test scripts.
 
 ### :dart:The basic syntax for JavascriptExecutor is given below: <br> 
