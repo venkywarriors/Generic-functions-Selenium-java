@@ -262,7 +262,7 @@ You can see that there is only one variable "value" inside the RetryCountIfFaile
 ```
 @Retention(RetentionPolicy.RUNTIME)
 ```
-# Use the Custom Created Java Annotation in TestNG Automation Test
+#### Use the Custom Created Java Annotation in TestNG Automation Test
 ```
 package Tests;
 
@@ -287,7 +287,7 @@ public class Test001 {
 	}
 }
 ```
-# Implement IRetryAnalyzer to Retry Failed Test in TestNG Framework <br>
+#### Implement IRetryAnalyzer to Retry Failed Test in TestNG Framework <br>
 Check if the Test method for which retry is called has RetryCountIfFailed annotation, Then compare current retry attempt with value of this annotation.
 Here is the new implementation of RetryAnalyzer Class
 ```
@@ -346,6 +346,16 @@ public class RunTestMultipleTime
  System.out.println("Manoj1");
  }
 }
+```
+```
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="YourTestSuite">
+    <test name="YourTest" invocationCount="3">
+        <classes>
+            <class name="path.to.YourTestClass" />
+        </classes>
+    </test>
+</suite>
 ```
 ### :dart:TestNG Priority Annotation: <br> 
 ```
@@ -454,12 +464,12 @@ public class TestNg_ExpectedException
  }
 }
 ```
-### :dart:Get Webpage Links Using Selenium Example Program: <br> 
+### :dart:timeOut attribute of the @Test annotation.: <br> 
 The maximum number of milliseconds this test should take for the cumulated time of all the invocationcounts. This attribute will be ignored if invocationCount is not specified.
 ```
 public class TestNGInvocationcountTimeoutEx 
 {
- @Test(invocationTimeOut=5)
+ @Test(invocationTimeOut=5000) // Timeout in milliseconds 
  public void test()
  {
  System.out.println("The Value Of I"); 
@@ -488,6 +498,7 @@ public class IgnoreTest {
    }
 }
 ```
+Now, when you combine both attributes (enabled = false, alwaysRun = true), it results in a somewhat contradictory scenario. The test method is disabled (enabled = false), so TestNG won't execute it under normal circumstances. However, because of alwaysRun = true, if this method is a dependency for other methods and those dependencies fail, TestNG will still attempt to run this method.
 ### :dart:TestNG Annotation Execution Flow: <br> 
 ```
 public class TestngAnnotation { 
