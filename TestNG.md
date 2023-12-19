@@ -1067,20 +1067,96 @@ System.out.println("hardAssert Method Was Executed");
 <a href="http://seleniumworks.blogspot.com/2014/01/testng-verbose-attribute-selenium-users.html?m=1
 ">Verbose Attribute </a>lets you obtain clear reports through IDE console. This attribute will be placed inside the <Suite> tag of testng.xml as shown below
 <img src="http://1.bp.blogspot.com/-6VeGziyKtYI/UZs9AcKhB2I/AAAAAAAATrc/1tHdY9ihZdI/s1600/1.jpg" alt="Flowers in Chania">
+### :dart: Rerun failed test cases after the completion of the entire suite, y
+#### Create a Custom Reporter Class (RetryReporter):
 
+Create a class that implements the IReporter interface. This class will be responsible for identifying failed test cases and rerunning them after the suite has completed.
+```
+import org.testng.IReporter;
+import org.testng.ISuite;
+import org.testng.ISuiteResult;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.TestNG;
+import org.testng.xml.XmlSuite;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
+public class RetryReporter implements IReporter {
 
+    @Override
+    public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
+        for (ISuite suite : suites) {
+            Map<String, ISuiteResult> results = suite.getResults();
+            for (ISuiteResult suiteResult : results.values()) {
+                ITestContext testContext = suiteResult.getTestContext();
+                rerunFailedTests(testContext.getFailedTests().getAllResults());
+            }
+        }
+    }
 
+    private void rerunFailedTests(List<ITestResult> failedTests) {
+        List<Class<?>> classesToRerun = new ArrayList<>();
 
+        for (ITestResult failedTest : failedTests) {
+            ITestContext failedTestContext = failedTest.getTestContext();
+            Class<?> testClass = failedTestContext.getCurrentXmlTest().getClasses().get(0).getSupportClass();
+            classesToRerun.add(testClass);
+        }
 
+        if (!classesToRerun.isEmpty()) {
+            rerunTests(classesToRerun);
+        }
+    }
 
+    private void rerunTests(List<Class<?>> classesToRerun) {
+        TestNG reRunTestNG = new TestNG();
+        reRunTestNG.setTestClasses(classesToRerun.toArray(new Class<?>[0]));
 
+        Reporter.log("Rerunning failed tests...");
 
+        reRunTestNG.run();
+    }
+}
+```
+In the RetryReporter class, the generateReport method is called after the suite has completed. It then calls the rerunFailedTests method to identify failed test cases and the corresponding test classes. The rerunTests method creates a new TestNG instance, sets the test classes to rerun, and runs the tests again.
 
+#### Modify TestNG XML to Include RetryReporter:
+```
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="YourTestSuite">
+    <listeners>
+        <listener class-name="path.to.RetryReporter"/>
+    </listeners>
+    <!-- Include your test classes and configurations here -->
+</suite>
+```
+Replace path.to.RetryReporter with the actual package path to your RetryReporter class.
 
+Create a Test Class (YourTestClass):
+```
+import org.testng.annotations.Test;
+import org.testng.Assert;
 
+public class YourTestClass {
 
+    @Test
+    public void testPass() {
+        Assert.assertTrue(true);
+    }
 
+    @Test
+    public void testFail() {
+        Assert.fail("Intentional failure");
+    }
 
-
+    @Test
+    public void testAnotherPass() {
+        Assert.assertTrue(true);
+    }
+}
+```
+After the initial run, the RetryReporter will identify the failed tests and rerun them.
