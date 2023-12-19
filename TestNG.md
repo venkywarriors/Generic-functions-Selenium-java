@@ -2,12 +2,12 @@
 ```
 public class GroupingTests 
 {
- @BeforeGroups
+ @BeforeGroups("Test1")
  public void login()
  {
  System.out.println("Login Sucessfully");
  }
- @AfterGroups
+ @AfterGroups("Test1")
  public void logout()
  {
  System.out.println("Logout Sucessfully");
@@ -28,6 +28,23 @@ public class GroupingTests
  System.out.println("Bill Generated");
  }
 }
+```
+```
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite">
+    <test name="Test">
+        <groups>
+            <run>
+                <include name="groupA" />
+            </run>
+        </groups>
+        <classes>
+            <class name="path.to.TestClassA" />
+            <class name="path.to.TestClassB" />
+        </classes>
+    </test>
+</suite>
+
 ```
 ### :dart:TestNG AlwaysRun Annotation : <br> 
 ```
