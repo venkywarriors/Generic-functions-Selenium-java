@@ -77,7 +77,13 @@ WinAppDriver uses selenium-like libraries and is actively supported by the commu
 <a href="https://www.automatetheplanet.com/automate-windows-desktop-apps-winappdriver/">WinAppDriver with C#</a><br>
 <a href="https://www.softwaretestingmaterial.com/headless-browser-testing-using-htmlunitdriver/">HTML unit driver</a><br>
 ### What is the sequence in which Maven searches for dependency libraries?
-<a href="https://www.learntek.org/blog/apache-maven-interview-questions/">Maven-interview-questions</a><br>
+Maven build life cycles are listed below as the followings:<br>
+- Clean: Removes the artifact produced from the preceding build processes.<br>
+- Default: Deployment and build process is taken care of.<br>
+- Site: Project documentation is carried out in this cycle.<br>
+<a href="https://www.softwaretestinghelp.com/maven-interview-questions/">Maven-interview-questions</a><br>
+<a href="https://www.simplilearn.com/tutorials/maven-tutorial/maven-interview-questions">Maven-interview-questions</a><br>
+<a href="https://www.guru99.com/maven-interview-questions.html">Maven-interview-questions</a><br>
 <a href="https://octopus.com/blog/selenium/2-the-maven-pom-file/the-maven-pom-file">Maven-POM.xml</a><br>
 <a href="https://maven.apache.org/surefire/maven-surefire-plugin/index.html">Maven Surefire Plugin</a><br>
 When we execute Maven build commands, Maven starts looking for dependency libraries in the following sequence −<br>
