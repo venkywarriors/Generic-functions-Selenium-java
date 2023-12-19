@@ -1067,7 +1067,7 @@ System.out.println("hardAssert Method Was Executed");
 <a href="http://seleniumworks.blogspot.com/2014/01/testng-verbose-attribute-selenium-users.html?m=1
 ">Verbose Attribute </a>lets you obtain clear reports through IDE console. This attribute will be placed inside the <Suite> tag of testng.xml as shown below
 <img src="http://1.bp.blogspot.com/-6VeGziyKtYI/UZs9AcKhB2I/AAAAAAAATrc/1tHdY9ihZdI/s1600/1.jpg" alt="Flowers in Chania">
-### :dart: Rerun failed test cases after the completion of the entire suite, y
+### :dart: Rerun failed test cases after the completion of the entire suite
 #### Create a Custom Reporter Class (RetryReporter):
 
 Create a class that implements the IReporter interface. This class will be responsible for identifying failed test cases and rerunning them after the suite has completed.
