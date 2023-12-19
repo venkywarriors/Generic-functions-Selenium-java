@@ -1,6 +1,28 @@
 # Need for JavaScriptExecutor? 
 
 ### JavaScriptExecutor is an Interface that helps to execute JavaScript through Selenium Webdriver. Possibility that locators may not work, You can use JavaScriptExecutor to perform an desired operation on a web element. You need to import (org.openqa.selenium.JavascriptExecutor) in the script as to use JavaScriptExecutor. 
+The executeScript method is used to execute synchronous JavaScript code. It returns a value, which can be used in your Selenium test scripts. This method is commonly used for operations like clicking on an element, scrolling to a specific element, or handling pop-ups in Selenium.
+
+On the other hand, the executeAsyncScript method is used to execute asynchronous JavaScript code. This method does not return a value directly, but it allows you to perform asynchronous operations and handle callbacks. It is particularly useful when dealing with AJAX requests or waiting for dynamic web elements to load.
+
+#### Difference between executeAsyncScript vs executeScript
+The main difference between the executeAsyncScript and executeScript methods lies in their behavior and how they handle the execution of JavaScript code.
+
+The executeScript method executes JavaScript code synchronously, meaning that it waits for the script to complete before moving on to the next operation. This can be useful when you need to ensure that a certain JavaScript operation is completed before proceeding further in your test script.
+
+On the other hand, the executeAsyncScript method executes JavaScript code asynchronously, allowing other operations to be performed simultaneously. This is particularly useful when dealing with long-running JavaScript operations or when you want to perform multiple operations in parallel.
+
+The JavaScriptExecutor interface provides several methods that can be used to interact with the web page using JavaScript. Here are some commonly used methods:
+
+executeScript: Executes synchronous JavaScript code and returns a value.
+executeAsyncScript: Executes asynchronous JavaScript code without returning a value directly.
+scrollIntoView: Scrolls the web page to bring a specific element into view.
+click: Performs a click operation on a web element.
+getElement: Retrieves a web element using a specified locator.
+performSnippet: Executes a snippet of JavaScript code without returning a value.
+executeVoidScript: Executes JavaScript code without returning a value.
+These methods provide a flexible approach to interact with web elements, handle alerts, perform scrolling, and execute custom JavaScript operations within your Selenium test scripts.
+
 ### :dart:The basic syntax for JavascriptExecutor is given below: <br> 
 ```
 JavascriptExecutor js = (JavascriptExecutor) driver;  
@@ -83,11 +105,15 @@ js.executeScript("$('ul.menus.menu-secondary.sf-js-enabled.sub-menu li').hover()
 ### :dart:Handling Checkbox using JavaScriptExecutor: 
 ```
 js.executeScript("document.getElementById('enter element id').checked=false;");
+or
+executor.executeScript("arguments[0].checked = true;", element);
 ```
 ### :dart:Refresh Browser using JavaScriptExecutor: 
 ```
 JavascriptExecutor js = (JavascriptExecutor)driver;
-driver.executeScript("history.go(0)");
+js.executeScript("history.go(0)");
+or
+js.executeScript(“location.reload()”);
 ```
 ### :dart:Get InnerText of a Webpage using JavaScriptExecutor: 
 ```
@@ -122,10 +148,6 @@ js.executeScript("window.scrollBy(0,0)");
 ```
 String className = Driver.executeScript("return document.getElementById('gsc-i-id1').getAttribute('class');"));
 ```
-### :dart:Count number of frames inside a webpage using JavaScriptExecutor: 
-```
-js.executeScript("document.frames.length;");
-```
 ### :dart:Adding an Element in DOM using JavaScriptExecutor: 
 ```
 Driver.executeScript("var btn=document.createElement('BUTTON');"
@@ -136,9 +158,19 @@ Driver.executeScript("var btn=document.createElement('BUTTON');"
 Driver.executeScript("return window.innerHeight;")
 Driver.executeScript("return window.innerWidth;")
 ```
+### :dart:Open a new window with a specific URL a new window with a specific URL
+```
+  jsExecutor.executeScript("window.open('https://www.google.com', '_blank');");
+or 
+  jsExecutor.executeScript("window.open('', '_blank');"); //Open a new window
+```
 ### :dart:Navigating to URL using JavaScriptExecutor: 
 ```
 js.executeScript("window.location = 'https://www.google.co.in'");
+or
+js.executeScript("window.location.href = 'https://www.example.com';");
+// Execute JavaScript to open a new tab
+jsExecutor.executeScript("window.open('about:blank','_blank');");
 ```
 # Handle Ajax call Using JavaScriptExecutor in Selenium? 
 ### What is Ajax?
