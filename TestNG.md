@@ -62,7 +62,7 @@
 | `@Parameters`   | ✘         | ✔          | Provides parameters for test methods. |
 
 ### :dart:TestNG Parallel Execution: <br> 
-The TestNG has a default value of thread = 5 for parallel testing. To run them parallelly, head over to the testng.xml file, and write the following code:
+There are different ways to achieve parallel execution in TestNG, such as parallel execution of methods, classes, or suites. The TestNG has a default value of thread = 5 for parallel testing. To run them parallelly, head over to the testng.xml file, and write the following code:
 ```
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name = "Parallel Testing Suite">
@@ -91,6 +91,22 @@ Mention the thread-count inside the XML file.
    </test>
 </suite>
 
+```
+In this approach, entire test suites are executed in parallel.
+```
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parallel Testing Suite" parallel="tests" thread-count="2">
+    <test name="Test1">
+        <classes>
+            <class name="path.to.TestClass1" />
+        </classes>
+    </test>
+    <test name="Test2">
+        <classes>
+            <class name="path.to.TestClass2" />
+        </classes>
+    </test>
+</suite>
 ```
 ### :dart:TestNG Group Annotation: <br> 
 ```
@@ -139,6 +155,24 @@ public class GroupingTests
     </test>
 </suite>
 
+```
+Running TestNG suite in parallel with groups involves specifying the parallel attribute in the TestNG XML file along with specifying the groups that should be executed in parallel
+```
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parallel Group Testing Suite" parallel="methods" thread-count="2">
+    <test name="GroupTests">
+        <groups>
+            <run>
+                <include name="group1" />
+                <include name="group2" />
+            </run>
+        </groups>
+        <classes>
+            <class name="path.to.TestClass1" />
+            <class name="path.to.TestClass2" />
+        </classes>
+    </test>
+</suite>
 ```
 ### :dart:TestNG AlwaysRun Annotation : <br> 
 ```
