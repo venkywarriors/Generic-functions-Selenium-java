@@ -21,7 +21,7 @@
 <methods>
 ```
 ### :dart: Annotations In JUnit and TestNG <br>
-[Click here to read about TestNG Listeners](https://www.toolsqa.com/testng/testng-listeners/) <br?
+[Click here to read about TestNG Listeners](https://www.toolsqa.com/testng/testng-listeners/) <br>
 [Click here to read about TestNG vs JUnit](https://www.toolsqa.com/testng/testng-vs-junit/)
 
 | Feature                                 | JUnit 5                        | TestNG                               |
@@ -34,32 +34,15 @@
 | Ignore Test                             | `@Ignore`                       | `@Test(enabled = false)`             |
 | Expected exception                      | `@Test(expected=ArithmeticException.class)` | `@Test(expectedException=ArithmeticException.class)` |
 | Timeout                                 | `@Test(timeout = 1000)`         | `@Test(timeout = 1000)`              |
+| Groups tests for configuration and execution                                 | `@tag("group")`         | `@Test(groups = "group1")`              |
 | Execute before all tests in this suite have run | N/A                         | `@BeforeSuite`                       |
 | Execute after all tests in this suite have run. | N/A                        | `@AfterSuite`                        |
 | Execute before the test                 | N/A                             | `@BeforeTest`                        |
 | Execute after the test                  | N/A                             | `@AfterTest`                         |
+| Run a given test method multiple times                  | `@RepeatedTest(5)`                           | `@Test(invocationCount = 5)`                         |
+| Oorder of test method execution                  | @TestMethodOrder annotation with MethodOrderer.OrderAnnotation.class allows ordering `@Order(1)`                            | `@Test(priority = 1)`                         |
 | Execute before the first test method that belongs to any of these groups is invoked | N/A | `@BeforeGroups`                    |
 | Execute after the last test method that belongs to any of these groups is invoked | N/A | N/A                                |
-
-| **Annotation** | **JUnit** | **TestNG** | **Description** |
-| --------------- | --------- | ---------- | --------------- |
-| `@Test`         | ✔         | ✔          | Identifies a method as a test method. |
-| `@Before`       | ✔         | ✘          | Executed before each test method. |
-| `@After`        | ✔         | ✘          | Executed after each test method. |
-| `@BeforeClass`  | ✔         | ✔          | Executed once before any test method in the class. |
-| `@AfterClass`   | ✔         | ✔          | Executed once after all test methods in the class. |
-| `@BeforeMethod` | ✘         | ✔          | Executed before each test method. |
-| `@AfterMethod`  | ✘         | ✔          | Executed after each test method. |
-| `@Ignore`       | ✔         | ✔          | Skips the annotated test or class. |
-| `@RunWith`      | ✔         | ✘          | Specifies a custom test runner. |
-| `@DataProvider` | ✘         | ✔          | Provides data for parameterized tests. |
-| `@Parameters`   | ✘         | ✔          | Provides parameters for test methods. |
-| `@Listeners`    | ✘         | ✔          | Specifies test listeners. |
-| `@Factory`      | ✘         | ✔          | Marks a method as a factory for test instances. |
-| `@TestInstance` | ✘         | ✔          | Defines the test instance lifecycle (per class or per method). |
-| `@Test(groups)` | ✘         | ✔          | Groups tests for configuration and execution. |
-| `@DataProvider` | ✘         | ✔          | Provides data for parameterized tests. |
-| `@Parameters`   | ✘         | ✔          | Provides parameters for test methods. |
 
 ### :dart:TestNG Parallel Execution: <br> 
 There are different ways to achieve parallel execution in TestNG, such as parallel execution of methods, classes, or suites. The TestNG has a default value of thread = 5 for parallel testing. To run them parallelly, head over to the testng.xml file, and write the following code:
