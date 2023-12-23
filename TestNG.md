@@ -43,7 +43,7 @@
 | Oorder of test method execution                  | @TestMethodOrder annotation with MethodOrderer.OrderAnnotation.class allows ordering `@Order(1)`                            | `@Test(priority = 1)`                         |
 | Execute before the first test method that belongs to any of these groups is invoked | N/A | `@BeforeGroups`                    |
 | Execute after the last test method that belongs to any of these groups is invoked | N/A | N/A                                |
-
+<br> Click this link to view <a href="https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/Junit.md" title="Click here to view Junit Sample Programs">*Junit Sample Programs* </a><br>
 ### :dart:TestNG Parallel Execution: <br> 
 There are different ways to achieve parallel execution in TestNG, such as parallel execution of methods, classes, or suites. The TestNG has a default value of thread = 5 for parallel testing. To run them parallelly, head over to the testng.xml file, and write the following code:
 ```
