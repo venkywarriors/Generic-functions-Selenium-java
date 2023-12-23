@@ -1,4 +1,4 @@
-### :dart: Parameterize Test cases in JUnit 
+### :dart: Parameterize Test cases in JUnit 4
 JUnit 4 provides parameterized tests using the `@Parameters` annotation and the Parameterized runner
 ```
 import org.junit.Test;
@@ -43,9 +43,10 @@ public class ParameterizedTestExample {
 - The constructor of the test class takes parameters, and the `@Parameters` annotation is used on a method (data()) to provide parameter values.
 - The data() method returns a collection of arrays, where each array represents a set of parameters for a test run.
 - The `@Test` annotation is used to indicate the test method (testAddition).
-<br>
-In JUnit 5, parameterized tests can be achieved using the `@ParameterizedTest` annotation along with various argument sources <br>
-#### @CsvSource Example:
+
+### :dart: Parameterize Test cases in JUnit 5
+In JUnit 5, parameterized tests can be achieved using the `@ParameterizedTest` annotation along with various argument sources
+#### @CsvSource Example
 ```
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -62,11 +63,10 @@ public class ParameterizedTestExample {
         assertEquals(expectedSum, sum, () -> a + " + " + b + " should equal " + expectedSum);
     }
 }
-
 ```
-#### `@CsvFileSource` Example:
+#### `@CsvFileSource` Example
 ```
- import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -80,7 +80,7 @@ public class CsvFileSourceExample {
     }
 }
 ```
-#### `@ValueSource` Example:
+#### `@ValueSource` Example
 ```
  import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -95,7 +95,7 @@ public class ValueSourceExample {
     }
 }
 ```
-### :dart: Parallel execution of test cases
+### :dart: Parallel execution of test cases <br>
 JUnit 5 does not inherently provide built-in support for parallel execution of test cases, as each test method is designed to be independent of others. However, you can leverage external tools or plugins to achieve parallel execution. One such tool is the `junit-platform-parallel` plugin.
 <br>You can then run your tests with parallel execution using the following command:
 ```
