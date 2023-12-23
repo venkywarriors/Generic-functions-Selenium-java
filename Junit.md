@@ -278,5 +278,3 @@ public class Regression1TestClass {
 }
 
 ```
-```
-```
