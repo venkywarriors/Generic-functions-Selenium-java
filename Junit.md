@@ -42,10 +42,10 @@ public class ParameterizedTestExample {
 - The `@RunWith(Parameterized.class)` annotation indicates that the test class will use the Parameterized runner.
 - The constructor of the test class takes parameters, and the `@Parameters` annotation is used on a method (data()) to provide parameter values.
 - The data() method returns a collection of arrays, where each array represents a set of parameters for a test run.
-- The '@Test` annotation is used to indicate the test method (testAddition).
+- The `@Test` annotation is used to indicate the test method (testAddition).
 <br>
-#### In JUnit 5, parameterized tests can be achieved using the `@ParameterizedTest` annotation along with various argument sources
-`@CsvSource` Example:
+In JUnit 5, parameterized tests can be achieved using the `@ParameterizedTest` annotation along with various argument sources <br>
+#### @CsvSource Example:
 ```
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -64,11 +64,7 @@ public class ParameterizedTestExample {
 }
 
 ```
-`@CsvFileSource` Example:
-```
- 
-```
-`@CsvFileSource` Example:
+#### `@CsvFileSource` Example:
 ```
  import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -84,7 +80,7 @@ public class CsvFileSourceExample {
     }
 }
 ```
-`@ValueSource` Example:
+#### `@ValueSource` Example:
 ```
  import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
