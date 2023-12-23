@@ -104,3 +104,179 @@ mvn test -Djunit.jupiter.extensions.autodetection.enabled=true
 ```
 ./gradlew test --tests * --rerun-tasks
 ```
+### :dart: Selenium JUnit test class 
+```
+import org.junit.After;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+
+public class ScreenshotTest {
+
+    private WebDriver driver;
+
+    @Rule
+    public TestWatcher screenshotOnFailure = new TestWatcher() {
+        @Override
+        protected void failed(Throwable e, Description description) {
+            captureScreenshot(description.getMethodName());
+        }
+    };
+
+    @Test
+    public void testLoginWithValidCredentials() {
+        initializeWebDriver();
+        // Your test logic here for a successful scenario
+    }
+
+    @Test
+    public void testLoginWithInvalidCredentials() {
+        initializeWebDriver();
+        // Your test logic here for a failed scenario
+        WebElement errorMessage = driver.findElement(By.id("error-message"));
+        assert errorMessage.isDisplayed() : "Error message should be displayed";
+    }
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    private void initializeWebDriver() {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+        driver.get("https://example.com");
+    }
+
+    private void captureScreenshot(String methodName) {
+        try {
+            if (driver instanceof TakesScreenshot) {
+                TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+                File screenshotFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+
+                Path destinationPath = Path.of("screenshots", methodName + ".png");
+                Files.copy(screenshotFile.toPath(), destinationPath, StandardCopyOption.REPLACE_EXISTING);
+
+                System.out.println("Screenshot captured: " + destinationPath.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+### :dart: @DisplayName Annotation
+- Allows you to provide a custom display name for a test class or method.
+- Useful for creating more human-readable and expressive test names.
+```
+@DisplayName("Custom Test Class")
+public class MyTestClass {
+    // Test methods go here...
+}
+
+@Test
+@DisplayName("Custom Test Method")
+public void myTestMethod() {
+    // Test logic goes here...
+}
+
+```
+### :dart: @Disabled Annotation 
+- Marks a test class or method as disabled or ignored.
+- Test methods annotated with @Disabled will not be executed.
+```
+@Disabled("Not ready for execution")
+@Test
+public void disabledTest() {
+    // Test logic goes here...
+}
+```
+### :dart: @EnabledIfEnvironmentVariable Annotation 
+Enables or disables a test based on the value of an environment variable.
+```
+@EnabledIfEnvironmentVariable(named = "ENV", matches = "stage")
+@Test
+public void testForStageEnvironment() {
+    // Test logic goes here...
+}
+```
+### :dart: @EnabledOnOs / @DisabledOnOs Annotation 
+Enables or disables a test based on the operating system
+```
+@EnabledOnOs(OS.WINDOWS)
+@Test
+void testForWindows() {
+    // Test logic
+}
+
+@DisabledOnOs(OS.LINUX)
+@Test
+void disabledForLinux() {
+    // Test logic
+}
+```
+### :dart: @EnabledIfSystemProperty / @DisabledIfSystemProperty Annotation 
+Enables or disables a test based on the value of a system property.
+```
+@EnabledIfSystemProperty(named = "environment", matches = "dev")
+@Test
+void testForDevEnvironment() {
+    // Test logic
+}
+
+@DisabledIfSystemProperty(named = "ci", matches = "true")
+@Test
+void disabledForCI() {
+    // Test logic
+}
+```
+### :dart: Create custom annotations to group test cases
+Define Custom Annotation
+```
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Tag("nightRun")
+@Test
+public @interface NightRun {
+}
+```
+Apply the Custom Annotation and Extension in Tests
+```
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+public class Regression1TestClass {
+
+    @NightRun
+    void regression1Test1() {
+        // Test logic for regression1
+    }
+
+    @Test
+    void regression1Test2() {
+        // Test logic for regression1
+    }
+}
+
+```
+```
+```
