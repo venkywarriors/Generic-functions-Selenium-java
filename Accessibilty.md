@@ -78,6 +78,7 @@ Content must be robust enough that it can be interpreted reliably by a wide vari
 </details>
 
 View [`WCAG 2.0 Guidelines`](https://accessibility.psu.edu/guidelines/wcag2/):books:<br>
+View [`WCAG 2.2 Guidelines`](https://accessibility.psu.edu/guidelines/wcaglist/):books:<br>
 
 ## WCAG 2.0 Conformance Levels<br> 
 **Conformance Level:** One of the following levels of conformance is met in full.<br>
