@@ -1,6 +1,7 @@
 
 ## Basic Linux Commands
-:+1: Click this link to view <a href="https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/linux-commands-cheat-sheet-pdf.pdf" title="Click here to view Cheet sheet">*Cheet sheet* </a><br>
+Click this link to view <a href="https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/linux-commands-cheat-sheet-pdf.pdf" title="Click here to view Cheet sheet">*Cheet sheet* </a><br>
+Executing Selenium Scripts on Linux Ubuntu Machine
 | Command | Description |
 | --- | --- |
 | `ls` | Lists all files and directories in the current directory |
@@ -121,7 +122,8 @@
 | `~` | Change the case of an individual character |
 
 ### :dart:How to launch Firefox and Chrome browsers using Selenium on Linux | Ubuntu 18.04:
-WebDriverManager is an open-source Java library that automatically performs the four steps (find, download, setup, and maintenance) mentioned above for the drivers required for Selenium tests.
+WebDriverManager is an open-source Java library that automatically performs the four steps (find, download, setup, and maintenance) mentioned above for the drivers required for Selenium tests. <br>
+Click this link to view <a href="https://www.youtube.com/watch?v=er3AcbcsNlY" title="Click here to view Executing Selenium Scripts on Ubuntu">*Executing Selenium Scripts on Ubuntu* </a><br>
 ```
 
         // Set up the WebDriverManager for chrome driver
