@@ -12,7 +12,10 @@ This repository contains generic functions used in selenium java <br>
 :+1: Click this link to view <a href="https://github.com/venkywarriors619/Generic-functions-Selenium-java/blob/master/JavaTitBits.md" title="Click here to view Java TitBits">*Java TitBits* </a><br>
 :+1: Click this link to view <a href="https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/Interview%20Java%20programs.md" title="Click here to view Java Programs">*Java Programs* </a><br>
 :+1: Click this link to view <a href="https://www.eclipse.org/community/eclipse_newsletter/2017/june/article1.php" title="Click here to view Debugging">*Debugging* </a><br>
-:+1: Click this link to view <a href="https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/Accessibilty.md" title="Click here to view know Accessibility Testing">*Accessibility Testing* </a><br>
+:+1: Click this link to view <a href="https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/Accessibilty.md" title="Click here to view Accessibility Testing">*Accessibility Testing* 
+</a><br>
+:+1: Click this link to view <a href="https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/Linux.md" title="Click here to view Linux Commands">*Linux Commands* 
+</a><br>
 ## Why Do We Need Waits In Selenium?
 Most of the web applications are developed using Ajax and Javascript. When a page is loaded by the browser the elements which we want to interact with may load at different time intervals.<br>
 <a href="https://www.browserstack.com/guide/wait-commands-in-selenium-webdriver">Selenium Wait</a><br>
