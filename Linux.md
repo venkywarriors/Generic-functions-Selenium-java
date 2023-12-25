@@ -1,6 +1,6 @@
 
 ## Basic Linux Commands
-:+1: Click this link to view <a href="https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/linux-commands-cheat-sheet-pdf.pdfd" title="Click here to view Cheet sheet">*Cheet sheet* </a><br>
+:+1: Click this link to view <a href="https://github.com/venkywarriors/Generic-functions-Selenium-java/blob/master/linux-commands-cheat-sheet-pdf.pdf" title="Click here to view Cheet sheet">*Cheet sheet* </a><br>
 | Command | Description |
 | --- | --- |
 | `ls` | Lists all files and directories in the current directory |
