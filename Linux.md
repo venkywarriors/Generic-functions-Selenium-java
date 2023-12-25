@@ -126,7 +126,8 @@ WebDriverManager is an open-source Java library that automatically performs the 
 
         // Set up the WebDriverManager for chrome driver
         WebDriverManager.chromedriver().OperatingSystem(OperatingSystem.Linux)setup();
- 
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); or options.addArguments("--headless=chrome") or '--headless=new'
         // Create the driver object
         driver = new ChromeDriver();
 
@@ -135,7 +136,8 @@ WebDriverManager is an open-source Java library that automatically performs the 
 
         // Set up the WebDriverManager for firefox driver
         WebDriverManager.firefoxdriver().OperatingSystem(OperatingSystem.Linux)setup();
- 
+        FirefoxOptions options=new FirefoxOptions();
+        options.addArguments("--headless=new");
         // Create the driver object
         driver = new firefoxDriver();
 
