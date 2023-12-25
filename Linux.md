@@ -119,3 +119,29 @@
 | `s` | Substitute one character under the cursor and continue to insert |
 | `S` | Substitute the entire line and begin to insert at the beginning of the line |
 | `~` | Change the case of an individual character |
+
+### :dart:How to launch Firefox and Chrome browsers using Selenium on Linux | Ubuntu 18.04:
+WebDriverManager is an open-source Java library that automatically performs the four steps (find, download, setup, and maintenance) mentioned above for the drivers required for Selenium tests.
+```
+
+        // Set up the WebDriverManager for chrome driver
+        WebDriverManager.chromedriver().OperatingSystem(OperatingSystem.Linux)setup();
+ 
+        // Create the driver object
+        driver = new ChromeDriver();
+
+```
+```
+
+        // Set up the WebDriverManager for firefox driver
+        WebDriverManager.firefoxdriver().OperatingSystem(OperatingSystem.Linux)setup();
+ 
+        // Create the driver object
+        driver = new firefoxDriver();
+
+```
+* WebDriverManager automates the management of WebDriver binaries, thereby avoiding installing any device binaries manually.
+* WebDriverManager checks the version of the browser installed on your machine and downloads the proper driver binaries into the local cache (~/.cache/selenium by default) if not already present.
+* WebDriverManager matches the version of the drivers. If unknown, it uses the latest version of the driver
+* WebDriverManager offers cross browser testing without the hassle of installing and maintaining different browser driver binaries.
+* WebDriverManager can create browsers in Docker containers
