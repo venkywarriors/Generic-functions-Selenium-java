@@ -6,13 +6,15 @@ The four guiding principles of WCAG 2.2 say that Web content must be Perceivable
 <details>
   <summary>Perceivable</summary>  
 Information and user interface components must be presentable to users in ways they can perceive.<br>
+  
 Examples of Principle 1: <br>
-- Visually impaired users must be able to receive information via sound or touch
-- Hearing impaired users must be able to receive information via sight
-- Low vision users must be able to receive information with alternative formatting or zoomed to larger sizes
-- Color deficient users must be able to receive information without use of color
+- Visually impaired users must be able to receive information via sound or touch  <br>
+- Hearing impaired users must be able to receive information via sight <br>
+- Low vision users must be able to receive information with alternative formatting or zoomed to larger sizes <br>
+- Color deficient users must be able to receive information without use of color <br>
+  
 *1.1 – Text Alternatives*
-* Do images have alternative text?
+- Do images have alternative text?
 
 *1.2 – Time-based Media*
 - Does video have captions and does audio have a transcript?
