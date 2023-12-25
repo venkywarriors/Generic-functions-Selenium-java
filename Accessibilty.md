@@ -74,6 +74,12 @@ Content must be robust enough that it can be interpreted reliably by a wide vari
 View [`WCAG 2.0 Guidelines`](https://accessibility.psu.edu/guidelines/wcag2/):books:<br>
 View [`WCAG 2.2 Guidelines`](https://accessibility.psu.edu/guidelines/wcaglist/):books:<br>
 
+## The main difference between the different WCAG versions lies in the number of new success criteria:
+
+WCAG 2.0 has 61 success criteria<br>
+WCAG 2.1 has 78 (61 + 17 new success criteria)<br>
+WCAG 2.2 will have 87 (78 + 9 new success criteria)<br>
+
 ## WCAG 2.0 Conformance Levels<br> 
 **Conformance Level:** One of the following levels of conformance is met in full.<br>
 **Level A:** For Level A conformance (the minimum level of conformance), the Web page satisfies all the Level A Success Criteria, or a conforming alternate version is provided.<br>
