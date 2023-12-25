@@ -1,12 +1,16 @@
 ## Accessibility Testing <br> 
 ### Accessibility Testing is defined as a type of Software Testing performed to ensure that the application being tested is usable by people with disabilities like hearing, color blindness, old age and other disadvantaged groups. It is a subset of Usability Testing.<br> 
 Click this link to view <a href="https://www.w3.org/TR/WCAG22/" title="Click here to view WCAG Official Website">*WCAG Official Website* </a><br>
-### WCAG 2.0 Principles
-The four guiding principles of WCAG 2.0 say that Web content must be Perceivable, Operable, Understandable and Robust (POUR) in order to be accessible to people with disabilities.
+### WCAG 2.2 Principles
+The four guiding principles of WCAG 2.2 say that Web content must be Perceivable, Operable, Understandable and Robust (POUR) in order to be accessible to people with disabilities.
 <details>
   <summary>Perceivable</summary>  
-Information and user interface components must be presentable to users in ways they can perceive.
-  
+Information and user interface components must be presentable to users in ways they can perceive.<br>
+Examples of Principle 1: <br>
+- Visually impaired users must be able to receive information via sound or touch
+- Hearing impaired users must be able to receive information via sight
+- Low vision users must be able to receive information with alternative formatting or zoomed to larger sizes
+- Color deficient users must be able to receive information without use of color
 *1.1 – Text Alternatives*
 * Do images have alternative text?
 
